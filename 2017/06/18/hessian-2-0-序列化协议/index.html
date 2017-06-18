@@ -1,0 +1,478 @@
+
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+
+    <head prefix="og: http://ogp.me/ns#">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <meta name="description" content="JUST DO IT">
+        <title>
+            hessian 2.0 序列化协议 | YFHan的博客
+        </title>
+
+        <!-- Open Graph -->
+        <meta name="description" content="&amp;#x4ECB;&amp;#x7ECD;Hessian is a dynamically-typed, binary serialization and Web Services protocol designed for object-oriented transmission. &amp;#x8BBE;&amp;#x8BA1;&amp;#x76EE;&amp;#x6807;Hessian is dynamically-typed,">
+<meta name="keywords" content="hessian,序列化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hessian 2.0 序列化协议">
+<meta property="og:url" content="https://yyhan.github.io/2017/06/18/hessian-2-0-序列化协议/index.html">
+<meta property="og:site_name" content="YFHan的博客">
+<meta property="og:description" content="&amp;#x4ECB;&amp;#x7ECD;Hessian is a dynamically-typed, binary serialization and Web Services protocol designed for object-oriented transmission. &amp;#x8BBE;&amp;#x8BA1;&amp;#x76EE;&amp;#x6807;Hessian is dynamically-typed,">
+<meta property="og:updated_time" content="2017-06-18T11:36:43.924Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hessian 2.0 序列化协议">
+<meta name="twitter:description" content="&amp;#x4ECB;&amp;#x7ECD;Hessian is a dynamically-typed, binary serialization and Web Services protocol designed for object-oriented transmission. &amp;#x8BBE;&amp;#x8BA1;&amp;#x76EE;&amp;#x6807;Hessian is dynamically-typed,">
+
+            <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:undefined",
+  "image": "undefined",
+  "name": "YFHan",
+  "url": "https://yyhan.github.io"
+}
+</script>
+                <script>
+    var algoliaEnabled = false;
+    
+</script>
+
+                    
+
+                            
+                                <!--
+        <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    -->
+                                
+                                    
+                                        <!-- stylesheets list from config.yml -->
+                                        
+                                            <link rel="stylesheet" href="/css/aloha.css">
+                                            
+                                            <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+                                            
+                                            <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+                                            
+                                                
+
+    </head>
+
+    <body id="body" style="margin-bottom: 0;" class="pushable">
+
+        <div class="ui top fixed menu">
+            <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+        </div>
+
+        <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>YFHan的博客</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/favicon_400x400.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">
+                        YFHan
+                    </a>
+                    
+                        <div class="meta">
+                            Programer / Dotaor
+                        </div>
+                        
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                            <div class="item">
+                                <i class="marker icon" style="float: left"></i>
+                                <div class="content">
+                                    杭州
+                                </div>
+                            </div>
+                            
+                                
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+
+                            <a href="https://github.com/yyhan"><i class="large github icon" style="float: left"></i></a>
+
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item" >
+        <i class="home icon"></i>
+        首页
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/archives/" class="item" >
+        <i class="archive icon"></i>
+        归档
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/atom.xml" class="item" >
+        <i class="rss icon"></i>
+        RSS
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/about" class="item" >
+        <i class="mail icon"></i>
+        关于
+    </a>
+
+    
+
+    
+</div>
+
+            <div class="pusher body-content">
+                <div id="content" class="ui main container">
+                    <!--<div class="ui one column grid">-->
+                    <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                    <div id="post-hessian-2-0-序列化协议" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    hessian 2.0 序列化协议
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <h1 id="&#x4ECB;&#x7ECD;"><a href="#&#x4ECB;&#x7ECD;" class="headerlink" title="&#x4ECB;&#x7ECD;"></a>&#x4ECB;&#x7ECD;</h1><p>Hessian is a dynamically-typed, binary serialization and Web Services protocol designed for object-oriented transmission.</p>
+<h1 id="&#x8BBE;&#x8BA1;&#x76EE;&#x6807;"><a href="#&#x8BBE;&#x8BA1;&#x76EE;&#x6807;" class="headerlink" title="&#x8BBE;&#x8BA1;&#x76EE;&#x6807;"></a>&#x8BBE;&#x8BA1;&#x76EE;&#x6807;</h1><p>Hessian is dynamically-typed, compact, and portable across languages.<br>The Hessian protocol has the following design goals:</p>
+<ul class="ui list">
+<li>It must self-describe the serialized types, i.e. not require external schema or interface definitions.</li>
+<li>It must be language-independent, including supporting scripting languages.</li>
+<li>It must be readable or writable in a single pass.</li>
+<li>It must be as compact as possible.</li>
+<li>It must be simple so it can be effectively tested and implemented.</li>
+<li>It must be as fast as possible.</li>
+<li>It must support Unicode strings.</li>
+<li>It must support 8-bit binary data without escaping or using attachments.</li>
+<li>It must support encryption, compression, signature, and transaction context envelopes.</li>
+</ul>
+<h1 id="Hessian-&#x8BED;&#x6CD5;"><a href="#Hessian-&#x8BED;&#x6CD5;" class="headerlink" title="Hessian &#x8BED;&#x6CD5;"></a>Hessian &#x8BED;&#x6CD5;</h1><h2 id="&#x5E8F;&#x5217;&#x5316;&#x8BED;&#x6CD5;"><a href="#&#x5E8F;&#x5217;&#x5316;&#x8BED;&#x6CD5;" class="headerlink" title="&#x5E8F;&#x5217;&#x5316;&#x8BED;&#x6CD5;"></a>&#x5E8F;&#x5217;&#x5316;&#x8BED;&#x6CD5;</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div></pre></td><td class="code"><pre><div class="line">           # starting production</div><div class="line">top        ::= value</div><div class="line"></div><div class="line">           # 8-bit binary data split into 64k chunks</div><div class="line">binary     ::= x41 b1 b0 &lt;binary-data&gt; binary # non-final chunk</div><div class="line">           ::= &apos;B&apos; b1 b0 &lt;binary-data&gt;        # final chunk</div><div class="line">           ::= [x20-x2f] &lt;binary-data&gt;        # binary data of</div><div class="line">                                                 #  length 0-15</div><div class="line">           ::= [x34-x37] &lt;binary-data&gt;        # binary data of</div><div class="line">                                                 #  length 0-1023</div><div class="line"></div><div class="line">           # boolean true/false</div><div class="line">boolean    ::= &apos;T&apos;</div><div class="line">           ::= &apos;F&apos;</div><div class="line"></div><div class="line">           # definition for an object (compact map)</div><div class="line">class-def  ::= &apos;C&apos; string int string*</div><div class="line"></div><div class="line">           # time in UTC encoded as 64-bit long milliseconds since</div><div class="line">           #  epoch</div><div class="line">date       ::= x4a b7 b6 b5 b4 b3 b2 b1 b0</div><div class="line">           ::= x4b b3 b2 b1 b0       # minutes since epoch</div><div class="line"></div><div class="line">           # 64-bit IEEE double</div><div class="line">double     ::= &apos;D&apos; b7 b6 b5 b4 b3 b2 b1 b0</div><div class="line">           ::= x5b                   # 0.0</div><div class="line">           ::= x5c                   # 1.0</div><div class="line">           ::= x5d b0                # byte cast to double</div><div class="line">                                     #  (-128.0 to 127.0)</div><div class="line">           ::= x5e b1 b0             # short cast to double</div><div class="line">           ::= x5f b3 b2 b1 b0       # 32-bit float cast to double</div><div class="line"></div><div class="line">           # 32-bit signed integer</div><div class="line">int        ::= &apos;I&apos; b3 b2 b1 b0</div><div class="line">           ::= [x80-xbf]             # -x10 to x3f</div><div class="line">           ::= [xc0-xcf] b0          # -x800 to x7ff</div><div class="line">           ::= [xd0-xd7] b1 b0       # -x40000 to x3ffff</div><div class="line"></div><div class="line">           # list/vector</div><div class="line">list       ::= x55 type value* &apos;Z&apos;   # variable-length list</div><div class="line">	   ::= &apos;V&apos; type int value*   # fixed-length list</div><div class="line">           ::= x57 value* &apos;Z&apos;        # variable-length untyped list</div><div class="line">           ::= x58 int value*        # fixed-length untyped list</div><div class="line">	   ::= [x70-77] type value*  # fixed-length typed list</div><div class="line">	   ::= [x78-7f] value*       # fixed-length untyped list</div><div class="line"></div><div class="line">           # 64-bit signed long integer</div><div class="line">long       ::= &apos;L&apos; b7 b6 b5 b4 b3 b2 b1 b0</div><div class="line">           ::= [xd8-xef]             # -x08 to x0f</div><div class="line">           ::= [xf0-xff] b0          # -x800 to x7ff</div><div class="line">           ::= [x38-x3f] b1 b0       # -x40000 to x3ffff</div><div class="line">           ::= x59 b3 b2 b1 b0       # 32-bit integer cast to long</div><div class="line"></div><div class="line">           # map/object</div><div class="line">map        ::= &apos;M&apos; type (value value)* &apos;Z&apos;  # key, value map pairs</div><div class="line">	   ::= &apos;H&apos; (value value)* &apos;Z&apos;       # untyped key, value</div><div class="line"></div><div class="line">           # null value</div><div class="line">null       ::= &apos;N&apos;</div><div class="line"></div><div class="line">           # Object instance</div><div class="line">object     ::= &apos;O&apos; int value*</div><div class="line">	   ::= [x60-x6f] value*</div><div class="line"></div><div class="line">           # value reference (e.g. circular trees and graphs)</div><div class="line">ref        ::= x51 int            # reference to nth map/list/object</div><div class="line"></div><div class="line">           # UTF-8 encoded character string split into 64k chunks</div><div class="line">string     ::= x52 b1 b0 &lt;utf8-data&gt; string  # non-final chunk</div><div class="line">           ::= &apos;S&apos; b1 b0 &lt;utf8-data&gt;         # string of length</div><div class="line">                                             #  0-65535</div><div class="line">           ::= [x00-x1f] &lt;utf8-data&gt;         # string of length</div><div class="line">                                             #  0-31</div><div class="line">           ::= [x30-x34] &lt;utf8-data&gt;         # string of length</div><div class="line">                                             #  0-1023</div><div class="line"></div><div class="line">           # map/list types for OO languages</div><div class="line">type       ::= string                        # type name</div><div class="line">           ::= int                           # type reference</div><div class="line"></div><div class="line">           # main production</div><div class="line">value      ::= null</div><div class="line">           ::= binary</div><div class="line">           ::= boolean</div><div class="line">           ::= class-def value</div><div class="line">           ::= date</div><div class="line">           ::= double</div><div class="line">           ::= int</div><div class="line">           ::= list</div><div class="line">           ::= long</div><div class="line">           ::= map</div><div class="line">           ::= object</div><div class="line">           ::= ref</div><div class="line">           ::= string</div></pre></td></tr></table></figure>
+<h1 id="&#x5E8F;&#x5217;&#x5316;"><a href="#&#x5E8F;&#x5217;&#x5316;" class="headerlink" title="&#x5E8F;&#x5217;&#x5316;"></a>&#x5E8F;&#x5217;&#x5316;</h1><p>Hessian&#x2019;s object serialization has 8 primitive types:</p>
+<ul class="ui list">
+<li>raw binary data</li>
+<li>boolean</li>
+<li>64-bit millisecond date</li>
+<li>64-bit double</li>
+<li>32-bit int</li>
+<li>64-bit long</li>
+<li>null</li>
+<li>UTF8-encoded string</li>
+<li>It has 3 recursive types:</li>
+</ul>
+<p>list for lists and arrays</p>
+<ul class="ui list">
+<li>map for maps and dictionaries</li>
+<li>object for objects</li>
+</ul>
+<p>Finally, it has one special contruct:</p>
+<ul class="ui list">
+<li>ref for shared and circular object references.</li>
+</ul>
+<p>Hessian 2.0 has 3 internal reference maps:</p>
+<ul class="ui list">
+<li>An object/list reference map.</li>
+<li>An class definition reference map.</li>
+<li>A type (class name) reference map.</li>
+</ul>
+<h2 id="&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;"><a href="#&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;" class="headerlink" title="&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;"></a>&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;</h2><p>&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x8BED;&#x6CD5;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">binary ::= b b1 b0 &lt;binary-data&gt; binary</div><div class="line">       ::= B b1 b0 &lt;binary-data&gt;</div><div class="line">       ::= [x20-x2f] &lt;binary-data&gt;</div></pre></td></tr></table></figure></p>
+<p>Binary data is encoded in chunks. The octet x42 (&#x2018;B&#x2019;) encodes the final chunk and x62 (&#x2018;b&#x2019;) represents any non-final chunk. Each chunk has a 16-bit length value.</p>
+<p>len = 256 * b1 + b0</p>
+<h3 id="&#x538B;&#x7F29;&#x77ED;&#x4E8C;&#x8FDB;&#x5236;"><a href="#&#x538B;&#x7F29;&#x77ED;&#x4E8C;&#x8FDB;&#x5236;" class="headerlink" title="&#x538B;&#x7F29;&#x77ED;&#x4E8C;&#x8FDB;&#x5236;"></a>&#x538B;&#x7F29;&#x77ED;&#x4E8C;&#x8FDB;&#x5236;</h3><p>Binary data with length less than 15 may be encoded by a single octet length [x20-x2f].</p>
+<p>len = code - 0x20</p>
+<h3 id="&#x4E8C;&#x8FDB;&#x5236;&#x793A;&#x4F8B;"><a href="#&#x4E8C;&#x8FDB;&#x5236;&#x793A;&#x4F8B;" class="headerlink" title="&#x4E8C;&#x8FDB;&#x5236;&#x793A;&#x4F8B;"></a>&#x4E8C;&#x8FDB;&#x5236;&#x793A;&#x4F8B;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">x20               # 0&#x957F;&#x5EA6;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;</div><div class="line"></div><div class="line">x23 x01 x02 x03   # 3&#x4E2A;&#x516B;&#x5B57;&#x8282;&#x6570;&#x636E;</div><div class="line"></div><div class="line">B x10 x00 ....    # 4k &#x7ED3;&#x5C3E;&#x6570;&#x636E;&#x5757;</div><div class="line"></div><div class="line">b x04 x00 ....    # 1k &#x975E;&#x7ED3;&#x5C3E;&#x6570;&#x636E;&#x5757;</div></pre></td></tr></table></figure>
+<h2 id="boolean"><a href="#boolean" class="headerlink" title="boolean"></a>boolean</h2><p>Boolean&#x8BED;&#x6CD5;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">boolean ::= T</div><div class="line">        ::= F</div></pre></td></tr></table></figure></p>
+<p>&#x5B57;&#x8282; <code>&apos;F&apos;</code> &#x8868;&#x793A;<code>false</code>&#xFF0C;&#x5B57;&#x8282; <code>&apos;T&apos;</code> &#x8868;&#x793A;<code>true</code></p>
+<h3 id="Boolean-&#x793A;&#x4F8B;"><a href="#Boolean-&#x793A;&#x4F8B;" class="headerlink" title="Boolean &#x793A;&#x4F8B;"></a>Boolean &#x793A;&#x4F8B;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">T   # true</div><div class="line">F   # false</div></pre></td></tr></table></figure>
+<h2 id="date"><a href="#date" class="headerlink" title="date"></a>date</h2><p>Date &#x8BED;&#x6CD5;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">date ::= x4a b7 b6 b5 b4 b3 b2 b1 b0</div><div class="line">     ::= x4b b4 b3 b2 b1 b0</div></pre></td></tr></table></figure></p>
+<p>&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;64&#x4F4D;&#x7684;<code>long</code>&#x8868;&#x793A;&#x4ECE;<code>1970-01-01 00:00:00</code>&#x4EE5;&#x6765;&#x7ECF;&#x8FC7;&#x7684;&#x6BEB;&#x79D2;&#x6570;&#x3002;</p>
+<blockquote>
+<p>Date represented by a 64-bit long of milliseconds since Jan 1 1970 00:00H, UTC.</p>
+<h3 id="&#x7D27;&#x51D1;&#x578B;&#xFF1A;&#x4F7F;&#x7528;&#x5206;&#x949F;&#x8868;&#x793A;&#x65E5;&#x671F;"><a href="#&#x7D27;&#x51D1;&#x578B;&#xFF1A;&#x4F7F;&#x7528;&#x5206;&#x949F;&#x8868;&#x793A;&#x65E5;&#x671F;" class="headerlink" title="&#x7D27;&#x51D1;&#x578B;&#xFF1A;&#x4F7F;&#x7528;&#x5206;&#x949F;&#x8868;&#x793A;&#x65E5;&#x671F;"></a>&#x7D27;&#x51D1;&#x578B;&#xFF1A;&#x4F7F;&#x7528;&#x5206;&#x949F;&#x8868;&#x793A;&#x65E5;&#x671F;</h3><p>The second form contains a 32-bit int of minutes since Jan 1 1970 00:00H, UTC.</p>
+<h3 id="&#x65E5;&#x671F;-&#x793A;&#x4F8B;"><a href="#&#x65E5;&#x671F;-&#x793A;&#x4F8B;" class="headerlink" title="&#x65E5;&#x671F; &#x793A;&#x4F8B;"></a>&#x65E5;&#x671F; &#x793A;&#x4F8B;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">x4a x00 x00 x00 xd0 x4b x92 x84 xb8   # 09:51:31 May 8, 1998 UTC</div><div class="line"></div><div class="line">x4b x4b x92 x0b xa0                   # 09:51:00 May 8, 1998 UTC</div></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="double"><a href="#double" class="headerlink" title="double"></a>double</h2><p>Double &#x8BED;&#x6CD5;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">double ::= D b7 b6 b5 b4 b3 b2 b1 b0</div><div class="line">       ::= x5b</div><div class="line">       ::= x5c</div><div class="line">       ::= x5d b0</div><div class="line">       ::= x5e b1 b0</div><div class="line">       ::= x5f b3 b2 b1 b0</div></pre></td></tr></table></figure></p>
+<p>&#x4E00;&#x4E2A;64&#x4F4D;&#x7684;IEEE&#x6807;&#x51C6;&#x7684;&#x6D6E;&#x70B9;&#x6570;&#x3002;</p>
+<blockquote>
+<p>A 64-bit IEEE floating pointer number.</p>
+<h3 id="&#x538B;&#x7F29;&#xFF1A;double-zero"><a href="#&#x538B;&#x7F29;&#xFF1A;double-zero" class="headerlink" title="&#x538B;&#x7F29;&#xFF1A;double zero"></a>&#x538B;&#x7F29;&#xFF1A;double zero</h3><p>The double 0.0 can be represented by the octet x5b</p>
+<h3 id="&#x538B;&#x7F29;&#xFF1A;double-one"><a href="#&#x538B;&#x7F29;&#xFF1A;double-one" class="headerlink" title="&#x538B;&#x7F29;&#xFF1A;double one"></a>&#x538B;&#x7F29;&#xFF1A;double one</h3><p>The double 1.0 can be represented by the octet x5c</p>
+<h3 id="&#x538B;&#x7F29;-double-octet"><a href="#&#x538B;&#x7F29;-double-octet" class="headerlink" title="&#x538B;&#x7F29;: double octet"></a>&#x538B;&#x7F29;: double octet</h3></blockquote>
+<p>Doubles between -128.0 and 127.0 with no fractional component can be represented in two octets by casting the byte value to a double.</p>
+<p>value = (double) b0</p>
+<h3 id="&#x538B;&#x7F29;-double-short"><a href="#&#x538B;&#x7F29;-double-short" class="headerlink" title="&#x538B;&#x7F29;: double short"></a>&#x538B;&#x7F29;: double short</h3><p>Doubles between -32768.0 and 32767.0 with no fractional component can be represented in three octets by casting the short value to a double.</p>
+<p>value = (double) (256 * b1 + b0)</p>
+<h3 id="&#x538B;&#x7F29;-double-float"><a href="#&#x538B;&#x7F29;-double-float" class="headerlink" title="&#x538B;&#x7F29;: double float"></a>&#x538B;&#x7F29;: double float</h3><p>Doubles which are equivalent to their 32-bit float representation can be represented as the 4-octet float and then cast to double.</p>
+<h3 id="Double-&#x793A;&#x4F8B;"><a href="#Double-&#x793A;&#x4F8B;" class="headerlink" title="Double &#x793A;&#x4F8B;"></a>Double &#x793A;&#x4F8B;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">x5b          # 0.0</div><div class="line">x5c          # 1.0</div><div class="line"></div><div class="line">x5d x00      # 0.0</div><div class="line">x5d x80      # -128.0</div><div class="line">x5d x7f      # 127.0</div><div class="line"></div><div class="line">x5e x00 x00  # 0.0</div><div class="line">x5e x80 x00  # -32768.0</div><div class="line">x5e x7f xff  # 32767.0</div><div class="line"></div><div class="line">D x40 x28 x80 x00 x00 x00 x00 x00  # 12.25</div></pre></td></tr></table></figure>
+<h2 id="int"><a href="#int" class="headerlink" title="int"></a>int</h2><p>Integer &#x8BED;&#x6CD5;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int ::= &apos;I&apos; b3 b2 b1 b0</div><div class="line">    ::= [x80-xbf]</div><div class="line">    ::= [xc0-xcf] b0</div><div class="line">    ::= [xd0-xd7] b1 b0</div></pre></td></tr></table></figure></p>
+<p>A 32-bit signed integer. An integer is represented by the octet x49 (&#x2018;I&#x2019;) followed by the 4 octets of the integer in big-endian order.</p>
+<p>value = (b3 &lt;&lt; 24) + (b2 &lt;&lt; 16) + (b1 &lt;&lt; 8) + b0;</p>
+<h3 id="Compact-single-octet-integers"><a href="#Compact-single-octet-integers" class="headerlink" title="Compact: single octet integers"></a>Compact: single octet integers</h3><p>Integers between -16 and 47 can be encoded by a single octet in the range x80 to xbf.</p>
+<p>value = code - 0x90</p>
+<h3 id="Compact-two-octet-integers"><a href="#Compact-two-octet-integers" class="headerlink" title="Compact: two octet integers"></a>Compact: two octet integers</h3><p>Integers between -2048 and 2047 can be encoded in two octets with the leading byte in the range xc0 to xcf.</p>
+<p>value = ((code - 0xc8) &lt;&lt; 8) + b0;</p>
+<h3 id="Compact-three-octet-integers"><a href="#Compact-three-octet-integers" class="headerlink" title="Compact: three octet integers"></a>Compact: three octet integers</h3><p>Integers between -262144 and 262143 can be encoded in three bytes with the leading byte in the range xd0 to xd7.</p>
+<p>value = ((code - 0xd4) &lt;&lt; 16) + (b1 &lt;&lt; 8) + b0;</p>
+<h3 id="Integer-Examples"><a href="#Integer-Examples" class="headerlink" title="Integer Examples"></a>Integer Examples</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">x90                # 0</div><div class="line">x80                # -16</div><div class="line">xbf                # 47</div><div class="line"></div><div class="line">xc8 x00            # 0</div><div class="line">xc0 x00            # -2048</div><div class="line">xc7 x00            # -256</div><div class="line">xcf xff            # 2047</div><div class="line"></div><div class="line">xd4 x00 x00        # 0</div><div class="line">xd0 x00 x00        # -262144</div><div class="line">xd7 xff xff        # 262143</div><div class="line"></div><div class="line">I x00 x00 x00 x00  # 0</div><div class="line">I x00 x00 x01 x2c  # 300</div></pre></td></tr></table></figure>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><p>List &#x8BED;&#x6CD5;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">list ::= x55 type value* &apos;Z&apos;   # variable-length list</div><div class="line">     ::= &apos;V&apos; type int value*   # fixed-length list</div><div class="line">     ::= x57 value* &apos;Z&apos;        # variable-length untyped list</div><div class="line">     ::= x58 int value*        # fixed-length untyped list</div><div class="line">     ::= [x70-77] type value*  # fixed-length typed list</div><div class="line">     ::= [x78-7f] value*       # fixed-length untyped list</div></pre></td></tr></table></figure>
+<p>An ordered list, like an array. The two list productions are a fixed-length list and a variable length list. Both lists have a type. The type string may be an arbitrary UTF-8 string understood by the service.</p>
+<p>Each list item is added to the reference list to handle shared and circular elements. See the ref element.</p>
+<p>Any parser expecting a list must also accept a null or a shared ref.</p>
+<p>The valid values of type are not specified in this document and may depend on the specific application. For example, a server implemented in a language with static typing which exposes an Hessian interface can use the type information to instantiate the specific array type. On the other hand, a server written in a dynamicly-typed language would likely ignore the contents of type entirely and create a generic array.</p>
+<h3 id="Compact-fixed-length-list"><a href="#Compact-fixed-length-list" class="headerlink" title="Compact: fixed length list"></a>Compact: fixed length list</h3><p>Hessian 2.0 allows a compact form of the list for successive lists of the same type where the length is known beforehand. The type and length are encoded by integers, where the type is a reference to an earlier specified type.</p>
+<p> TOC </p>
+<h3 id="List-&#x793A;&#x4F8B;"><a href="#List-&#x793A;&#x4F8B;" class="headerlink" title="List &#x793A;&#x4F8B;"></a>List &#x793A;&#x4F8B;</h3><p>Serialization of a typed int array: int[] = {0, 1}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">V                    # fixed length, typed list</div><div class="line">  x04 [int           # encoding of int[] type</div><div class="line">  x92                # length = 2</div><div class="line">  x90                # integer 0</div><div class="line">  x91                # integer 1</div></pre></td></tr></table></figure></p>
+<p>untyped variable-length list = {0, 1}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">x57                  # variable-length, untyped</div><div class="line">  x90                # integer 0</div><div class="line">  x91                # integer 1</div><div class="line">  Z</div></pre></td></tr></table></figure></p>
+<p>fixed-length type<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">x72                # typed list length=2</div><div class="line">  x04 [int         # type for int[] (save as type #0)</div><div class="line">  x90              # integer 0</div><div class="line">  x91              # integer 1</div><div class="line"></div><div class="line">x73                # typed list length = 3</div><div class="line">  x90              # type reference to int[] (integer #0)</div><div class="line">  x92              # integer 2</div><div class="line">  x93              # integer 3</div><div class="line">  x94              # integer 4</div></pre></td></tr></table></figure></p>
+<h2 id="long"><a href="#long" class="headerlink" title="long"></a>long</h2><p>Long &#x8BED;&#x6CD5;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">long ::= L b7 b6 b5 b4 b3 b2 b1 b0</div><div class="line">     ::= [xd8-xef]</div><div class="line">     ::= [xf0-xff] b0</div><div class="line">     ::= [x38-x3f] b1 b0</div><div class="line">     ::= x4c b3 b2 b1 b0</div></pre></td></tr></table></figure></p>
+<p>A 64-bit signed integer. An long is represented by the octet x4c (&#x2018;L&#x2019; ) followed by the 8-bytes of the integer in big-endian order.</p>
+<h3 id="Compact-single-octet-longs"><a href="#Compact-single-octet-longs" class="headerlink" title="Compact: single octet longs"></a>Compact: single octet longs</h3><p>Longs between -8 and 15 are represented by a single octet in the range xd8 to xef.</p>
+<p>value = (code - 0xe0)</p>
+<h3 id="Compact-two-octet-longs"><a href="#Compact-two-octet-longs" class="headerlink" title="Compact: two octet longs"></a>Compact: two octet longs</h3><p>Longs between -2048 and 2047 are encoded in two octets with the leading byte in the range xf0 to xff.</p>
+<p>value = ((code - 0xf8) &lt;&lt; 8) + b0</p>
+<h3 id="Compact-three-octet-longs"><a href="#Compact-three-octet-longs" class="headerlink" title="Compact: three octet longs"></a>Compact: three octet longs</h3><p>Longs between -262144 and 262143 are encoded in three octets with the leading byte in the range x38 to x3f.</p>
+<p>value = ((code - 0x3c) &lt;&lt; 16) + (b1 &lt;&lt; 8) + b0</p>
+<h3 id="Compact-four-octet-longs"><a href="#Compact-four-octet-longs" class="headerlink" title="Compact: four octet longs"></a>Compact: four octet longs</h3><p>Longs between which fit into 32-bits are encoded in five octets with the leading byte x4c.</p>
+<p>value = (b3 &lt;&lt; 24) + (b2 &lt;&lt; 16) + (b1 &lt;&lt; 8) + b0</p>
+<h3 id="Long-Examples"><a href="#Long-Examples" class="headerlink" title="Long Examples"></a>Long Examples</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">xe0                  # 0</div><div class="line">xd8                  # -8</div><div class="line">xef                  # 15</div><div class="line"></div><div class="line">xf8 x00              # 0</div><div class="line">xf0 x00              # -2048</div><div class="line">xf7 x00              # -256</div><div class="line">xff xff              # 2047</div><div class="line"></div><div class="line">x3c x00 x00          # 0</div><div class="line">x38 x00 x00          # -262144</div><div class="line">x3f xff xff          # 262143</div><div class="line"></div><div class="line">x4c x00 x00 x00 x00  # 0</div><div class="line">x4c x00 x00 x01 x2c  # 300</div><div class="line"></div><div class="line">L x00 x00 x00 x00 x00 x00 x01 x2c  # 300</div></pre></td></tr></table></figure>
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><p>Map &#x8BED;&#x6CD5;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">map        ::= M type (value value)* Z</div></pre></td></tr></table></figure></p>
+<p>Represents serialized maps and can represent objects. The type element describes the type of the map.</p>
+<p>The type may be empty, i.e. a zero length. The parser is responsible for choosing a type if one is not specified. For objects, unrecognized keys will be ignored.</p>
+<p>Each map is added to the reference list. Any time the parser expects a map, it must also be able to support a null or a ref.</p>
+<p>The type is chosen by the service.</p>
+<h3 id="Map-&#x793A;&#x4F8B;"><a href="#Map-&#x793A;&#x4F8B;" class="headerlink" title="Map &#x793A;&#x4F8B;"></a>Map &#x793A;&#x4F8B;</h3><p>A sparse array<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">map = <span class="keyword">new</span> HashMap();</div><div class="line">map.put(<span class="keyword">new</span> Integer(<span class="number">1</span>), <span class="string">&quot;fee&quot;</span>);</div><div class="line">map.put(<span class="keyword">new</span> Integer(<span class="number">16</span>), <span class="string">&quot;fie&quot;</span>);</div><div class="line">map.put(<span class="keyword">new</span> Integer(<span class="number">256</span>), <span class="string">&quot;foe&quot;</span>);</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">H           # untyped map (HashMap for Java)</div><div class="line">  x91       # 1</div><div class="line">  x03 fee   # &quot;fee&quot;</div><div class="line"></div><div class="line">  xa0       # 16</div><div class="line">  x03 fie   # &quot;fie&quot;</div><div class="line"></div><div class="line">  xc9 x00   # 256</div><div class="line">  x03 foe   # &quot;foe&quot;</div><div class="line"></div><div class="line">  Z</div></pre></td></tr></table></figure>
+<p>Map Representation of a Java Object</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>{</div><div class="line">  String color = <span class="string">&quot;aquamarine&quot;</span>;</div><div class="line">  String model = <span class="string">&quot;Beetle&quot;</span>;</div><div class="line">  <span class="keyword">int</span> mileage = <span class="number">65536</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">M</div><div class="line">  x13 com.caucho.test.Car  # type</div><div class="line"></div><div class="line">  x05 color                # color field</div><div class="line">  x0a aquamarine</div><div class="line"></div><div class="line">  x05 model                # model field</div><div class="line">  x06 Beetle</div><div class="line"></div><div class="line">  x07 mileage              # mileage field</div><div class="line">  I x00 x01 x00 x00</div><div class="line">  Z</div></pre></td></tr></table></figure>
+<h2 id="null"><a href="#null" class="headerlink" title="null"></a>null</h2><p>Null &#x8BED;&#x6CD5;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">null ::= N</div></pre></td></tr></table></figure></p>
+<p>Null &#x8868;&#x793A;&#x7A7A;&#x6307;&#x9488;&#x3002;&#x5B57;&#x8282; <code>&apos;N&apos;</code> &#x8868;&#x793A;<code>null</code>&#x503C;&#x3002;</p>
+<h2 id="object"><a href="#object" class="headerlink" title="object"></a>object</h2><p>Object &#x8BED;&#x6CD5;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class-def  ::= &apos;C&apos; string int string*</div><div class="line"></div><div class="line">object     ::= &apos;O&apos; int value*</div><div class="line">           ::= [x60-x6f] value*</div></pre></td></tr></table></figure></p>
+<h3 id="&#x538B;&#x7F29;-class-definition"><a href="#&#x538B;&#x7F29;-class-definition" class="headerlink" title="&#x538B;&#x7F29;: class definition"></a>&#x538B;&#x7F29;: class definition</h3><p>Hessian 2.0 has a compact object form where the field names are only serialized once. Following objects only need to serialize their values.</p>
+<p>The object definition includes a mandatory type string, the number of fields, and the field names. The object definition is stored in the object definition map and will be referenced by object instances with an integer reference.</p>
+<h3 id="&#x538B;&#x7F29;-object-instantiation"><a href="#&#x538B;&#x7F29;-object-instantiation" class="headerlink" title="&#x538B;&#x7F29;: object instantiation"></a>&#x538B;&#x7F29;: object instantiation</h3><p>Hessian 2.0 has a compact object form where the field names are only serialized once. Following objects only need to serialize their values.</p>
+<p>The object instantiation creates a new object based on a previous definition. The integer value refers to the object definition.</p>
+<h3 id="Object-&#x793A;&#x4F8B;"><a href="#Object-&#x793A;&#x4F8B;" class="headerlink" title="Object &#x793A;&#x4F8B;"></a>Object &#x793A;&#x4F8B;</h3><p>Object &#x5E8F;&#x5217;&#x5316;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">class Car {</div><div class="line">  String color;</div><div class="line">  String model;</div><div class="line">}</div><div class="line"></div><div class="line">out.writeObject(new Car(&quot;red&quot;, &quot;corvette&quot;));</div><div class="line">out.writeObject(new Car(&quot;green&quot;, &quot;civic&quot;));</div><div class="line"></div><div class="line">---</div><div class="line"></div><div class="line">C                        # object definition (#0)</div><div class="line">  x0b example.Car        # type is example.Car</div><div class="line">  x92                    # two fields</div><div class="line">  x05 color              # color field name</div><div class="line">  x05 model              # model field name</div><div class="line"></div><div class="line">O                        # object def (long form)</div><div class="line">  x90                    # object definition #0</div><div class="line">  x03 red                # color field value</div><div class="line">  x08 corvette           # model field value</div><div class="line"></div><div class="line">x60                      # object def #0 (short form)</div><div class="line">  x05 green              # color field value</div><div class="line">  x05 civic              # model field value</div></pre></td></tr></table></figure></p>
+<p>&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"> enum Color {</div><div class="line">  RED,</div><div class="line">  GREEN,</div><div class="line">  BLUE,</div><div class="line">}</div><div class="line"></div><div class="line">out.writeObject(Color.RED);</div><div class="line">out.writeObject(Color.GREEN);</div><div class="line">out.writeObject(Color.BLUE);</div><div class="line">out.writeObject(Color.GREEN);</div><div class="line"></div><div class="line">---</div><div class="line"></div><div class="line">C                         # class definition #0</div><div class="line">  x0b example.Color       # type is example.Color</div><div class="line">  x91                     # one field</div><div class="line">  x04 name                # enumeration field is &quot;name&quot;</div><div class="line"></div><div class="line">x60                       # object #0 (class def #0)</div><div class="line">  x03 RED                 # RED value</div><div class="line"></div><div class="line">x60                       # object #1 (class def #0)</div><div class="line">  x90                     # object definition ref #0</div><div class="line">  x05 GREEN               # GREEN value</div><div class="line"></div><div class="line">x60                       # object #2 (class def #0)</div><div class="line">  x04 BLUE                # BLUE value</div><div class="line"></div><div class="line">x51 x91                   # object ref #1, i.e. Color.GREEN</div></pre></td></tr></table></figure></p>
+<h2 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h2><p>Ref &#x8BED;&#x6CD5;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ref ::= x51 int</div></pre></td></tr></table></figure></p>
+<p>An integer referring to a previous list, map, or object instance. As each list, map or object is read from the input stream, it is assigned the integer position in the stream, i.e. the first list or map is &#x2018;0&#x2019;, the next is &#x2018;1&#x2019;, etc. A later ref can then use the previous object. Writers MAY generate refs. Parsers MUST be able to recognize them.</p>
+<p>ref can refer to incompletely-read items. For example, a circular linked-list will refer to the first link before the entire list has been read.</p>
+<p>A possible implementation would add each map, list, and object to an array as it is read. The ref will return the corresponding value from the array. To support circular structures, the implementation would store the map, list or object immediately, before filling in the contents.</p>
+<p>Each map or list is stored into an array as it is parsed. ref selects one of the stored objects. The first object is numbered &#x2018;0&#x2019;.</p>
+<h3 id="Ref-&#x793A;&#x4F8B;"><a href="#Ref-&#x793A;&#x4F8B;" class="headerlink" title="Ref &#x793A;&#x4F8B;"></a>Ref &#x793A;&#x4F8B;</h3><p>Circular list<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">list = new LinkedList();</div><div class="line">list.data = 1;</div><div class="line">list.tail = list;</div><div class="line"></div><div class="line">---</div><div class="line">C</div><div class="line">  x0a LinkedList</div><div class="line">  x92</div><div class="line">  x04 head</div><div class="line">  x04 tail</div><div class="line"></div><div class="line">o x90      # object stores ref #0</div><div class="line">  x91      # data = 1</div><div class="line">  x51 x90  # next field refers to itself, i.e. ref #0</div></pre></td></tr></table></figure></p>
+<p>ref only refers to list, map and objects elements. Strings and binary data, in particular, will only share references if they&#x2019;re wrapped in a list or map.</p>
+<h3 id="string"><a href="#string" class="headerlink" title="string"></a>string</h3><p>String &#x8BED;&#x6CD5;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">string ::= x52 b1 b0 &lt;utf8-data&gt; string</div><div class="line">       ::= S b1 b0 &lt;utf8-data&gt;</div><div class="line">       ::= [x00-x1f] &lt;utf8-data&gt;</div><div class="line">       ::= [x30-x33] b0 &lt;utf8-data&gt;</div></pre></td></tr></table></figure></p>
+<p>A 16-bit unicode character string encoded in UTF-8. Strings are encoded in chunks. x53 (&#x2018;S&#x2019;) represents the final chunk and x52 (&#x2018;R&#x2019;) represents any non-final chunk. Each chunk has a 16-bit unsigned integer length value.</p>
+<p>The length is the number of 16-bit characters, which may be different than the number of bytes.</p>
+<p>String chunks may not split surrogate pairs.</p>
+<h3 id="&#x538B;&#x7F29;-short-strings"><a href="#&#x538B;&#x7F29;-short-strings" class="headerlink" title="&#x538B;&#x7F29;: short strings"></a>&#x538B;&#x7F29;: short strings</h3><p>Strings with length less than 32 may be encoded with a single octet length [x00-x1f].</p>
+<p>value = code</p>
+<h2 id="String-&#x793A;&#x4F8B;"><a href="#String-&#x793A;&#x4F8B;" class="headerlink" title="String &#x793A;&#x4F8B;"></a>String &#x793A;&#x4F8B;</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">x00                 # &quot;&quot;, empty string</div><div class="line">x05 hello           # &quot;hello&quot;</div><div class="line">x01 xc3 x83         # &quot;\u00c3&quot;</div><div class="line"></div><div class="line">S x00 x05 hello     # &quot;hello&quot; in long form</div><div class="line"></div><div class="line">x52 x00 x07 hello,  # &quot;hello, world&quot; split into two chunks</div><div class="line">  x05 world</div></pre></td></tr></table></figure>
+<h2 id="type"><a href="#type" class="headerlink" title="type"></a>type</h2><p>Type &#x8BED;&#x6CD5;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">type ::= string</div><div class="line">     ::= int</div></pre></td></tr></table></figure></p>
+<p>A <code>map</code> or <code>list</code> includes a type attribute indicating the type name of the map or list for object-oriented languages.</p>
+<p>Each type is added to the <code>type map</code> for future reference.</p>
+<h2 id="&#x538B;&#x7F29;-type-&#x5F15;&#x7528;"><a href="#&#x538B;&#x7F29;-type-&#x5F15;&#x7528;" class="headerlink" title="&#x538B;&#x7F29;: type &#x5F15;&#x7528;"></a>&#x538B;&#x7F29;: type &#x5F15;&#x7528;</h2><p>Repeated type strings MAY use the <code>type map</code> to refer to a previously used type. The type reference is zero-based over all the types encountered during parsing.</p>
+<h1 id="&#x5F15;&#x7528;&#x6620;&#x5C04;"><a href="#&#x5F15;&#x7528;&#x6620;&#x5C04;" class="headerlink" title="&#x5F15;&#x7528;&#x6620;&#x5C04;"></a>&#x5F15;&#x7528;&#x6620;&#x5C04;</h1><p>Hessian 2.0 &#x6709;&#x4E09;&#x79CD;&#x5185;&#x7F6E;&#x5F15;&#x7528;&#x6620;&#x5C04;:</p>
+<ul class="ui list">
+<li>An map/object/list reference map.</li>
+<li>An class definition map.</li>
+<li>A type (class name) map.</li>
+</ul>
+<p>The value reference map lets Hessian support arbitrary graphs, and recursive and circular data structures.</p>
+<p>The class and type maps improve Hessian efficiency by avoiding repetition of common string data.</p>
+<h2 id="&#x503C;&#x5F15;&#x7528;"><a href="#&#x503C;&#x5F15;&#x7528;" class="headerlink" title="&#x503C;&#x5F15;&#x7528;"></a>&#x503C;&#x5F15;&#x7528;</h2><p>Hessian supports arbitrary graphs by adding <code>list</code>, <code>object</code>, and <code>map</code> as it encounters them in the bytecode stream.</p>
+<p>Parsers MUST store each list, object and map in the reference map as they are encountered.</p>
+<p>The stored objects can be used with a ref bytecode.</p>
+<h2 id="class-&#x5F15;&#x7528;"><a href="#class-&#x5F15;&#x7528;" class="headerlink" title="class &#x5F15;&#x7528;"></a>class &#x5F15;&#x7528;</h2><p>Each <code>object definition</code> is automatically added to the class-map. Parsers MUST add a class definition to the class map as each is encountered. Following object instances will refer to the defined class.</p>
+<h2 id="type-&#x5F15;&#x7528;"><a href="#type-&#x5F15;&#x7528;" class="headerlink" title="type &#x5F15;&#x7528;"></a>type &#x5F15;&#x7528;</h2><p>The <code>type</code> strings for <code>map</code> and <code>list</code> values are stored in a type map for reference.</p>
+<p>Parsers MUST add a type string to the type map as each is encountered.</p>
+<h1 id="&#x5B57;&#x8282;&#x6620;&#x5C04;"><a href="#&#x5B57;&#x8282;&#x6620;&#x5C04;" class="headerlink" title="&#x5B57;&#x8282;&#x6620;&#x5C04;"></a>&#x5B57;&#x8282;&#x6620;&#x5C04;</h1><p>Hessian is organized as a bytecode protocol. A Hessian reader is essentially a switch statement on the initial octet.</p>
+<p>&#x5B57;&#x8282;&#x7F16;&#x7801;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">x00 - x1f    # utf-8 string length 0-32</div><div class="line">x20 - x2f    # binary data length 0-16</div><div class="line">x30 - x33    # utf-8 string length 0-1023</div><div class="line">x34 - x37    # binary data length 0-1023</div><div class="line">x38 - x3f    # three-octet compact long (-x40000 to x3ffff)</div><div class="line">x40          # reserved (expansion/escape)</div><div class="line">x41          # 8-bit binary data non-final chunk (&apos;A&apos;)</div><div class="line">x42          # 8-bit binary data final chunk (&apos;B&apos;)</div><div class="line">x43          # object type definition (&apos;C&apos;)</div><div class="line">x44          # 64-bit IEEE encoded double (&apos;D&apos;)</div><div class="line">x45          # reserved</div><div class="line">x46          # boolean false (&apos;F&apos;)</div><div class="line">x47          # reserved</div><div class="line">x48          # untyped map (&apos;H&apos;)</div><div class="line">x49          # 32-bit signed integer (&apos;I&apos;)</div><div class="line">x4a          # 64-bit UTC millisecond date</div><div class="line">x4b          # 32-bit UTC minute date</div><div class="line">x4c          # 64-bit signed long integer (&apos;L&apos;)</div><div class="line">x4d          # map with type (&apos;M&apos;)</div><div class="line">x4e          # null (&apos;N&apos;)</div><div class="line">x4f          # object instance (&apos;O&apos;)</div><div class="line">x50          # reserved</div><div class="line">x51          # reference to map/list/object - integer (&apos;Q&apos;)</div><div class="line">x52          # utf-8 string non-final chunk (&apos;R&apos;)</div><div class="line">x53          # utf-8 string final chunk (&apos;S&apos;)</div><div class="line">x54          # boolean true (&apos;T&apos;)</div><div class="line">x55          # variable-length list/vector (&apos;U&apos;)</div><div class="line">x56          # fixed-length list/vector (&apos;V&apos;)</div><div class="line">x57          # variable-length untyped list/vector (&apos;W&apos;)</div><div class="line">x58          # fixed-length untyped list/vector (&apos;X&apos;)</div><div class="line">x59          # long encoded as 32-bit int (&apos;Y&apos;)</div><div class="line">x5a          # list/map terminator (&apos;Z&apos;)</div><div class="line">x5b          # double 0.0</div><div class="line">x5c          # double 1.0</div><div class="line">x5d          # double represented as byte (-128.0 to 127.0)</div><div class="line">x5e          # double represented as short (-32768.0 to 327676.0)</div><div class="line">x5f          # double represented as float</div><div class="line">x60 - x6f    # object with direct type</div><div class="line">x70 - x77    # fixed list with direct length</div><div class="line">x78 - x7f    # fixed untyped list with direct length</div><div class="line">x80 - xbf    # one-octet compact int (-x10 to x3f, x90 is 0)</div><div class="line">xc0 - xcf    # two-octet compact int (-x800 to x7ff)</div><div class="line">xd0 - xd7    # three-octet compact int (-x40000 to x3ffff)</div><div class="line">xd8 - xef    # one-octet compact long (-x8 to xf, xe0 is 0)</div><div class="line">xf0 - xff    # two-octet compact long (-x800 to x7ff, xf8 is 0)</div></pre></td></tr></table></figure></p>
+<h1 id="&#x4F5C;&#x8005;&#x8054;&#x7CFB;&#x65B9;&#x5F0F;"><a href="#&#x4F5C;&#x8005;&#x8054;&#x7CFB;&#x65B9;&#x5F0F;" class="headerlink" title="&#x4F5C;&#x8005;&#x8054;&#x7CFB;&#x65B9;&#x5F0F;"></a>&#x4F5C;&#x8005;&#x8054;&#x7CFB;&#x65B9;&#x5F0F;</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Scott Ferguson</div><div class="line">Caucho Technology Inc.</div><div class="line">P.O. Box 9001</div><div class="line">La Jolla, CA 92038</div><div class="line">USA</div><div class="line">Email: 	ferg@caucho.com</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Emil Ong</div><div class="line">Caucho Technology Inc.</div><div class="line">P.O. Box 9001</div><div class="line">La Jolla, CA 92038</div><div class="line">USA</div><div class="line">Email: 	emil@caucho.com</div></pre></td></tr></table></figure>
+<h1 id="Full-Copyright-Statement"><a href="#Full-Copyright-Statement" class="headerlink" title="Full Copyright Statement"></a>Full Copyright Statement</h1><p>Copyright &#xA9; The IETF Trust (2007).</p>
+<p>This document is subject to the rights, licenses and restrictions contained in BCP 78, and except as set forth therein, the authors retain all their rights.</p>
+<p>This document and the information contained herein are provided on an &#x201C;AS IS&#x201D; basis and THE CONTRIBUTOR, THE ORGANIZATION HE/SHE REPRESENTS OR IS SPONSORED BY (IF ANY), THE INTERNET SOCIETY, THE IETF TRUST AND THE INTERNET ENGINEERING TASK FORCE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.</p>
+<h1 id="Intellectual-Property"><a href="#Intellectual-Property" class="headerlink" title="Intellectual Property"></a>Intellectual Property</h1><p>The IETF takes no position regarding the validity or scope of any Intellectual Property Rights or other rights that might be claimed to pertain to the implementation or use of the technology described in this document or the extent to which any license under such rights might or might not be available; nor does it represent that it has made any independent effort to identify any such rights. Information on the procedures with respect to rights in RFC documents can be found in BCP 78 and BCP 79.</p>
+<p>Copies of IPR disclosures made to the IETF Secretariat and any assurances of licenses to be made available, or the result of an attempt made to obtain a general license or permission for the use of such proprietary rights by implementers or users of this specification can be obtained from the IETF on-line IPR repository at <a href="http://www.ietf.org/ipr" target="_blank" rel="external">http://www.ietf.org/ipr</a>.</p>
+<p>The IETF invites any interested party to bring to its attention any copyrights, patents or patent applications, or other proprietary rights that may cover technology that may be required to implement this standard. Please address the information to the IETF at ietf-ipr@ietf.org.</p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-06-18T03:05:53.000Z" itemprop="datePublished">2017-06-18</time>
+
+    </span>
+    <span class="post-description-item">
+        
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/hessian/">hessian</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/序列化/">序列化</a>
+    </span>
+
+    
+
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a class="ui tiny button disabled"><i class="angle left icon"></i>前一篇</a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/2017/06/15/Spring-MVC基本配置/" class="ui tiny button">
+                    
+                    Spring MVC基本配置
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#介绍"><span>介绍</span></a></li><li><a href="#设计目标"><span>设计目标</span></a></li><li><a href="#Hessian-语法"><span>Hessian 语法</span></a><ol><li><a href="#序列化语法"><span>序列化语法</span></a></li></ol></li><li><a href="#序列化"><span>序列化</span></a><ol><li><a href="#二进制数据"><span>二进制数据</span></a><ol><li><a href="#压缩短二进制"><span>压缩短二进制</span></a></li><li><a href="#二进制示例"><span>二进制示例</span></a></li></ol></li><li><a href="#boolean"><span>boolean</span></a><ol><li><a href="#Boolean-示例"><span>Boolean 示例</span></a></li></ol></li><li><a href="#date"><span>date</span></a><ol><li><a href="#紧凑型：使用分钟表示日期"><span>紧凑型：使用分钟表示日期</span></a></li><li><a href="#日期-示例"><span>日期 示例</span></a></li></ol></li><li><a href="#double"><span>double</span></a><ol><li><a href="#压缩：double-zero"><span>压缩：double zero</span></a></li><li><a href="#压缩：double-one"><span>压缩：double one</span></a></li><li><a href="#压缩-double-octet"><span>压缩: double octet</span></a></li><li><a href="#压缩-double-short"><span>压缩: double short</span></a></li><li><a href="#压缩-double-float"><span>压缩: double float</span></a></li><li><a href="#Double-示例"><span>Double 示例</span></a></li></ol></li><li><a href="#int"><span>int</span></a><ol><li><a href="#Compact-single-octet-integers"><span>Compact: single octet integers</span></a></li><li><a href="#Compact-two-octet-integers"><span>Compact: two octet integers</span></a></li><li><a href="#Compact-three-octet-integers"><span>Compact: three octet integers</span></a></li><li><a href="#Integer-Examples"><span>Integer Examples</span></a></li></ol></li><li><a href="#list"><span>list</span></a><ol><li><a href="#Compact-fixed-length-list"><span>Compact: fixed length list</span></a></li><li><a href="#List-示例"><span>List 示例</span></a></li></ol></li><li><a href="#long"><span>long</span></a><ol><li><a href="#Compact-single-octet-longs"><span>Compact: single octet longs</span></a></li><li><a href="#Compact-two-octet-longs"><span>Compact: two octet longs</span></a></li><li><a href="#Compact-three-octet-longs"><span>Compact: three octet longs</span></a></li><li><a href="#Compact-four-octet-longs"><span>Compact: four octet longs</span></a></li><li><a href="#Long-Examples"><span>Long Examples</span></a></li></ol></li><li><a href="#map"><span>map</span></a><ol><li><a href="#Map-示例"><span>Map 示例</span></a></li></ol></li><li><a href="#null"><span>null</span></a></li><li><a href="#object"><span>object</span></a><ol><li><a href="#压缩-class-definition"><span>压缩: class definition</span></a></li><li><a href="#压缩-object-instantiation"><span>压缩: object instantiation</span></a></li><li><a href="#Object-示例"><span>Object 示例</span></a></li></ol></li><li><a href="#ref"><span>ref</span></a><ol><li><a href="#Ref-示例"><span>Ref 示例</span></a></li><li><a href="#string"><span>string</span></a></li><li><a href="#压缩-short-strings"><span>压缩: short strings</span></a></li></ol></li><li><a href="#String-示例"><span>String 示例</span></a></li><li><a href="#type"><span>type</span></a></li><li><a href="#压缩-type-引用"><span>压缩: type 引用</span></a></li></ol></li><li><a href="#引用映射"><span>引用映射</span></a><ol><li><a href="#值引用"><span>值引用</span></a></li><li><a href="#class-引用"><span>class 引用</span></a></li><li><a href="#type-引用"><span>type 引用</span></a></li></ol></li><li><a href="#字节映射"><span>字节映射</span></a></li><li><a href="#作者联系方式"><span>作者联系方式</span></a></li><li><a href="#Full-Copyright-Statement"><span>Full Copyright Statement</span></a></li><li><a href="#Intellectual-Property"><span>Intellectual Property</span></a></li></ol>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                </div>
+                <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2017 <a href="/">YFHan</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
+                href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+            </div>
+
+            
+
+                        
+                            <!-- scripts list from theme config.yml -->
+                            
+                                <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+                                
+                                <script src="/js/semantic-ui-algolia.js"></script>
+                                
+                                <script src="/js/aloha-events.js"></script>
+                                
+                                    
+
+    </body>
+
+    </html>

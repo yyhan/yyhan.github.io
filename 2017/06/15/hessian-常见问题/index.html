@@ -1,0 +1,328 @@
+
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+
+    <head prefix="og: http://ogp.me/ns#">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <meta name="description" content="JUST DO IT">
+        <title>
+            hessian 常见问题 | YFHan的博客
+        </title>
+
+        <!-- Open Graph -->
+        <meta name="description" content="hessian&amp;#x63A5;&amp;#x53E3;&amp;#x670D;&amp;#x52A1;&amp;#x7AEF;&amp;#x548C;&amp;#x5BA2;&amp;#x6237;&amp;#x7AEF;&amp;#x5BF9;&amp;#x8C61;&amp;#x4E0D;&amp;#x4E00;&amp;#x81F4;&amp;#x95EE;&amp;#x9898;&amp;#x5B57;&amp;#x6BB5;&amp;#x6570;&amp;#x91CF;&amp;#x4E0D;&amp;#x4E00;&amp;#x81F4;hessian&amp;#">
+<meta name="keywords" content="java,hessian">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hessian 常见问题">
+<meta property="og:url" content="https://yyhan.github.io/2017/06/15/hessian-常见问题/index.html">
+<meta property="og:site_name" content="YFHan的博客">
+<meta property="og:description" content="hessian&amp;#x63A5;&amp;#x53E3;&amp;#x670D;&amp;#x52A1;&amp;#x7AEF;&amp;#x548C;&amp;#x5BA2;&amp;#x6237;&amp;#x7AEF;&amp;#x5BF9;&amp;#x8C61;&amp;#x4E0D;&amp;#x4E00;&amp;#x81F4;&amp;#x95EE;&amp;#x9898;&amp;#x5B57;&amp;#x6BB5;&amp;#x6570;&amp;#x91CF;&amp;#x4E0D;&amp;#x4E00;&amp;#x81F4;hessian&amp;#">
+<meta property="og:updated_time" content="2017-06-15T14:24:28.865Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hessian 常见问题">
+<meta name="twitter:description" content="hessian&amp;#x63A5;&amp;#x53E3;&amp;#x670D;&amp;#x52A1;&amp;#x7AEF;&amp;#x548C;&amp;#x5BA2;&amp;#x6237;&amp;#x7AEF;&amp;#x5BF9;&amp;#x8C61;&amp;#x4E0D;&amp;#x4E00;&amp;#x81F4;&amp;#x95EE;&amp;#x9898;&amp;#x5B57;&amp;#x6BB5;&amp;#x6570;&amp;#x91CF;&amp;#x4E0D;&amp;#x4E00;&amp;#x81F4;hessian&amp;#">
+
+            <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:undefined",
+  "image": "undefined",
+  "name": "YFHan",
+  "url": "https://yyhan.github.io"
+}
+</script>
+                <script>
+    var algoliaEnabled = false;
+    
+</script>
+
+                    
+
+                            
+                                <!--
+        <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    -->
+                                
+                                    
+                                        <!-- stylesheets list from config.yml -->
+                                        
+                                            <link rel="stylesheet" href="/css/aloha.css">
+                                            
+                                            <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+                                            
+                                            <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+                                            
+                                                
+
+    </head>
+
+    <body id="body" style="margin-bottom: 0;" class="pushable">
+
+        <div class="ui top fixed menu">
+            <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+        </div>
+
+        <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>YFHan的博客</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/favicon_400x400.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">
+                        YFHan
+                    </a>
+                    
+                        <div class="meta">
+                            Programer / Dotaor
+                        </div>
+                        
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                            <div class="item">
+                                <i class="marker icon" style="float: left"></i>
+                                <div class="content">
+                                    杭州
+                                </div>
+                            </div>
+                            
+                                
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+
+                            <a href="https://github.com/yyhan"><i class="large github icon" style="float: left"></i></a>
+
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item" >
+        <i class="home icon"></i>
+        首页
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/archives/" class="item" >
+        <i class="archive icon"></i>
+        归档
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/atom.xml" class="item" >
+        <i class="rss icon"></i>
+        RSS
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/about" class="item" >
+        <i class="mail icon"></i>
+        关于
+    </a>
+
+    
+
+    
+</div>
+
+            <div class="pusher body-content">
+                <div id="content" class="ui main container">
+                    <!--<div class="ui one column grid">-->
+                    <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                    <div id="post-hessian-常见问题" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    hessian 常见问题
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <h1 id="hessian&#x63A5;&#x53E3;&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x5BF9;&#x8C61;&#x4E0D;&#x4E00;&#x81F4;&#x95EE;&#x9898;"><a href="#hessian&#x63A5;&#x53E3;&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x5BF9;&#x8C61;&#x4E0D;&#x4E00;&#x81F4;&#x95EE;&#x9898;" class="headerlink" title="hessian&#x63A5;&#x53E3;&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x5BF9;&#x8C61;&#x4E0D;&#x4E00;&#x81F4;&#x95EE;&#x9898;"></a>hessian&#x63A5;&#x53E3;&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x5BF9;&#x8C61;&#x4E0D;&#x4E00;&#x81F4;&#x95EE;&#x9898;</h1><h2 id="&#x5B57;&#x6BB5;&#x6570;&#x91CF;&#x4E0D;&#x4E00;&#x81F4;"><a href="#&#x5B57;&#x6BB5;&#x6570;&#x91CF;&#x4E0D;&#x4E00;&#x81F4;" class="headerlink" title="&#x5B57;&#x6BB5;&#x6570;&#x91CF;&#x4E0D;&#x4E00;&#x81F4;"></a>&#x5B57;&#x6BB5;&#x6570;&#x91CF;&#x4E0D;&#x4E00;&#x81F4;</h2><p>hessian&#x5141;&#x8BB8;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x5BF9;&#x8C61;&#x5B57;&#x6BB5;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x589E;&#x52A0;&#x3001;&#x5220;&#x9664;&#x5B57;&#x6BB5;&#x90FD;&#x4E0D;&#x5F71;&#x54CD;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x540C;&#x540D;&#x5B57;&#x6BB5;&#xFF0C;&#x5FC5;&#x987B;&#x4FDD;&#x8BC1;&#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#x4E00;&#x81F4;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x62A5;&#x5F02;&#x5E38;&#xFF1A;</p>
+<ul class="ui list">
+<li>&#x4F8B;&#x5982;&#x670D;&#x52A1;&#x7AEF;&#x4E3A;BigDecimal&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x4E3A;int&#xFF1A;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">com.caucho.hessian.client.HessianRuntimeException: com.caucho.hessian.io.HessianFieldException: com.demo.entity.DemoBean.number: expected integer at 0x43 java.math.BigDecimal (1233456)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x4E0D;&#x4E00;&#x81F4;"><a href="#&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x4E0D;&#x4E00;&#x81F4;" class="headerlink" title="&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x4E0D;&#x4E00;&#x81F4;"></a>&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x4E0D;&#x4E00;&#x81F4;</h2><p>&#x5F53;&#x670D;&#x52A1;&#x7AEF;&#x8FD4;&#x56DE;&#x5BF9;&#x8C61;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x671F;&#x671B;&#x83B7;&#x53D6;&#x7684;&#x5BF9;&#x8C61;&#x4E0D;&#x4E00;&#x81F4;&#x65F6;&#xFF0C;&#x6BD4;&#x5982;&#x670D;&#x52A1;&#x7AEF;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x4E3A;A&#xFF0C;&#x4F46;&#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x63A5;&#x53D7;&#x7684;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x4E3A;B&#xFF0C;&#x6B64;&#x65F6;hessian&#x4F7F;&#x7528;map&#x6620;&#x5C04;&#x7684;&#x65B9;&#x5F0F;&#x89E3;&#x6790;&#xFF0C;&#x6839;&#x636E;&#x5B57;&#x6BB5;&#x540D;&#x6620;&#x5C04;&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x8BB0;&#x5F55;&#x4E00;&#x4E9B;&#x8B66;&#x544A;&#x65E5;&#x5FD7;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[2017-06-15 22:17:00,267] &#x8B66;&#x544A; com.caucho.hessian.io.SerializerFactory getDeserializer - Hessian/Burlap: &apos;com.demo.entity.DemoBean&apos; is an unknown class in sun.misc.Launcher$AppClassLoader@18b4aac2:</div><div class="line">java.lang.ClassNotFoundException: com.demo.entity.DemoBean </div><div class="line">[2017-06-15 22:17:00,282] &#x8F83;&#x8BE6;&#x7EC6; com.caucho.hessian.io.SerializerFactory getDeserializer - java.lang.ClassNotFoundException: com.demo.entity.DemoBean </div><div class="line">[2017-06-15 22:17:01,194] &#x8B66;&#x544A; com.caucho.hessian.io.SerializerFactory getDeserializer - Hessian/Burlap: &apos;com.demo.entity.DemoBean&apos; is an unknown class in sun.misc.Launcher$AppClassLoader@18b4aac2:</div><div class="line">java.lang.ClassNotFoundException: com.demo.entity.DemoBean </div><div class="line">[2017-06-15 22:17:01,194] &#x8F83;&#x8BE6;&#x7EC6; com.caucho.hessian.io.SerializerFactory getDeserializer - java.lang.ClassNotFoundException: com.demo.entity.DemoBean </div><div class="line">MyHessianServlet.getDeserializer: com.demo.entity.Demo2Bean</div><div class="line">[2017-06-15 22:17:01,196] &#x8BE6;&#x7EC6; com.caucho.hessian.io.SerializerFactory getObjectDeserializer - hessian: expected deserializer &apos;com.demo.entity.Demo2Bean&apos; at &apos;com.demo.entity.DemoBean&apos; (java.util.HashMap)</div></pre></td></tr></table></figure></p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-06-15T13:22:54.000Z" itemprop="datePublished">2017-06-15</time>
+
+    </span>
+    <span class="post-description-item">
+        
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/java/">java</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/hessian/">hessian</a>
+    </span>
+
+    
+
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a href="/2017/06/15/Spring-MVC基本配置/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    Spring MVC基本配置
+                    
+
+                </a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/2017/06/13/hessian-序列化BigDecimal问题/" class="ui tiny button">
+                    
+                    hessian 序列化BigDecimal问题
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#hessian接口服务端和客户端对象不一致问题"><span>hessian接口服务端和客户端对象不一致问题</span></a><ol><li><a href="#字段数量不一致"><span>字段数量不一致</span></a></li><li><a href="#接口返回值类型不一致"><span>接口返回值类型不一致</span></a></li></ol></li></ol>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                </div>
+                <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2017 <a href="/">YFHan</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
+                href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+            </div>
+
+            
+
+                        
+                            <!-- scripts list from theme config.yml -->
+                            
+                                <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+                                
+                                <script src="/js/semantic-ui-algolia.js"></script>
+                                
+                                <script src="/js/aloha-events.js"></script>
+                                
+                                    
+
+    </body>
+
+    </html>

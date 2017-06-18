@@ -1,0 +1,339 @@
+
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+
+    <head prefix="og: http://ogp.me/ns#">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <meta name="description" content="JUST DO IT">
+        <title>
+            Spring @Value注解 | YFHan的博客
+        </title>
+
+        <!-- Open Graph -->
+        <meta name="description" content="Spring @Value&amp;#x6CE8;&amp;#x89E3;&amp;#x7684;&amp;#x7528;&amp;#x6CD5;&amp;#x3002; &amp;#x57FA;&amp;#x672C;&amp;#x4F7F;&amp;#x7528;1@Value(&amp;quot;${user.name}&amp;quot;) SpELl&amp;#x65B9;&amp;#x5F0F;systemProperties&amp;#x662F;spring&amp;#x81EA;&amp;#x52A8;&amp;#x6C">
+<meta name="keywords" content="java,spring,value,注解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring @Value注解">
+<meta property="og:url" content="https://yyhan.github.io/2017/05/16/Spring-Value/index.html">
+<meta property="og:site_name" content="YFHan的博客">
+<meta property="og:description" content="Spring @Value&amp;#x6CE8;&amp;#x89E3;&amp;#x7684;&amp;#x7528;&amp;#x6CD5;&amp;#x3002; &amp;#x57FA;&amp;#x672C;&amp;#x4F7F;&amp;#x7528;1@Value(&amp;quot;${user.name}&amp;quot;) SpELl&amp;#x65B9;&amp;#x5F0F;systemProperties&amp;#x662F;spring&amp;#x81EA;&amp;#x52A8;&amp;#x6C">
+<meta property="og:updated_time" content="2017-05-16T15:54:07.844Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring @Value注解">
+<meta name="twitter:description" content="Spring @Value&amp;#x6CE8;&amp;#x89E3;&amp;#x7684;&amp;#x7528;&amp;#x6CD5;&amp;#x3002; &amp;#x57FA;&amp;#x672C;&amp;#x4F7F;&amp;#x7528;1@Value(&amp;quot;${user.name}&amp;quot;) SpELl&amp;#x65B9;&amp;#x5F0F;systemProperties&amp;#x662F;spring&amp;#x81EA;&amp;#x52A8;&amp;#x6C">
+
+            <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:undefined",
+  "image": "undefined",
+  "name": "YFHan",
+  "url": "https://yyhan.github.io"
+}
+</script>
+                <script>
+    var algoliaEnabled = false;
+    
+</script>
+
+                    
+
+                            
+                                <!--
+        <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    -->
+                                
+                                    
+                                        <!-- stylesheets list from config.yml -->
+                                        
+                                            <link rel="stylesheet" href="/css/aloha.css">
+                                            
+                                            <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+                                            
+                                            <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+                                            
+                                                
+
+    </head>
+
+    <body id="body" style="margin-bottom: 0;" class="pushable">
+
+        <div class="ui top fixed menu">
+            <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+        </div>
+
+        <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>YFHan的博客</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/favicon_400x400.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">
+                        YFHan
+                    </a>
+                    
+                        <div class="meta">
+                            Programer / Dotaor
+                        </div>
+                        
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                            <div class="item">
+                                <i class="marker icon" style="float: left"></i>
+                                <div class="content">
+                                    杭州
+                                </div>
+                            </div>
+                            
+                                
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+
+                            <a href="https://github.com/yyhan"><i class="large github icon" style="float: left"></i></a>
+
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item" >
+        <i class="home icon"></i>
+        首页
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/archives/" class="item" >
+        <i class="archive icon"></i>
+        归档
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/atom.xml" class="item" >
+        <i class="rss icon"></i>
+        RSS
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/about" class="item" >
+        <i class="mail icon"></i>
+        关于
+    </a>
+
+    
+
+    
+</div>
+
+            <div class="pusher body-content">
+                <div id="content" class="ui main container">
+                    <!--<div class="ui one column grid">-->
+                    <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                    <div id="post-Spring-Value" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    Spring @Value注解
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <p>Spring @Value&#x6CE8;&#x89E3;&#x7684;&#x7528;&#x6CD5;&#x3002;</p>
+<h3 id="&#x57FA;&#x672C;&#x4F7F;&#x7528;"><a href="#&#x57FA;&#x672C;&#x4F7F;&#x7528;" class="headerlink" title="&#x57FA;&#x672C;&#x4F7F;&#x7528;"></a>&#x57FA;&#x672C;&#x4F7F;&#x7528;</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Value</span>(<span class="string">&quot;${user.name}&quot;</span>)</div></pre></td></tr></table></figure>
+<h3 id="SpELl&#x65B9;&#x5F0F;"><a href="#SpELl&#x65B9;&#x5F0F;" class="headerlink" title="SpELl&#x65B9;&#x5F0F;"></a>SpELl&#x65B9;&#x5F0F;</h3><p><code>systemProperties</code>&#x662F;spring&#x81EA;&#x52A8;&#x6CE8;&#x5165;&#x7684;&#x7CFB;&#x7EDF;&#x53D8;&#x91CF;&#x96C6;&#x5408;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x81EA;&#x5DF1;&#x6CE8;&#x5165;&#x7684;&#x53D8;&#x91CF;&#x96C6;&#x5408;&#x3002;<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Value</span>(<span class="string">&quot;#{systemProperties[&apos;user.name&apos;]}&quot;</span>)</div></pre></td></tr></table></figure></p>
+<h3 id="&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;"><a href="#&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;" class="headerlink" title="&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;"></a>&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Value</span>(<span class="string">&quot;${user.name:root}&quot;</span>)</div></pre></td></tr></table></figure>
+<h3 id="SpEl&#x65B9;&#x5F0F;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;"><a href="#SpEl&#x65B9;&#x5F0F;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;" class="headerlink" title="SpEl&#x65B9;&#x5F0F;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;"></a>SpEl&#x65B9;&#x5F0F;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Value</span>(<span class="string">&quot;#{systemProperties[&apos;user.name&apos;] ?: &apos;root&apos;}&quot;</span>) <span class="comment">//&#x6CE8;&#x610F;&#x5B57;&#x7B26;&#x4E32;&#x8981;&#x52A0;&#x5355;&#x5F15;&#x53F7;</span></div></pre></td></tr></table></figure>
+<h3 id="&#x8BBE;&#x7F6E;null&#x503C;"><a href="#&#x8BBE;&#x7F6E;null&#x503C;" class="headerlink" title="&#x8BBE;&#x7F6E;null&#x503C;"></a>&#x8BBE;&#x7F6E;null&#x503C;</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Value</span>(<span class="string">&quot;${user.name:#{null}}&quot;</span>) <span class="comment">//&#x6DF7;&#x5408;&#x65B9;&#x5F0F;</span></div><div class="line"></div><div class="line"><span class="meta">@Value</span>(<span class="string">&quot;#{systemProperties[&apos;user.name&apos;] ?: null}&quot;</span>) <span class="comment">//&#x7EAF;SpEl&#x65B9;&#x5F0F;</span></div></pre></td></tr></table></figure>
+<h3 id="&#x68C0;&#x67E5;&#x662F;&#x5426;&#x4E3A;null&#x6216;&#x8005;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;"><a href="#&#x68C0;&#x67E5;&#x662F;&#x5426;&#x4E3A;null&#x6216;&#x8005;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;" class="headerlink" title="&#x68C0;&#x67E5;&#x662F;&#x5426;&#x4E3A;null&#x6216;&#x8005;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;"></a>&#x68C0;&#x67E5;&#x662F;&#x5426;&#x4E3A;null&#x6216;&#x8005;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Value</span>(value = <span class="string">&quot;#{systemProperties[&apos;user.name&apos;] == null ? null : &apos;&apos;.equals(systemProperties[&apos;user.name&apos;]) ? null : systemProperties[&apos;user.name&apos;]}&quot;</span>)</div></pre></td></tr></table></figure>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-05-16T15:45:22.000Z" itemprop="datePublished">2017-05-16</time>
+
+    </span>
+    <span class="post-description-item">
+        
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/java/">java</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/spring/">spring</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/value/">value</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/注解/">注解</a>
+    </span>
+
+    
+
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a href="/2017/06/11/hessian-序列化和反序列化/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    hessian 序列化和反序列化
+                    
+
+                </a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/2017/05/16/Log4j2配置/" class="ui tiny button">
+                    
+                    Log4j2配置
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#基本使用"><span>基本使用</span></a></li><li><a href="#SpELl方式"><span>SpELl方式</span></a></li><li><a href="#设置默认值"><span>设置默认值</span></a></li><li><a href="#SpEl方式设置默认值"><span>SpEl方式设置默认值</span></a></li><li><a href="#设置null值"><span>设置null值</span></a></li><li><a href="#检查是否为null或者空字符串"><span>检查是否为null或者空字符串</span></a></li></ol>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                </div>
+                <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2017 <a href="/">YFHan</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
+                href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+            </div>
+
+            
+
+                        
+                            <!-- scripts list from theme config.yml -->
+                            
+                                <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+                                
+                                <script src="/js/semantic-ui-algolia.js"></script>
+                                
+                                <script src="/js/aloha-events.js"></script>
+                                
+                                    
+
+    </body>
+
+    </html>

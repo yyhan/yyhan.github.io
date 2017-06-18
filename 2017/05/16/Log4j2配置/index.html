@@ -1,0 +1,324 @@
+
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+
+    <head prefix="og: http://ogp.me/ns#">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <meta name="description" content="JUST DO IT">
+        <title>
+            Log4j2配置 | YFHan的博客
+        </title>
+
+        <!-- Open Graph -->
+        <meta name="description" content="&amp;#x4F7F;&amp;#x7528;xml&amp;#x65B9;&amp;#x5F0F;&amp;#x521D;&amp;#x59CB;&amp;#x5316;Log4j2123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263&amp;lt;?xml version=&amp;">
+<meta name="keywords" content="log4j2,java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Log4j2配置">
+<meta property="og:url" content="https://yyhan.github.io/2017/05/16/Log4j2配置/index.html">
+<meta property="og:site_name" content="YFHan的博客">
+<meta property="og:description" content="&amp;#x4F7F;&amp;#x7528;xml&amp;#x65B9;&amp;#x5F0F;&amp;#x521D;&amp;#x59CB;&amp;#x5316;Log4j2123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263&amp;lt;?xml version=&amp;">
+<meta property="og:updated_time" content="2017-05-16T15:33:48.398Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Log4j2配置">
+<meta name="twitter:description" content="&amp;#x4F7F;&amp;#x7528;xml&amp;#x65B9;&amp;#x5F0F;&amp;#x521D;&amp;#x59CB;&amp;#x5316;Log4j2123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263&amp;lt;?xml version=&amp;">
+
+            <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:undefined",
+  "image": "undefined",
+  "name": "YFHan",
+  "url": "https://yyhan.github.io"
+}
+</script>
+                <script>
+    var algoliaEnabled = false;
+    
+</script>
+
+                    
+
+                            
+                                <!--
+        <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    -->
+                                
+                                    
+                                        <!-- stylesheets list from config.yml -->
+                                        
+                                            <link rel="stylesheet" href="/css/aloha.css">
+                                            
+                                            <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+                                            
+                                            <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+                                            
+                                                
+
+    </head>
+
+    <body id="body" style="margin-bottom: 0;" class="pushable">
+
+        <div class="ui top fixed menu">
+            <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+        </div>
+
+        <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>YFHan的博客</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/favicon_400x400.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">
+                        YFHan
+                    </a>
+                    
+                        <div class="meta">
+                            Programer / Dotaor
+                        </div>
+                        
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                            <div class="item">
+                                <i class="marker icon" style="float: left"></i>
+                                <div class="content">
+                                    杭州
+                                </div>
+                            </div>
+                            
+                                
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+
+                            <a href="https://github.com/yyhan"><i class="large github icon" style="float: left"></i></a>
+
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item" >
+        <i class="home icon"></i>
+        首页
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/archives/" class="item" >
+        <i class="archive icon"></i>
+        归档
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/atom.xml" class="item" >
+        <i class="rss icon"></i>
+        RSS
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/about" class="item" >
+        <i class="mail icon"></i>
+        关于
+    </a>
+
+    
+
+    
+</div>
+
+            <div class="pusher body-content">
+                <div id="content" class="ui main container">
+                    <!--<div class="ui one column grid">-->
+                    <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                    <div id="post-Log4j2配置" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    Log4j2配置
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <h1 id="&#x4F7F;&#x7528;xml&#x65B9;&#x5F0F;&#x521D;&#x59CB;&#x5316;Log4j2"><a href="#&#x4F7F;&#x7528;xml&#x65B9;&#x5F0F;&#x521D;&#x59CB;&#x5316;Log4j2" class="headerlink" title="&#x4F7F;&#x7528;xml&#x65B9;&#x5F0F;&#x521D;&#x59CB;&#x5316;Log4j2"></a>&#x4F7F;&#x7528;xml&#x65B9;&#x5F0F;&#x521D;&#x59CB;&#x5316;Log4j2</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">Configuration</span> <span class="attr">status</span>=<span class="string">&quot;WARN&quot;</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">Appenders</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- &#x63A7;&#x5236;&#x53F0;appender --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">Console</span> <span class="attr">name</span>=<span class="string">&quot;Console&quot;</span> <span class="attr">target</span>=<span class="string">&quot;SYSTEM_OUT&quot;</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">PatternLayout</span> <span class="attr">pattern</span>=<span class="string">&quot;%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n&quot;</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">Console</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">RollingFile</span> <span class="attr">name</span>=<span class="string">&quot;appFileLog&quot;</span> <span class="attr">fileName</span>=<span class="string">&quot;${log.dir}/logs/app.log&quot;</span></span></div><div class="line">              <span class="attr">filePattern</span>=<span class="string">&quot;${log.dir}/logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz&quot;</span>&gt;</div><div class="line">            <span class="tag">&lt;<span class="name">PatternLayout</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">Pattern</span>&gt;</span>%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg %throwable{none}%n<span class="tag">&lt;/<span class="name">Pattern</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">PatternLayout</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">Policies</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">TimeBasedTriggeringPolicy</span> /&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">SizeBasedTriggeringPolicy</span> <span class="attr">size</span>=<span class="string">&quot;250 MB&quot;</span>/&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">Policies</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">RollingFile</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">RollingFile</span> <span class="attr">name</span>=<span class="string">&quot;appErrorFileLog&quot;</span> <span class="attr">fileName</span>=<span class="string">&quot;${log.dir}/logs/app-error.log&quot;</span></span></div><div class="line">              <span class="attr">filePattern</span>=<span class="string">&quot;${log.dir}/logs/$${date:yyyy-MM}/app-error-%d{MM-dd-yyyy}-%i.log.gz&quot;</span>&gt;</div><div class="line">            <span class="tag">&lt;<span class="name">PatternLayout</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">Pattern</span>&gt;</span>%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg %throwable{none}%n<span class="tag">&lt;/<span class="name">Pattern</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">PatternLayout</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">Policies</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">TimeBasedTriggeringPolicy</span> /&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">SizeBasedTriggeringPolicy</span> <span class="attr">size</span>=<span class="string">&quot;250 MB&quot;</span>/&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">Policies</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">ThresholdFilter</span> <span class="attr">level</span>=<span class="string">&quot;ERROR&quot;</span> <span class="attr">onMatch</span>=<span class="string">&quot;ACCEPT&quot;</span> <span class="attr">onMismatch</span>=<span class="string">&quot;DENY&quot;</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">RollingFile</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">RollingFile</span> <span class="attr">name</span>=<span class="string">&quot;dbFileLogAppender&quot;</span> <span class="attr">fileName</span>=<span class="string">&quot;${log.dir}/logs/db.log&quot;</span></span></div><div class="line">              <span class="attr">filePattern</span>=<span class="string">&quot;${log.dir}/logs/$${date:yyyy-MM}/db-%d{MM-dd-yyyy}-%i.log.gz&quot;</span>&gt;</div><div class="line">            <span class="tag">&lt;<span class="name">PatternLayout</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">Pattern</span>&gt;</span>%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg %throwable{none}%n<span class="tag">&lt;/<span class="name">Pattern</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">PatternLayout</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">Policies</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">TimeBasedTriggeringPolicy</span> /&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">SizeBasedTriggeringPolicy</span> <span class="attr">size</span>=<span class="string">&quot;250 MB&quot;</span>/&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">Policies</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">RollingFile</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">Appenders</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">Loggers</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- &#x9ED8;&#x8BA4;&#x65E5;&#x5FD7;&#x7EA7;&#x522B; debug --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">Root</span> <span class="attr">level</span>=<span class="string">&quot;debug&quot;</span>&gt;</span></div><div class="line">            <span class="comment">&lt;!-- &#x9ED8;&#x8BA4;&#x65E5;&#x5FD7;&#x8F93;&#x51FA;&#x5230; &#x63A7;&#x5236;&#x53F0; --&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">&quot;Console&quot;</span>/&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">&quot;appFileLog&quot;</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">&quot;appErrorFileLog&quot;</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">Root</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- &#x6253;&#x5370;spring info&#x65E5;&#x5FD7; --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;org.springframework&quot;</span> <span class="attr">level</span>=<span class="string">&quot;info&quot;</span> /&gt;</span></div><div class="line">        <span class="comment">&lt;!-- &#x6253;&#x5370;mybati info&#x65E5;&#x5FD7; --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;org.mybatis&quot;</span> <span class="attr">level</span>=<span class="string">&quot;info&quot;</span> /&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;org.springframework.jdbc&quot;</span> <span class="attr">level</span>=<span class="string">&quot;info&quot;</span> &gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">&quot;dbFileLogAppender&quot;</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">logger</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;org.mybatis&quot;</span> <span class="attr">level</span>=<span class="string">&quot;info&quot;</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">&quot;dbFileLogAppender&quot;</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">logger</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;com.yfhan.dao&quot;</span> <span class="attr">level</span>=<span class="string">&quot;debug&quot;</span> &gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">&quot;dbFileLogAppender&quot;</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">logger</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">Loggers</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Configuration</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="&#x4F7F;&#x7528;java&#x65B9;&#x5F0F;&#x521D;&#x59CB;&#x5316;Log4j2"><a href="#&#x4F7F;&#x7528;java&#x65B9;&#x5F0F;&#x521D;&#x59CB;&#x5316;Log4j2" class="headerlink" title="&#x4F7F;&#x7528;java&#x65B9;&#x5F0F;&#x521D;&#x59CB;&#x5316;Log4j2"></a>&#x4F7F;&#x7528;java&#x65B9;&#x5F0F;&#x521D;&#x59CB;&#x5316;Log4j2</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.demo.utils.log;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.apache.logging.log4j.Level;</div><div class="line"><span class="keyword">import</span> org.apache.logging.log4j.core.LoggerContext;</div><div class="line"><span class="keyword">import</span> org.apache.logging.log4j.core.appender.ConsoleAppender;</div><div class="line"><span class="keyword">import</span> org.apache.logging.log4j.core.config.Configurator;</div><div class="line"><span class="keyword">import</span> org.apache.logging.log4j.core.config.builder.api.ConfigurationBuilder;</div><div class="line"><span class="keyword">import</span> org.apache.logging.log4j.core.config.builder.api.ConfigurationBuilderFactory;</div><div class="line"><span class="keyword">import</span> org.apache.logging.log4j.core.config.builder.impl.BuiltConfiguration;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line">* Created by YFHan on 2016/9/21.</div><div class="line">*/</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Log4JHelper</span> </span>{</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>{</div><div class="line">        ConfigurationBuilder&lt;BuiltConfiguration&gt; builder = ConfigurationBuilderFactory.newConfigurationBuilder();</div><div class="line">        builder.setStatusLevel(Level.ERROR);</div><div class="line">        builder.setConfigurationName(<span class="string">&quot;Log4JHelper&quot;</span>);</div><div class="line">        builder.add(</div><div class="line">                builder.newAppender(<span class="string">&quot;STDOUT&quot;</span>, <span class="string">&quot;CONSOLE&quot;</span>)</div><div class="line">                        .addAttribute(<span class="string">&quot;target&quot;</span>, ConsoleAppender.Target.SYSTEM_OUT)</div><div class="line">                        .add(</div><div class="line">                                builder.newLayout(<span class="string">&quot;PatternLayout&quot;</span>)</div><div class="line">                                        .addAttribute(<span class="string">&quot;pattern&quot;</span>, <span class="string">&quot;%d [%t] %-5level: %msg%n%throwable&quot;</span>)</div><div class="line">                        ))</div><div class="line">                .add(builder.newLogger(<span class="string">&quot;org.apache.logging.log4j&quot;</span>, Level.DEBUG)</div><div class="line">                        .add(builder.newAppenderRef(<span class="string">&quot;STDOUT&quot;</span>)))</div><div class="line">                .add(builder.newRootLogger(Level.DEBUG).add(builder.newAppenderRef(<span class="string">&quot;STDOUT&quot;</span>)));</div><div class="line">        LoggerContext ctx = Configurator.initialize(builder.build());</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-05-16T15:25:40.000Z" itemprop="datePublished">2017-05-16</time>
+
+    </span>
+    <span class="post-description-item">
+        
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/log4j2/">log4j2</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/java/">java</a>
+    </span>
+
+    
+
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a href="/2017/05/16/Spring-Value/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    Spring @Value注解
+                    
+
+                </a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/2017/05/16/ssh配置和使用/" class="ui tiny button">
+                    
+                    SSH配置和使用
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#使用xml方式初始化Log4j2"><span>使用xml方式初始化Log4j2</span></a></li><li><a href="#使用java方式初始化Log4j2"><span>使用java方式初始化Log4j2</span></a></li></ol>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                </div>
+                <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2017 <a href="/">YFHan</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
+                href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+            </div>
+
+            
+
+                        
+                            <!-- scripts list from theme config.yml -->
+                            
+                                <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+                                
+                                <script src="/js/semantic-ui-algolia.js"></script>
+                                
+                                <script src="/js/aloha-events.js"></script>
+                                
+                                    
+
+    </body>
+
+    </html>

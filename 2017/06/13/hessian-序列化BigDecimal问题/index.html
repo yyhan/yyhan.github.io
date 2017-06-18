@@ -1,0 +1,356 @@
+
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+
+    <head prefix="og: http://ogp.me/ns#">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <meta name="description" content="JUST DO IT">
+        <title>
+            hessian 序列化BigDecimal问题 | YFHan的博客
+        </title>
+
+        <!-- Open Graph -->
+        <meta name="description" content="hessian&amp;#x5904;&amp;#x7406;BigDecimal&amp;#x65F6;&amp;#xFF0C;&amp;#x9ED8;&amp;#x8BA4;&amp;#x5C06;BigDecimal&amp;#x4F5C;&amp;#x4E3A;Object&amp;#x5BF9;&amp;#x8C61;&amp;#x5904;&amp;#x7406;&amp;#xFF0C;&amp;#x5C1D;&amp;#x8BD5;&amp;#x5C06;BigDecimal&amp;#x7684;&amp;#x5404;&amp;#x4E">
+<meta name="keywords" content="java,hessian,BigDecimal">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hessian 序列化BigDecimal问题">
+<meta property="og:url" content="https://yyhan.github.io/2017/06/13/hessian-序列化BigDecimal问题/index.html">
+<meta property="og:site_name" content="YFHan的博客">
+<meta property="og:description" content="hessian&amp;#x5904;&amp;#x7406;BigDecimal&amp;#x65F6;&amp;#xFF0C;&amp;#x9ED8;&amp;#x8BA4;&amp;#x5C06;BigDecimal&amp;#x4F5C;&amp;#x4E3A;Object&amp;#x5BF9;&amp;#x8C61;&amp;#x5904;&amp;#x7406;&amp;#xFF0C;&amp;#x5C1D;&amp;#x8BD5;&amp;#x5C06;BigDecimal&amp;#x7684;&amp;#x5404;&amp;#x4E">
+<meta property="og:updated_time" content="2017-06-15T14:56:44.841Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hessian 序列化BigDecimal问题">
+<meta name="twitter:description" content="hessian&amp;#x5904;&amp;#x7406;BigDecimal&amp;#x65F6;&amp;#xFF0C;&amp;#x9ED8;&amp;#x8BA4;&amp;#x5C06;BigDecimal&amp;#x4F5C;&amp;#x4E3A;Object&amp;#x5BF9;&amp;#x8C61;&amp;#x5904;&amp;#x7406;&amp;#xFF0C;&amp;#x5C1D;&amp;#x8BD5;&amp;#x5C06;BigDecimal&amp;#x7684;&amp;#x5404;&amp;#x4E">
+
+            <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:undefined",
+  "image": "undefined",
+  "name": "YFHan",
+  "url": "https://yyhan.github.io"
+}
+</script>
+                <script>
+    var algoliaEnabled = false;
+    
+</script>
+
+                    
+
+                            
+                                <!--
+        <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    -->
+                                
+                                    
+                                        <!-- stylesheets list from config.yml -->
+                                        
+                                            <link rel="stylesheet" href="/css/aloha.css">
+                                            
+                                            <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+                                            
+                                            <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+                                            
+                                                
+
+    </head>
+
+    <body id="body" style="margin-bottom: 0;" class="pushable">
+
+        <div class="ui top fixed menu">
+            <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+        </div>
+
+        <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>YFHan的博客</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/favicon_400x400.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">
+                        YFHan
+                    </a>
+                    
+                        <div class="meta">
+                            Programer / Dotaor
+                        </div>
+                        
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                            <div class="item">
+                                <i class="marker icon" style="float: left"></i>
+                                <div class="content">
+                                    杭州
+                                </div>
+                            </div>
+                            
+                                
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+
+                            <a href="https://github.com/yyhan"><i class="large github icon" style="float: left"></i></a>
+
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item" >
+        <i class="home icon"></i>
+        首页
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/archives/" class="item" >
+        <i class="archive icon"></i>
+        归档
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/atom.xml" class="item" >
+        <i class="rss icon"></i>
+        RSS
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/about" class="item" >
+        <i class="mail icon"></i>
+        关于
+    </a>
+
+    
+
+    
+</div>
+
+            <div class="pusher body-content">
+                <div id="content" class="ui main container">
+                    <!--<div class="ui one column grid">-->
+                    <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                    <div id="post-hessian-序列化BigDecimal问题" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    hessian 序列化BigDecimal问题
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <p>hessian&#x5904;&#x7406;BigDecimal&#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C06;BigDecimal&#x4F5C;&#x4E3A;Object&#x5BF9;&#x8C61;&#x5904;&#x7406;&#xFF0C;&#x5C1D;&#x8BD5;&#x5C06;BigDecimal&#x7684;&#x5404;&#x4E2A;&#x5B57;&#x6BB5;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x4F20;&#x8F93;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x7684;BigDecimal&#x4F4D;0&#x3002;</p>
+<p>&#x76EE;&#x524D;&#x6709;&#x4E09;&#x79CD;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;</p>
+<h2 id="&#x5BF9;hessian&#x91CD;&#x65B0;&#x6253;&#x5305;"><a href="#&#x5BF9;hessian&#x91CD;&#x65B0;&#x6253;&#x5305;" class="headerlink" title="&#x5BF9;hessian&#x91CD;&#x65B0;&#x6253;&#x5305;"></a>&#x5BF9;hessian&#x91CD;&#x65B0;&#x6253;&#x5305;</h2><p>&#x521B;&#x5EFA;<code>META-INF/hessian/serializers</code>&#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java.math.BigDecimal=com.caucho.hessian.io.StringValueSerializer</div></pre></td></tr></table></figure></p>
+<p>&#x521B;&#x5EFA;<code>META-INF/hessian/deserializers</code>&#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java.math.BigDecimal=com.caucho.hessian.io.BigDecimalDeserializer</div></pre></td></tr></table></figure></p>
+<p>&#x6307;&#x5B9A;&#x4F7F;&#x7528;<code>StringValueSerializer</code>&#x5E8F;&#x5217;&#x5316;BigDecimal&#x5BF9;&#x8C61;&#xFF0C;&#x4F7F;&#x7528;<code>BigDecimalDeserializer</code>&#x53CD;&#x5E8F;&#x5217;&#x5316;BigDecimal&#x5BF9;&#x8C61;&#x3002;</p>
+<h2 id="&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x5E8F;&#x5217;&#x5316;&#x63A5;&#x53E3;"><a href="#&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x5E8F;&#x5217;&#x5316;&#x63A5;&#x53E3;" class="headerlink" title="&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x5E8F;&#x5217;&#x5316;&#x63A5;&#x53E3;"></a>&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x5E8F;&#x5217;&#x5316;&#x63A5;&#x53E3;</h2><p>&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x7684;&#x5E8F;&#x5217;&#x5316;&#xFF08;<code>com.caucho.hessian.io.Serializer</code>&#xFF09;&#x548C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x63A5;&#x53E3;&#xFF08;<code>com.caucho.hessian.io.Deserializer</code>&#xFF09;&#x3002;</p>
+<ul class="ui list">
+<li>&#x5E8F;&#x5217;&#x5316;&#x7684;&#x7C7B;&#x540D;&#x5FC5;&#x987B;&#x4E3A; <code>cl.getName() + &quot;HessianSerializer&quot;</code></li>
+<li>&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x7C7B;&#x540D;&#x5FC5;&#x987B;&#x4E3A; <code>cl.getName() + &quot;HessianDeserializer&quot;</code></li>
+<li>&#x540C;&#x65F6;&#x5FC5;&#x987B;&#x548C;&#x76EE;&#x6807;&#x7C7B;&#x7684;&#x5305;&#x8DEF;&#x5F84;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#x3002;</li>
+</ul>
+<h2 id="&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;AbstractSerializerFactory"><a href="#&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;AbstractSerializerFactory" class="headerlink" title="&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;AbstractSerializerFactory"></a>&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;<code>AbstractSerializerFactory</code></h2><p>&#x5B9E;&#x73B0;&#x81EA;&#x5DF1;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x5DE5;&#x5382;&#x7C7B;&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;&#x5230;&#x9ED8;&#x8BA4;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x5DE5;&#x5382;&#x4E2D;&#x3002;&#x6709;&#x4E09;&#x5904;&#x6539;&#x52A8;&#xFF1A;</p>
+<ul class="ui list">
+<li><p>&#x81EA;&#x5B9A;&#x4E49;<code>AbstractSerializerFactory</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.cloudin.hessian.support;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.caucho.hessian.io.*;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.math.BigDecimal;</div><div class="line"><span class="keyword">import</span> java.util.HashMap;</div><div class="line"><span class="keyword">import</span> java.util.Map;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by YFHan on 2017/6/15 0015.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyAbstractSerializerFactory</span> <span class="keyword">extends</span> <span class="title">AbstractSerializerFactory</span> </span>{</div><div class="line">    </div><div class="line">    <span class="keyword">private</span> Map&lt;String, Serializer&gt; serializerMap = <span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line">    <span class="keyword">private</span> Map&lt;String, Deserializer&gt; deserializerMap = <span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyAbstractSerializerFactory</span><span class="params">()</span> </span>{</div><div class="line">        serializerMap.put(BigDecimal.class.getName(), <span class="keyword">new</span> StringValueSerializer());</div><div class="line">        deserializerMap.put(BigDecimal.class.getName(), <span class="keyword">new</span> BigDecimalDeserializer());</div><div class="line">    }</div><div class="line">    </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Serializer <span class="title">getSerializer</span><span class="params">(Class cl)</span> <span class="keyword">throws</span> HessianProtocolException </span>{</div><div class="line">        <span class="keyword">return</span> serializerMap.get(cl.getName());</div><div class="line">    }</div><div class="line">    </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Deserializer <span class="title">getDeserializer</span><span class="params">(Class cl)</span> <span class="keyword">throws</span> HessianProtocolException </span>{</div><div class="line">        <span class="keyword">return</span> deserializerMap.get(cl.getName());</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x81EA;&#x5B9A;&#x4E49;<code>HessianServlet</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.cloudin.hessian.support;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.caucho.hessian.io.*;</div><div class="line"><span class="keyword">import</span> com.caucho.hessian.server.HessianServlet;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.servlet.ServletException;</div><div class="line"><span class="keyword">import</span> java.math.BigDecimal;</div><div class="line"><span class="keyword">import</span> java.util.HashMap;</div><div class="line"><span class="keyword">import</span> java.util.Map;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * &#x81EA;&#x5B9A;&#x4E49;HessianServlet</div><div class="line"> * Created by YFHan on 2017/6/12 0012.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyHessianServlet</span> <span class="keyword">extends</span> <span class="title">HessianServlet</span> </span>{</div><div class="line">    </div><div class="line">    <span class="keyword">private</span> SerializerFactory serializerFactory;</div><div class="line">    </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(javax.servlet.ServletConfig config)</span> <span class="keyword">throws</span> ServletException </span>{</div><div class="line">        <span class="keyword">super</span>.init(config);</div><div class="line">        serializerFactory = <span class="keyword">super</span>.getSerializerFactory();</div><div class="line">        serializerFactory.addFactory(<span class="keyword">new</span> MyAbstractSerializerFactory());</div><div class="line">    }</div><div class="line">    </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> SerializerFactory <span class="title">getSerializerFactory</span><span class="params">()</span> </span>{</div><div class="line">        <span class="keyword">return</span> serializerFactory;</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x5411;<code>HessianProxyFactory</code>&#x4E2D;&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x5DE5;&#x5382;&#x5B9E;&#x4F8B;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">HessianProxyFactory hessianProxyFactory = <span class="keyword">new</span> HessianProxyFactory();</div><div class="line">hessianProxyFactory.getSerializerFactory().addFactory(<span class="keyword">new</span> MyAbstractSerializerFactory());</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h2><ul class="ui list">
+<li>&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6848;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5199;&#x4EFB;&#x4F55;&#x4EE3;&#x7801;&#xFF0C;&#x4F46;&#x662F;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x7EF4;&#x62A4;hessian&#x7684;&#x6253;&#x5305;</li>
+<li>&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6848;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x7A0B;&#x5EA6;&#x5F88;&#x9AD8;&#xFF0C;&#x4F46;&#x662F;&#x9700;&#x8981;&#x5BF9;hessian&#x7684;&#x5E8F;&#x5217;&#x5316;&#x534F;&#x8BAE;&#x975E;&#x5E38;&#x4E86;&#x89E3;&#xFF0C;&#x4F46;&#x662F;&#x5DE5;&#x4F5C;&#x91CF;&#x5F88;&#x5927;&#xFF0C;&#x4E00;&#x822C;&#x4E0D;&#x7528;</li>
+<li>&#x7B2C;&#x4E09;&#x79CD;&#x65B9;&#x6848;&#x548C;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6848;&#x539F;&#x7406;&#x4E00;&#x81F4;&#xFF0C;&#x867D;&#x7136;&#x9700;&#x8981;&#x4E9B;&#x4EE3;&#x7801;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E9B;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x62BD;&#x51FA;&#x4F5C;&#x4E3A;&#x56E2;&#x961F;&#x516C;&#x5171;&#x4EE3;&#x7801;&#xFF0C;&#x57FA;&#x672C;&#x4E0D;&#x9700;&#x8981;&#x8DDF;&#x968F;hessian&#x7248;&#x672C;&#x5347;&#x7EA7;&#x800C;&#x505A;&#x51FA;&#x6539;&#x52A8;&#xFF0C;&#x540C;&#x65F6;&#x5982;&#x679C;&#x6709;&#x9700;&#x8981;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x65B9;&#x5F0F;&#x3002;  </li>
+</ul>
+<p>&#x4E2A;&#x4EBA;&#x6BD4;&#x8F83;&#x63A8;&#x8350;&#x7B2C;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;&#x3002;</p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-06-13T14:49:43.000Z" itemprop="datePublished">2017-06-13</time>
+
+    </span>
+    <span class="post-description-item">
+        
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/java/">java</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/hessian/">hessian</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/BigDecimal/">BigDecimal</a>
+    </span>
+
+    
+
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a href="/2017/06/15/hessian-常见问题/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    hessian 常见问题
+                    
+
+                </a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/2017/06/11/hessian-序列化和反序列化/" class="ui tiny button">
+                    
+                    hessian 序列化和反序列化
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#对hessian重新打包"><span>对hessian重新打包</span></a></li><li><a href="#自己实现目标对象的序列化和序列化接口"><span>自己实现目标对象的序列化和序列化接口</span></a></li><li><a href="#添加自定义的AbstractSerializerFactory"><span>添加自定义的AbstractSerializerFactory</span></a></li><li><a href="#总结"><span>总结</span></a></li></ol>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                </div>
+                <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2017 <a href="/">YFHan</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
+                href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+            </div>
+
+            
+
+                        
+                            <!-- scripts list from theme config.yml -->
+                            
+                                <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+                                
+                                <script src="/js/semantic-ui-algolia.js"></script>
+                                
+                                <script src="/js/aloha-events.js"></script>
+                                
+                                    
+
+    </body>
+
+    </html>

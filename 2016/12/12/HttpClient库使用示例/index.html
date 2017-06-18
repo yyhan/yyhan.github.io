@@ -1,0 +1,326 @@
+
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+
+    <head prefix="og: http://ogp.me/ns#">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <meta name="description" content="JUST DO IT">
+        <title>
+            HttpClient库使用示例 | YFHan的博客
+        </title>
+
+        <!-- Open Graph -->
+        <meta name="description" content="HttpClient&amp;#x662F;apache common&amp;#x4E0B;&amp;#x7684;&amp;#x5B50;&amp;#x9879;&amp;#x76EE;&amp;#xFF0C;&amp;#x7528;&amp;#x6765;&amp;#x63D0;&amp;#x4F9B;&amp;#x9AD8;&amp;#x6548;&amp;#x7684;&amp;#x3001;&amp;#x529F;&amp;#x80FD;&amp;#x4E30;&amp;#x5BCC;&amp;#x7684;&amp;#x652F;&amp;#x6301;H">
+<meta name="keywords" content="HttpClient,http">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HttpClient库使用示例">
+<meta property="og:url" content="https://yyhan.github.io/2016/12/12/HttpClient库使用示例/index.html">
+<meta property="og:site_name" content="YFHan的博客">
+<meta property="og:description" content="HttpClient&amp;#x662F;apache common&amp;#x4E0B;&amp;#x7684;&amp;#x5B50;&amp;#x9879;&amp;#x76EE;&amp;#xFF0C;&amp;#x7528;&amp;#x6765;&amp;#x63D0;&amp;#x4F9B;&amp;#x9AD8;&amp;#x6548;&amp;#x7684;&amp;#x3001;&amp;#x529F;&amp;#x80FD;&amp;#x4E30;&amp;#x5BCC;&amp;#x7684;&amp;#x652F;&amp;#x6301;H">
+<meta property="og:updated_time" content="2016-12-12T15:08:10.980Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HttpClient库使用示例">
+<meta name="twitter:description" content="HttpClient&amp;#x662F;apache common&amp;#x4E0B;&amp;#x7684;&amp;#x5B50;&amp;#x9879;&amp;#x76EE;&amp;#xFF0C;&amp;#x7528;&amp;#x6765;&amp;#x63D0;&amp;#x4F9B;&amp;#x9AD8;&amp;#x6548;&amp;#x7684;&amp;#x3001;&amp;#x529F;&amp;#x80FD;&amp;#x4E30;&amp;#x5BCC;&amp;#x7684;&amp;#x652F;&amp;#x6301;H">
+
+            <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:undefined",
+  "image": "undefined",
+  "name": "YFHan",
+  "url": "https://yyhan.github.io"
+}
+</script>
+                <script>
+    var algoliaEnabled = false;
+    
+</script>
+
+                    
+
+                            
+                                <!--
+        <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    -->
+                                
+                                    
+                                        <!-- stylesheets list from config.yml -->
+                                        
+                                            <link rel="stylesheet" href="/css/aloha.css">
+                                            
+                                            <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+                                            
+                                            <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+                                            
+                                                
+
+    </head>
+
+    <body id="body" style="margin-bottom: 0;" class="pushable">
+
+        <div class="ui top fixed menu">
+            <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+        </div>
+
+        <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>YFHan的博客</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/favicon_400x400.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">
+                        YFHan
+                    </a>
+                    
+                        <div class="meta">
+                            Programer / Dotaor
+                        </div>
+                        
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                            <div class="item">
+                                <i class="marker icon" style="float: left"></i>
+                                <div class="content">
+                                    杭州
+                                </div>
+                            </div>
+                            
+                                
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+
+                            <a href="https://github.com/yyhan"><i class="large github icon" style="float: left"></i></a>
+
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item" >
+        <i class="home icon"></i>
+        首页
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/archives/" class="item" >
+        <i class="archive icon"></i>
+        归档
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/atom.xml" class="item" >
+        <i class="rss icon"></i>
+        RSS
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/about" class="item" >
+        <i class="mail icon"></i>
+        关于
+    </a>
+
+    
+
+    
+</div>
+
+            <div class="pusher body-content">
+                <div id="content" class="ui main container">
+                    <!--<div class="ui one column grid">-->
+                    <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                    <div id="post-HttpClient库使用示例" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    HttpClient库使用示例
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <p>HttpClient&#x662F;apache common&#x4E0B;&#x7684;&#x5B50;&#x9879;&#x76EE;&#xFF0C;&#x7528;&#x6765;&#x63D0;&#x4F9B;&#x9AD8;&#x6548;&#x7684;&#x3001;&#x529F;&#x80FD;&#x4E30;&#x5BCC;&#x7684;&#x652F;&#x6301;Http&#x534F;&#x8BAE;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x7F16;&#x7A0B;&#x5DE5;&#x5177;&#x5305;&#x3002;</p>
+<p><a href="http://hc.apache.org/" target="_blank" rel="external">&#x5B98;&#x7F51;</a></p>
+<p>&#x4F9D;&#x8D56;&#x7248;&#x672C;&#xFF1A;<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.httpcomponents<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>httpclient<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.5.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.httpcomponents<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>httpcore<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.4.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>&#x4EE3;&#x7801;&#xFF1A;<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.demo.utils.lang;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.apache.commons.lang3.CharEncoding;</div><div class="line"><span class="keyword">import</span> org.apache.http.HttpEntity;</div><div class="line"><span class="keyword">import</span> org.apache.http.HttpException;</div><div class="line"><span class="keyword">import</span> org.apache.http.HttpStatus;</div><div class="line"><span class="keyword">import</span> org.apache.http.StatusLine;</div><div class="line"><span class="keyword">import</span> org.apache.http.client.ClientProtocolException;</div><div class="line"><span class="keyword">import</span> org.apache.http.client.methods.CloseableHttpResponse;</div><div class="line"><span class="keyword">import</span> org.apache.http.client.methods.HttpGet;</div><div class="line"><span class="keyword">import</span> org.apache.http.client.methods.HttpPost;</div><div class="line"><span class="keyword">import</span> org.apache.http.client.methods.RequestBuilder;</div><div class="line"><span class="keyword">import</span> org.apache.http.entity.StringEntity;</div><div class="line"><span class="keyword">import</span> org.apache.http.impl.client.CloseableHttpClient;</div><div class="line"><span class="keyword">import</span> org.apache.http.impl.client.HttpClients;</div><div class="line"><span class="keyword">import</span> org.apache.http.util.EntityUtils;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> java.util.Map;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line">* Created by hyf on 2016/8/31.</div><div class="line">*/</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpUtil</span> </span>{</div><div class="line"></div><div class="line">    <span class="keyword">private</span> CloseableHttpClient httpClient;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> HttpUtil ourInstance = <span class="keyword">new</span> HttpUtil();</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> HttpUtil <span class="title">getInstance</span><span class="params">()</span> </span>{</div><div class="line">        <span class="keyword">return</span> ourInstance;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="title">HttpUtil</span><span class="params">()</span> </span>{</div><div class="line">        httpClient = HttpClients.createDefault();</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> CloseableHttpClient <span class="title">getHttpClient</span><span class="params">()</span> </span>{</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.httpClient;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * &#x53D1;&#x9001;get&#x8BF7;&#x6C42;</div><div class="line">    *</div><div class="line">    * <span class="doctag">@param</span> uri &#x8BF7;&#x6C42;&#x5730;&#x5740;</div><div class="line">    * <span class="doctag">@return</span></div><div class="line">    * <span class="doctag">@throws</span> IOException</div><div class="line">    * <span class="doctag">@throws</span> ClientProtocolException</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">get</span><span class="params">(String uri)</span> <span class="keyword">throws</span> HttpException, IOException </span>{</div><div class="line">        CloseableHttpResponse response = <span class="keyword">null</span>;</div><div class="line">        HttpEntity entity = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">try</span> {</div><div class="line">            response = getHttpClient().execute(<span class="keyword">new</span> HttpGet(uri));</div><div class="line">            StatusLine statusLine = response.getStatusLine();</div><div class="line">            <span class="keyword">if</span> (statusLine.getStatusCode() == HttpStatus.SC_OK) {</div><div class="line">                <span class="keyword">return</span> EntityUtils.toString(response.getEntity());</div><div class="line">            } <span class="keyword">else</span> {</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> HttpException(statusLine.toString());</div><div class="line">            }</div><div class="line">        } <span class="keyword">finally</span> {</div><div class="line">            <span class="keyword">try</span> {</div><div class="line">                <span class="keyword">if</span> (entity != <span class="keyword">null</span>) {</div><div class="line">                    EntityUtils.consume(entity);</div><div class="line">                }</div><div class="line">            } <span class="keyword">catch</span> (IOException e) {</div><div class="line">                e.printStackTrace();</div><div class="line">            }</div><div class="line">            <span class="keyword">try</span> {</div><div class="line">                <span class="keyword">if</span> (response != <span class="keyword">null</span>) {</div><div class="line">                    response.close();</div><div class="line">                }</div><div class="line">            } <span class="keyword">catch</span> (IOException e) {</div><div class="line">                e.printStackTrace();</div><div class="line">            }</div><div class="line">        }</div><div class="line"></div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * get&#x65B9;&#x5F0F;&#x53D1;&#x9001;form&#x8868;&#x5355;</div><div class="line">    *</div><div class="line">    * <span class="doctag">@param</span> uri        &#x8BF7;&#x6C42;&#x5730;&#x5740;</div><div class="line">    * <span class="doctag">@param</span> parameters &#x8868;&#x5355;&#x53C2;&#x6570;</div><div class="line">    * <span class="doctag">@return</span></div><div class="line">    * <span class="doctag">@throws</span> Exception</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">get</span><span class="params">(String uri, Map&lt;String, ?&gt; parameters)</span> <span class="keyword">throws</span> HttpException, IOException </span>{</div><div class="line">        <span class="keyword">return</span> send(uri, parameters, HttpGet.METHOD_NAME);</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * post&#x65B9;&#x5F0F;&#x53D1;&#x9001;form&#x8868;&#x5355;</div><div class="line">    *</div><div class="line">    * <span class="doctag">@param</span> uri        &#x8BF7;&#x6C42;&#x5730;&#x5740;</div><div class="line">    * <span class="doctag">@param</span> parameters &#x8868;&#x5355;&#x53C2;&#x6570;</div><div class="line">    * <span class="doctag">@return</span></div><div class="line">    * <span class="doctag">@throws</span> Exception</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">post</span><span class="params">(String uri, Map&lt;String, ?&gt; parameters)</span> <span class="keyword">throws</span> HttpException, IOException </span>{</div><div class="line">        <span class="keyword">return</span> send(uri, parameters, HttpPost.METHOD_NAME);</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * post&#x65B9;&#x5F0F;&#x53D1;&#x9001;form&#x8868;&#x5355;</div><div class="line">    *</div><div class="line">    * <span class="doctag">@param</span> uri        &#x8BF7;&#x6C42;&#x5730;&#x5740;</div><div class="line">    * <span class="doctag">@param</span> parameters &#x8868;&#x5355;&#x53C2;&#x6570;</div><div class="line">    * <span class="doctag">@return</span></div><div class="line">    * <span class="doctag">@throws</span> Exception</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">send</span><span class="params">(String uri, Map&lt;String, ?&gt; parameters, <span class="keyword">final</span> String method)</span> <span class="keyword">throws</span> HttpException, IOException </span>{</div><div class="line">        CloseableHttpResponse response = <span class="keyword">null</span>;</div><div class="line">        HttpEntity entity = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">try</span> {</div><div class="line">            RequestBuilder builder = RequestBuilder.create(method).setUri(uri);</div><div class="line">            <span class="keyword">for</span> (String k : parameters.keySet()) {</div><div class="line">                Object v = parameters.get(k);</div><div class="line">                <span class="keyword">if</span> (v == <span class="keyword">null</span>) {</div><div class="line">                    builder.addParameter(k, <span class="string">&quot;&quot;</span>);</div><div class="line">                } <span class="keyword">else</span> {</div><div class="line">                    builder.addParameter(k, v.toString());</div><div class="line">                }</div><div class="line">            }</div><div class="line">            response = getHttpClient().execute(builder.build());</div><div class="line">            StatusLine statusLine = response.getStatusLine();</div><div class="line">            <span class="keyword">if</span> (statusLine.getStatusCode() == HttpStatus.SC_OK) {</div><div class="line">                <span class="keyword">return</span> EntityUtils.toString(response.getEntity());</div><div class="line">            } <span class="keyword">else</span> {</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> HttpException(statusLine.toString());</div><div class="line">            }</div><div class="line">        } <span class="keyword">finally</span> {</div><div class="line">            <span class="keyword">try</span> {</div><div class="line">                <span class="keyword">if</span> (entity != <span class="keyword">null</span>) {</div><div class="line">                    EntityUtils.consume(entity);</div><div class="line">                }</div><div class="line">            } <span class="keyword">catch</span> (IOException e) {</div><div class="line">                e.printStackTrace();</div><div class="line">            }</div><div class="line">            <span class="keyword">try</span> {</div><div class="line">                <span class="keyword">if</span> (response != <span class="keyword">null</span>) {</div><div class="line">                    response.close();</div><div class="line">                }</div><div class="line">            } <span class="keyword">catch</span> (IOException e) {</div><div class="line">                e.printStackTrace();</div><div class="line">            }</div><div class="line">        }</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * &#x6839;&#x636E;request&#x548C;uri&#x83B7;&#x5F97;&#x54CD;&#x5E94;&#x4FE1;&#x606F;,&#x4F7F;&#x7528;post&#x65B9;&#x5F0F;&#x83B7;&#x53D6;,&#x4F7F;&#x7528;UTF-8&#x7F16;&#x7801;</div><div class="line">    *</div><div class="line">    * <span class="doctag">@param</span> uri    &#x8BF7;&#x6C42;&#x5730;&#x5740;</div><div class="line">    * <span class="doctag">@param</span> bodyTxt http&#x8BF7;&#x6C42;body&#x5185;&#x5BB9;</div><div class="line">    * <span class="doctag">@return</span></div><div class="line">    * <span class="doctag">@throws</span> IOException</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">post</span><span class="params">(String uri, String bodyTxt)</span> <span class="keyword">throws</span> IOException, HttpException </span>{</div><div class="line">        <span class="keyword">return</span> post(uri, bodyTxt, CharEncoding.UTF_8);</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * &#x53D1;&#x9001;post&#x8BF7;&#x6C42;</div><div class="line">    *</div><div class="line">    * <span class="doctag">@param</span> uri      &#x8BF7;&#x6C42;&#x5730;&#x5740;</div><div class="line">    * <span class="doctag">@param</span> bodyTxt  http&#x8BF7;&#x6C42;body&#x5185;&#x5BB9;</div><div class="line">    * <span class="doctag">@param</span> encoding &#x7F16;&#x7801;&#x7C7B;&#x578B;</div><div class="line">    * <span class="doctag">@return</span></div><div class="line">    * <span class="doctag">@throws</span> IOException</div><div class="line">    * <span class="doctag">@throws</span> HttpException</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">post</span><span class="params">(String uri, String bodyTxt, String encoding)</span> <span class="keyword">throws</span> IOException, HttpException </span>{</div><div class="line">        CloseableHttpResponse response = <span class="keyword">null</span>;</div><div class="line">        HttpEntity entity = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">try</span> {</div><div class="line">            response = getHttpClient().execute(</div><div class="line">                    RequestBuilder.post(uri)</div><div class="line">                            .setEntity(<span class="keyword">new</span> StringEntity(bodyTxt, encoding))</div><div class="line">                            .build());</div><div class="line">            StatusLine statusLine = response.getStatusLine();</div><div class="line">            <span class="keyword">if</span> (statusLine.getStatusCode() == HttpStatus.SC_OK) {</div><div class="line">                entity = response.getEntity();</div><div class="line">                <span class="keyword">return</span> EntityUtils.toString(entity);</div><div class="line">            } <span class="keyword">else</span> {</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> HttpException(statusLine.toString());</div><div class="line">            }</div><div class="line">        } <span class="keyword">finally</span> {</div><div class="line">            <span class="keyword">try</span> {</div><div class="line">                <span class="keyword">if</span> (entity != <span class="keyword">null</span>) {</div><div class="line">                    EntityUtils.consume(entity);</div><div class="line">                }</div><div class="line">            } <span class="keyword">catch</span> (IOException e) {</div><div class="line">                e.printStackTrace();</div><div class="line">            }</div><div class="line">            <span class="keyword">try</span> {</div><div class="line">                <span class="keyword">if</span> (response != <span class="keyword">null</span>) {</div><div class="line">                    response.close();</div><div class="line">                }</div><div class="line">            } <span class="keyword">catch</span> (IOException e) {</div><div class="line">                e.printStackTrace();</div><div class="line">            }</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure></p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2016-12-12T14:42:31.000Z" itemprop="datePublished">2016-12-12</time>
+
+    </span>
+    <span class="post-description-item">
+        
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/HttpClient/">HttpClient</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/http/">http</a>
+    </span>
+
+    
+
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a href="/2016/12/20/java图片压缩/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    java图片压缩
+                    
+
+                </a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/2016/12/12/idea乱码问题/" class="ui tiny button">
+                    
+                    idea乱码问题
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                </div>
+                <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2017 <a href="/">YFHan</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
+                href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+            </div>
+
+            
+
+                        
+                            <!-- scripts list from theme config.yml -->
+                            
+                                <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+                                
+                                <script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+                                
+                                <script src="/js/semantic-ui-algolia.js"></script>
+                                
+                                <script src="/js/aloha-events.js"></script>
+                                
+                                    
+
+    </body>
+
+    </html>
