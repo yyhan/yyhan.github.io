@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yyhan.github.io/"/>
-  <updated>2017-06-18T14:39:50.754Z</updated>
+  <updated>2017-06-18T14:44:57.509Z</updated>
   <id>https://yyhan.github.io/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="https://yyhan.github.io/2017/06/18/hessian-2-0-%E5%BA%8F%E5%88%97%E5%8C%96%E5%8D%8F%E8%AE%AE/"/>
     <id>https://yyhan.github.io/2017/06/18/hessian-2-0-序列化协议/</id>
     <published>2017-06-18T03:05:53.000Z</published>
-    <updated>2017-06-18T14:39:50.754Z</updated>
+    <updated>2017-06-18T14:44:57.509Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="&#x4ECB;&#x7ECD;"><a href="#&#x4ECB;&#x7ECD;" class="headerlink" title="&#x4ECB;&#x7ECD;"></a>&#x4ECB;&#x7ECD;</h1><p>Hessian&#x662F;&#x4E00;&#x79CD;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x7684;&#x3001;&#x91C7;&#x7528;&#x4E8C;&#x8FDB;&#x5236;&#x5E8F;&#x5217;&#x5316;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x88AB;&#x8BBE;&#x8BA1;&#x4E3A;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x4F20;&#x8F93;&#x7684;Web&#x670D;&#x52A1;&#x534F;&#x8BAE;&#x3002;</p>
+    <content type="html"><![CDATA[<p>Hessian 2.0 &#x5E8F;&#x5217;&#x5316;&#x534F;&#x8BAE;&#x7FFB;&#x8BD1;&#xFF0C;&#x539F;&#x6587;&#x94FE;&#x63A5;<a href="http://hessian.caucho.com/doc/hessian-ws.html" target="_blank" rel="external">http://hessian.caucho.com/doc/hessian-ws.html</a></p>
+<h1 id="&#x4ECB;&#x7ECD;"><a href="#&#x4ECB;&#x7ECD;" class="headerlink" title="&#x4ECB;&#x7ECD;"></a>&#x4ECB;&#x7ECD;</h1><p>Hessian&#x662F;&#x4E00;&#x79CD;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x7684;&#x3001;&#x91C7;&#x7528;&#x4E8C;&#x8FDB;&#x5236;&#x5E8F;&#x5217;&#x5316;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x88AB;&#x8BBE;&#x8BA1;&#x4E3A;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x4F20;&#x8F93;&#x7684;Web&#x670D;&#x52A1;&#x534F;&#x8BAE;&#x3002;</p>
 <h1 id="&#x8BBE;&#x8BA1;&#x76EE;&#x6807;"><a href="#&#x8BBE;&#x8BA1;&#x76EE;&#x6807;" class="headerlink" title="&#x8BBE;&#x8BA1;&#x76EE;&#x6807;"></a>&#x8BBE;&#x8BA1;&#x76EE;&#x6807;</h1><p>Hessian&#x662F;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x7684;&#xFF0C;&#x7D27;&#x51D1;&#x7684;&#xFF0C;&#x53EF;&#x8DE8;&#x8BED;&#x8A00;&#x79FB;&#x690D;&#x7684;&#x3002;</p>
 <p>Hessian&#x534F;&#x8BAE;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x8BBE;&#x8BA1;&#x76EE;&#x6807;:</p>
 <ul class="ui list">
@@ -192,7 +193,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;&amp;#x4ECB;&amp;#x7ECD;&quot;&gt;&lt;a href=&quot;#&amp;#x4ECB;&amp;#x7ECD;&quot; class=&quot;headerlink&quot; title=&quot;&amp;#x4ECB;&amp;#x7ECD;&quot;&gt;&lt;/a&gt;&amp;#x4ECB;&amp;#x7ECD;&lt;/h1&gt;&lt;p&gt;Hessian&amp;#x662F
+      &lt;p&gt;Hessian 2.0 &amp;#x5E8F;&amp;#x5217;&amp;#x5316;&amp;#x534F;&amp;#x8BAE;&amp;#x7FFB;&amp;#x8BD1;&amp;#xFF0C;&amp;#x539F;&amp;#x6587;&amp;#x94FE;&amp;#x63A5;&lt;a href=&quot;http://hessian.cauch
     
     </summary>
     
