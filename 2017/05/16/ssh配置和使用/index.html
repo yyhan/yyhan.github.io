@@ -3,7 +3,7 @@
     <!DOCTYPE html>
     <html lang="zh-CN">
 
-    <head prefix="og: http://ogp.me/ns#">
+    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
         <meta name="description" content="JUST DO IT">
@@ -12,7 +12,7 @@
         </title>
 
         <!-- Open Graph -->
-        <meta name="description" content="&amp;#x751F;&amp;#x6210;ssh&amp;#x5BC6;&amp;#x94A5;&amp;#x5728;linux&amp;#x4E0A;&amp;#x751F;&amp;#x6210;&amp;#x5728;linux&amp;#x4E0A;&amp;#xFF0C;&amp;#x4F7F;&amp;#x7528;ssh-keygen&amp;#x547D;&amp;#x4EE4;&amp;#x751F;&amp;#x6210;ssh&amp;#x5BC6;&amp;#x94A5;&amp;#x3002;1ssh-keygen -t">
+        <!--<meta name="description" content="&amp;#x751F;&amp;#x6210;ssh&amp;#x5BC6;&amp;#x94A5;&amp;#x5728;linux&amp;#x4E0A;&amp;#x751F;&amp;#x6210;&amp;#x5728;linux&amp;#x4E0A;&amp;#xFF0C;&amp;#x4F7F;&amp;#x7528;ssh-keygen&amp;#x547D;&amp;#x4EE4;&amp;#x751F;&amp;#x6210;ssh&amp;#x5BC6;&amp;#x94A5;&amp;#x3002;1ssh-keygen -t">
 <meta name="keywords" content="ssh,linux,多个远程主机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSH配置和使用">
@@ -20,11 +20,11 @@
 <meta property="og:site_name" content="YFHan的博客">
 <meta property="og:description" content="&amp;#x751F;&amp;#x6210;ssh&amp;#x5BC6;&amp;#x94A5;&amp;#x5728;linux&amp;#x4E0A;&amp;#x751F;&amp;#x6210;&amp;#x5728;linux&amp;#x4E0A;&amp;#xFF0C;&amp;#x4F7F;&amp;#x7528;ssh-keygen&amp;#x547D;&amp;#x4EE4;&amp;#x751F;&amp;#x6210;ssh&amp;#x5BC6;&amp;#x94A5;&amp;#x3002;1ssh-keygen -t">
 <meta property="og:image" content="https://yyhan.github.io/img/ssh/ssh.png">
-<meta property="og:updated_time" content="2017-06-18T13:12:11.033Z">
+<meta property="og:updated_time" content="2017-06-26T15:33:01.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH配置和使用">
 <meta name="twitter:description" content="&amp;#x751F;&amp;#x6210;ssh&amp;#x5BC6;&amp;#x94A5;&amp;#x5728;linux&amp;#x4E0A;&amp;#x751F;&amp;#x6210;&amp;#x5728;linux&amp;#x4E0A;&amp;#xFF0C;&amp;#x4F7F;&amp;#x7528;ssh-keygen&amp;#x547D;&amp;#x4EE4;&amp;#x751F;&amp;#x6210;ssh&amp;#x5BC6;&amp;#x94A5;&amp;#x3002;1ssh-keygen -t">
-<meta name="twitter:image" content="https://yyhan.github.io/img/ssh/ssh.png">
+<meta name="twitter:image" content="https://yyhan.github.io/img/ssh/ssh.png">-->
 
             <script type="application/ld+json">
 {
@@ -44,9 +44,6 @@
                     
 
                             
-                                <!--
-        <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-    -->
                                 
                                     
                                         <!-- stylesheets list from config.yml -->
@@ -255,8 +252,9 @@
 <li>openSSH&#xFF08;linux&#xFF09;</li>
 <li>xShell&#xFF08;windows&#xFF09;</li>
 <li>secureCRT&#xFF08;windows&#xFF09;</li>
-<li>FileZilla&#xFF08;windows&#x548C;linux&#xFF09;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;ssh&#x7684;FTP&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;<h2 id="&#x53C2;&#x8003;&#x6587;&#x6863;"><a href="#&#x53C2;&#x8003;&#x6587;&#x6863;" class="headerlink" title="&#x53C2;&#x8003;&#x6587;&#x6863;"></a>&#x53C2;&#x8003;&#x6587;&#x6863;</h2>&#x962E;&#x4E00;&#x5CF0;&#xFF1A;&#x300A;<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="external">SSH&#x539F;&#x7406;&#x4E0E;&#x8FD0;&#x7528;&#xFF08;&#x4E00;&#xFF09;&#xFF1A;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;</a>&#x300B;<br>&#x962E;&#x4E00;&#x5CF0;&#xFF1A;&#x300A;<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html" target="_blank" rel="external">SSH&#x539F;&#x7406;&#x4E0E;&#x8FD0;&#x7528;&#xFF08;&#x4E8C;&#xFF09;&#xFF1A;&#x8FDC;&#x7A0B;&#x64CD;&#x4F5C;&#x4E0E;&#x7AEF;&#x53E3;&#x8F6C;&#x53D1;</a>&#x300B;<br>OpenSSh&#x5B98;&#x7F51;&#xFF1A;<a href="https://www.openssh.com/" target="_blank" rel="external">OpenSSH</a></li>
+<li>FileZilla&#xFF08;windows&#x548C;linux&#xFF09;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;ssh&#x7684;FTP&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;</li>
 </ul>
+<h2 id="&#x53C2;&#x8003;&#x6587;&#x6863;"><a href="#&#x53C2;&#x8003;&#x6587;&#x6863;" class="headerlink" title="&#x53C2;&#x8003;&#x6587;&#x6863;"></a>&#x53C2;&#x8003;&#x6587;&#x6863;</h2><p>&#x962E;&#x4E00;&#x5CF0;&#xFF1A;&#x300A;<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="external">SSH&#x539F;&#x7406;&#x4E0E;&#x8FD0;&#x7528;&#xFF08;&#x4E00;&#xFF09;&#xFF1A;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;</a>&#x300B;<br>&#x962E;&#x4E00;&#x5CF0;&#xFF1A;&#x300A;<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html" target="_blank" rel="external">SSH&#x539F;&#x7406;&#x4E0E;&#x8FD0;&#x7528;&#xFF08;&#x4E8C;&#xFF09;&#xFF1A;&#x8FDC;&#x7A0B;&#x64CD;&#x4F5C;&#x4E0E;&#x7AEF;&#x53E3;&#x8F6C;&#x53D1;</a>&#x300B;<br>OpenSSh&#x5B98;&#x7F51;&#xFF1A;<a href="https://www.openssh.com/" target="_blank" rel="external">OpenSSH</a></p>
 
                         
                     </div>

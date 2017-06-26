@@ -508,7 +508,7 @@
     <link href="https://yyhan.github.io/2017/05/16/ssh%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/"/>
     <id>https://yyhan.github.io/2017/05/16/ssh配置和使用/</id>
     <published>2017-05-16T13:18:47.000Z</published>
-    <updated>2017-06-18T13:12:11.033Z</updated>
+    <updated>2017-06-26T15:33:01.472Z</updated>
     
     <content type="html"><![CDATA[<h1 id="&#x751F;&#x6210;ssh&#x5BC6;&#x94A5;"><a href="#&#x751F;&#x6210;ssh&#x5BC6;&#x94A5;" class="headerlink" title="&#x751F;&#x6210;ssh&#x5BC6;&#x94A5;"></a>&#x751F;&#x6210;ssh&#x5BC6;&#x94A5;</h1><h2 id="&#x5728;linux&#x4E0A;&#x751F;&#x6210;"><a href="#&#x5728;linux&#x4E0A;&#x751F;&#x6210;" class="headerlink" title="&#x5728;linux&#x4E0A;&#x751F;&#x6210;"></a>&#x5728;linux&#x4E0A;&#x751F;&#x6210;</h2><p>&#x5728;linux&#x4E0A;&#xFF0C;&#x4F7F;&#x7528;<code>ssh-keygen</code>&#x547D;&#x4EE4;&#x751F;&#x6210;ssh&#x5BC6;&#x94A5;&#x3002;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa</div></pre></td></tr></table></figure></p>
 <h2 id="&#x4F7F;&#x7528;xshell&#x751F;&#x6210;"><a href="#&#x4F7F;&#x7528;xshell&#x751F;&#x6210;" class="headerlink" title="&#x4F7F;&#x7528;xshell&#x751F;&#x6210;"></a>&#x4F7F;&#x7528;xshell&#x751F;&#x6210;</h2><p>&#x5DE5;&#x5177; &gt; &#x65B0;&#x5EFA;&#x7528;&#x6237;&#x5BC6;&#x94A5;&#x751F;&#x6210;&#x5411;&#x5BFC;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x5411;&#x5BFC;&#x751F;&#x6210;&#x5BC6;&#x94A5;&#x3002;</p>
@@ -568,8 +568,9 @@
 <li>openSSH&#xFF08;linux&#xFF09;</li>
 <li>xShell&#xFF08;windows&#xFF09;</li>
 <li>secureCRT&#xFF08;windows&#xFF09;</li>
-<li>FileZilla&#xFF08;windows&#x548C;linux&#xFF09;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;ssh&#x7684;FTP&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;<h2 id="&#x53C2;&#x8003;&#x6587;&#x6863;"><a href="#&#x53C2;&#x8003;&#x6587;&#x6863;" class="headerlink" title="&#x53C2;&#x8003;&#x6587;&#x6863;"></a>&#x53C2;&#x8003;&#x6587;&#x6863;</h2>&#x962E;&#x4E00;&#x5CF0;&#xFF1A;&#x300A;<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="external">SSH&#x539F;&#x7406;&#x4E0E;&#x8FD0;&#x7528;&#xFF08;&#x4E00;&#xFF09;&#xFF1A;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;</a>&#x300B;<br>&#x962E;&#x4E00;&#x5CF0;&#xFF1A;&#x300A;<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html" target="_blank" rel="external">SSH&#x539F;&#x7406;&#x4E0E;&#x8FD0;&#x7528;&#xFF08;&#x4E8C;&#xFF09;&#xFF1A;&#x8FDC;&#x7A0B;&#x64CD;&#x4F5C;&#x4E0E;&#x7AEF;&#x53E3;&#x8F6C;&#x53D1;</a>&#x300B;<br>OpenSSh&#x5B98;&#x7F51;&#xFF1A;<a href="https://www.openssh.com/" target="_blank" rel="external">OpenSSH</a></li>
+<li>FileZilla&#xFF08;windows&#x548C;linux&#xFF09;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;ssh&#x7684;FTP&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;</li>
 </ul>
+<h2 id="&#x53C2;&#x8003;&#x6587;&#x6863;"><a href="#&#x53C2;&#x8003;&#x6587;&#x6863;" class="headerlink" title="&#x53C2;&#x8003;&#x6587;&#x6863;"></a>&#x53C2;&#x8003;&#x6587;&#x6863;</h2><p>&#x962E;&#x4E00;&#x5CF0;&#xFF1A;&#x300A;<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="external">SSH&#x539F;&#x7406;&#x4E0E;&#x8FD0;&#x7528;&#xFF08;&#x4E00;&#xFF09;&#xFF1A;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;</a>&#x300B;<br>&#x962E;&#x4E00;&#x5CF0;&#xFF1A;&#x300A;<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html" target="_blank" rel="external">SSH&#x539F;&#x7406;&#x4E0E;&#x8FD0;&#x7528;&#xFF08;&#x4E8C;&#xFF09;&#xFF1A;&#x8FDC;&#x7A0B;&#x64CD;&#x4F5C;&#x4E0E;&#x7AEF;&#x53E3;&#x8F6C;&#x53D1;</a>&#x300B;<br>OpenSSh&#x5B98;&#x7F51;&#xFF1A;<a href="https://www.openssh.com/" target="_blank" rel="external">OpenSSH</a></p>
 ]]></content>
     
     <summary type="html">
