@@ -1,71 +1,39 @@
 
 
-    <!DOCTYPE html>
-    <html lang="zh-CN">
-
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-        <meta name="description" content="JUST DO IT">
-        <title>
-            hadoop集群搭建 | YFHan的博客
-        </title>
-
-        <!-- Open Graph -->
-        <!--<meta name="description" content="&amp;#x7CFB;&amp;#x7EDF;&amp;#x53CA;&amp;#x8F6F;&amp;#x4EF6;&amp;#x7248;&amp;#x672C; ubuntu server 16.10 jdk 1.8.0_111 hadoop 2.7.3  &amp;#x96C6;&amp;#x7FA4;&amp;#x914D;&amp;#x7F6E;IP&amp;#x53CA;&amp;#x57DF;&amp;#x540D;&amp;#x5206;&amp;#x914D;   &amp;#x4E3B;&amp;#x673A;&amp;#">
-<meta name="keywords" content="hadoop">
-<meta property="og:type" content="article">
-<meta property="og:title" content="hadoop集群搭建">
-<meta property="og:url" content="https://yyhan.github.io/2016/12/22/hadoop集群搭建/index.html">
-<meta property="og:site_name" content="YFHan的博客">
-<meta property="og:description" content="&amp;#x7CFB;&amp;#x7EDF;&amp;#x53CA;&amp;#x8F6F;&amp;#x4EF6;&amp;#x7248;&amp;#x672C; ubuntu server 16.10 jdk 1.8.0_111 hadoop 2.7.3  &amp;#x96C6;&amp;#x7FA4;&amp;#x914D;&amp;#x7F6E;IP&amp;#x53CA;&amp;#x57DF;&amp;#x540D;&amp;#x5206;&amp;#x914D;   &amp;#x4E3B;&amp;#x673A;&amp;#">
-<meta property="og:image" content="https://yyhan.github.io/img/hadoop/hadoop-hdfs.png">
-<meta property="og:image" content="https://yyhan.github.io/img/hadoop/hadoop-yarn.png">
-<meta property="og:updated_time" content="2017-06-18T13:19:00.469Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hadoop集群搭建">
-<meta name="twitter:description" content="&amp;#x7CFB;&amp;#x7EDF;&amp;#x53CA;&amp;#x8F6F;&amp;#x4EF6;&amp;#x7248;&amp;#x672C; ubuntu server 16.10 jdk 1.8.0_111 hadoop 2.7.3  &amp;#x96C6;&amp;#x7FA4;&amp;#x914D;&amp;#x7F6E;IP&amp;#x53CA;&amp;#x57DF;&amp;#x540D;&amp;#x5206;&amp;#x914D;   &amp;#x4E3B;&amp;#x673A;&amp;#">
-<meta name="twitter:image" content="https://yyhan.github.io/img/hadoop/hadoop-hdfs.png">-->
-
-            <script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Person",
-  "email": "mailto:undefined",
-  "image": "undefined",
-  "name": "YFHan",
-  "url": "https://yyhan.github.io"
-}
-</script>
-                <script>
-    var algoliaEnabled = false;
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="JUST DO IT">
+    <title>
+        hadoop集群搭建 | YFHan的博客
+    </title>
+    <link rel="shortcut icon" href="/favicon.jpg"/>
     
-</script>
 
-                    
+    
+    
+    
+    <!-- stylesheets list from config.yml -->
+        
+            <link rel="stylesheet" href="/css/aloha.css">
+        
+            <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+            <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
 
-                            
-                                
-                                    
-                                        <!-- stylesheets list from config.yml -->
-                                        
-                                            <link rel="stylesheet" href="/css/aloha.css">
-                                            
-                                            <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
-                                            
-                                            <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
-                                            
-                                                
+</head>
 
-    </head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
 
-    <body id="body" style="margin-bottom: 0;" class="pushable">
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
 
-        <div class="ui top fixed menu">
-            <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
-        </div>
-
-        <div id="menu-sidebar" class="ui left vertical sidebar menu">
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
 
     <div id="sidebar-top">
         <div class="content">
@@ -168,12 +136,9 @@
     
 </div>
 
-            <div class="pusher body-content">
-                <div id="content" class="ui main container">
-                    <!--<div class="ui one column grid">-->
-                    <!--<div class="column">-->
-                    <!--<div class="ui main container">-->
-                    <div id="post-hadoop集群搭建" class="ui main container article-type-post">
+        <div class="pusher body-content">
+            <div id="content" class="ui main container">
+                <div id="post-hadoop集群搭建" class="ui main container article-type-post">
 
     
 
@@ -331,11 +296,8 @@
 </div>
 
 
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                </div>
-                <div class="ui vertical footer segment">
+            </div>
+            <div class="ui vertical footer segment">
     <div class="ui center aligned container">
         <div class="ui inverted section divider"></div>
         &copy; 2017 <a href="/">YFHan</a>,
@@ -344,27 +306,23 @@
     </div>
 </div>
 
-            </div>
+        </div>
 
-            
+    
+        
+            <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+        
+            <script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+        
+            <script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+        
+            <script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+        
+            <script src="/js/semantic-ui-algolia.js"></script>
+        
+            <script src="/js/aloha-events.js"></script>
+        
+    
 
-                        
-                            <!-- scripts list from theme config.yml -->
-                            
-                                <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
-                                
-                                <script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
-                                
-                                <script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
-                                
-                                <script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
-                                
-                                <script src="/js/semantic-ui-algolia.js"></script>
-                                
-                                <script src="/js/aloha-events.js"></script>
-                                
-                                    
-
-    </body>
-
-    </html>
+</body>
+</html>
