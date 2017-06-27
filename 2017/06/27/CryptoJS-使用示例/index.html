@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="JUST DO IT">
+    <title>
+        CryptoJS 使用示例 | YFHan的博客
+    </title>
+    <link rel="shortcut icon" href="/favicon.jpg"/>
+    
+
+    
+    
+    
+    <!-- stylesheets list from config.yml -->
+        
+            <link rel="stylesheet" href="/css/aloha.css">
+        
+            <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+            <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
+
+</head>
+
+<body id="body" style="margin-bottom: 0;" class="pushable">
+
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>YFHan的博客</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/favicon_400x400.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">
+                        YFHan
+                    </a>
+                    
+                        <div class="meta">
+                            Programer / Dotaor
+                        </div>
+                        
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                            <div class="item">
+                                <i class="marker icon" style="float: left"></i>
+                                <div class="content">
+                                    杭州
+                                </div>
+                            </div>
+                            
+                                
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+
+                            <a href="https://github.com/yyhan"><i class="large github icon" style="float: left"></i></a>
+
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item" >
+        <i class="home icon"></i>
+        首页
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/archives/" class="item" >
+        <i class="archive icon"></i>
+        归档
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/atom.xml" class="item" >
+        <i class="rss icon"></i>
+        RSS
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/about" class="item" >
+        <i class="mail icon"></i>
+        关于
+    </a>
+
+    
+
+    
+</div>
+
+        <div class="pusher body-content">
+            <div id="content" class="ui main container">
+                <div id="post-CryptoJS-使用示例" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    CryptoJS 使用示例
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <h1 id="&#x5B57;&#x7B26;&#x4E32;&#x7F16;&#x89E3;&#x7801;"><a href="#&#x5B57;&#x7B26;&#x4E32;&#x7F16;&#x89E3;&#x7801;" class="headerlink" title="&#x5B57;&#x7B26;&#x4E32;&#x7F16;&#x89E3;&#x7801;"></a>&#x5B57;&#x7B26;&#x4E32;&#x7F16;&#x89E3;&#x7801;</h1><p>&#x6240;&#x6709;&#x7684;&#x7F16;&#x89E3;&#x7801;&#x5668;&#xFF0C;&#x90FD;&#x6709;<code>stringify(wordArray)</code>&#x548C;<code>parse(str)</code>&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;<code>stringify</code>&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x5C06;<code>WordArray</code>&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;&#x76F8;&#x5E94;&#x7F16;&#x7801;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;<code>parse</code>&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x89E3;&#x7801;&#x76EE;&#x6807;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;<code>WordArray</code>&#x5BF9;&#x8C61;&#x3002;</p>
+<h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><p>&#x5C06;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;Base64&#x5B57;&#x7B26;&#x4E32;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x5148;&#x8F6C;&#x6362;&#x4E3A;<code>WordArray</code>&#x5BF9;&#x8C61;&#xFF0C;&#x518D;&#x8F6C;&#x6362;&#x4E3A;Base64&#x5B57;&#x7B26;&#x4E32;&#x3002;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Base64 &#x57FA;&#x672C;&#x4F7F;&#x7528;</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> plainTxt = <span class="string">&quot;hello base64&quot;</span>; <span class="comment">// &#x6D4B;&#x8BD5;&#x5B57;&#x7B26;&#x4E32;</span></div><div class="line"><span class="keyword">var</span> plainTxtToWA = CryptoJS.enc.Utf8.parse(plainTxt); <span class="comment">// &#x8F6C;&#x6362;&#x4E3A; WordArray</span></div><div class="line"><span class="keyword">var</span> base64Str = CryptoJS.enc.Base64.stringify(base64TestStrToWordArray); <span class="comment">// &#x8F6C;&#x6362;&#x4E3A;base64&#x5B57;&#x7B26;&#x4E32;</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(plainTxt);</div><div class="line"><span class="built_in">console</span>.log(plainTxtToWA);</div><div class="line"><span class="built_in">console</span>.log(base64Str);</div></pre></td></tr></table></figure></p>
+<h1 id="&#x6458;&#x8981;&#x7B97;&#x6CD5;"><a href="#&#x6458;&#x8981;&#x7B97;&#x6CD5;" class="headerlink" title="&#x6458;&#x8981;&#x7B97;&#x6CD5;"></a>&#x6458;&#x8981;&#x7B97;&#x6CD5;</h1><h2 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> plainTxt = <span class="string">&quot;hello world&quot;</span>;</div><div class="line"><span class="keyword">var</span> md5Res = CryptoJS.MD5(plainTxt); <span class="comment">// MD5&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x4E2A; CryptoJS.lib.WordArray &#x5BF9;&#x8C61;</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(md5Res.toString()); <span class="comment">// WordArray.toString() &#x9ED8;&#x8BA4;&#x8F6C;&#x6362;&#x4E3A;hex&#x5B57;&#x7B26;&#x4E32;</span></div><div class="line"><span class="built_in">console</span>.log(md5Res.toString(CryptoJS.enc.Hex)); <span class="comment">// md5 &#x7ED3;&#x679C;&#x8F6C;&#x4E3A;hex&#x5B57;&#x7B26;&#x4E32;</span></div><div class="line"><span class="built_in">console</span>.log(md5Res.toString(CryptoJS.enc.Base64)); <span class="comment">// md5 &#x7ED3;&#x679C;&#x8F6C;&#x4E3A;base64&#x5B57;&#x7B26;&#x4E32;</span></div></pre></td></tr></table></figure>
+<h1 id="&#x52A0;&#x89E3;&#x5BC6;"><a href="#&#x52A0;&#x89E3;&#x5BC6;" class="headerlink" title="&#x52A0;&#x89E3;&#x5BC6;"></a>&#x52A0;&#x89E3;&#x5BC6;</h1><h2 id="AES"><a href="#AES" class="headerlink" title="AES"></a>AES</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ciphertext = CryptoJS.AES.encrypt(</div><div class="line">    <span class="string">&apos;plain text&apos;</span>, <span class="comment">// &#x9700;&#x8981;&#x52A0;&#x5BC6;&#x7684;&#x660E;&#x6587;</span></div><div class="line">    <span class="string">&apos;secret key&apos;</span>, <span class="comment">// &#x52A0;&#x5BC6;&#x5BC6;&#x94A5;</span></div><div class="line">    {</div><div class="line">        <span class="attr">mode</span>: CBC, <span class="comment">// AES&#x5DE5;&#x4F5C;&#x6A21;&#x5F0F;, &#x9ED8;&#x8BA4; CBC</span></div><div class="line">        padding: Pkcs7, <span class="comment">// &#x586B;&#x5145;&#x65B9;&#x5F0F;, &#x9ED8;&#x8BA4; Pkcs7</span></div><div class="line">        iv: <span class="literal">null</span>  <span class="comment">// AES &#x5411;&#x91CF;</span></div><div class="line">    }</div><div class="line">);</div></pre></td></tr></table></figure>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-06-27T15:51:37.000Z" itemprop="datePublished">2017-06-27</time>
+
+    </span>
+    <span class="post-description-item">
+        
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/CryptoJS/">CryptoJS</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/AES/">AES</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/BASE64/">BASE64</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/MD5/">MD5</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/SHA/">SHA</a>
+    </span>
+
+    
+
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a class="ui tiny button disabled"><i class="angle left icon"></i>前一篇</a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/2017/06/27/CryptoJS-使用指南/" class="ui tiny button">
+                    
+                    CryptoJS 使用指南
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#字符串编解码"><span>字符串编解码</span></a><ol><li><a href="#Base64"><span>Base64</span></a></li></ol></li><li><a href="#摘要算法"><span>摘要算法</span></a><ol><li><a href="#MD5"><span>MD5</span></a></li></ol></li><li><a href="#加解密"><span>加解密</span></a><ol><li><a href="#AES"><span>AES</span></a></li></ol></li></ol>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+            </div>
+            <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2017 <a href="/">YFHan</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
+                href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+        </div>
+
+    
+        
+            <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+        
+            <script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+        
+            <script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+        
+            <script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+        
+            <script src="/js/semantic-ui-algolia.js"></script>
+        
+            <script src="/js/aloha-events.js"></script>
+        
+    
+
+</body>
+</html>
