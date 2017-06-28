@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yyhan.github.io/"/>
-  <updated>2017-06-27T16:17:57.210Z</updated>
+  <updated>2017-06-28T16:49:22.823Z</updated>
   <id>https://yyhan.github.io/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OpenSSL 生成证书</title>
+    <link href="https://yyhan.github.io/2017/06/29/OpenSSL-%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6/"/>
+    <id>https://yyhan.github.io/2017/06/29/OpenSSL-生成证书/</id>
+    <published>2017-06-28T16:22:07.000Z</published>
+    <updated>2017-06-28T16:49:22.823Z</updated>
+    
+    <content type="html"><![CDATA[<p>1&#x3001;&#x751F;&#x6210;&#x6839;&#x8BC1;&#x4E66;RSA&#x5BC6;&#x94A5;&#x5BF9;</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl genrsa -out private/cakey.pem 2048</div></pre></td></tr></table></figure>
+<p>2&#x3001;&#x751F;&#x6210;&#x81EA;&#x7B7E;&#x540D;&#x6839;&#x8BC1;&#x4E66;</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl req -new -x509 -days 365 -key private/cakey.pem -out cacert.pem</div></pre></td></tr></table></figure>
+<p>3&#x3001;&#x8F6C;&#x6362;&#x8BC1;&#x4E66;&#x683C;&#x5F0F;&#xFF08;&#x975E;&#x5FC5;&#x987B;&#xFF09;<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl x509 -<span class="keyword">in</span> cacert.pem -out cacsert.crt</div></pre></td></tr></table></figure></p>
+<p>4&#x3001;&#x751F;&#x6210;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;RSA&#x5BC6;&#x94A5;&#x5BF9;&#xFF1A;<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl genrsa -out server.key 2048</div></pre></td></tr></table></figure></p>
+<p>5&#x3001;&#x751F;&#x6210;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;&#x7B7E;&#x540D;&#x8BF7;&#x6C42;<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">openssl req -new -days 30 -key nginx.pem -out nginxReq.pem</div><div class="line">openssl req -new -sha256 -days 30 -out server.csr -key server.key</div></pre></td></tr></table></figure></p>
+<p>6&#x3001;&#x5BF9;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;&#x7B7E;&#x540D;<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">openssl ca -<span class="keyword">in</span> nginxReq.pem -out nginxCert.pem</div><div class="line">openssl x509 -req -<span class="keyword">in</span> server.csr -CA D:/www/ca/cacert.pem -CAkey D:/www/ca/private/cakey.pem -CAcreateserial -out server.crt -days 30 -sha256 -extfile v3.ext</div></pre></td></tr></table></figure></p>
+<p>v3.ext &#x6307;&#x5B9A;&#x5907;&#x7528;&#x57DF;&#x540D;&#x7B49;&#x4FE1;&#x606F;<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">authorityKeyIdentifier=keyid,issuer</div><div class="line">basicConstraints=CA:FALSE</div><div class="line">keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment</div><div class="line">subjectAltName = @alt_names</div><div class="line"></div><div class="line">[alt_names]</div><div class="line">DNS.1 = it.jubaopay.com</div><div class="line">DNS.2 = b.jubaopay.com</div><div class="line">DNS.3 = oa.jubaopay.com</div></pre></td></tr></table></figure></p>
+<p>&#x8C37;&#x6B4C;&#x6D4F;&#x89C8;&#x5668;&#x4F7F;&#x7528;<code>SAN (Subject Alternative Name)</code>&#x66FF;&#x4EE3;&#x4E86;<code>CN</code>&#x6765;&#x9A8C;&#x8BC1;&#x57DF;&#x540D;&#xFF0C;&#x6240;&#x4EE5;&#x5FC5;&#x987B;&#x8981;&#x8FD9;&#x6837;&#x641E;</p>
+<p>7&#x3001;&#x8F6C;&#x6362;&#x8BC1;&#x4E66;&#x683C;&#x5F0F;&#xFF08;&#x975E;&#x5FC5;&#x987B;&#xFF09;<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl x509 -<span class="keyword">in</span> nginxCert.pem -out nginx.crt</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1&amp;#x3001;&amp;#x751F;&amp;#x6210;&amp;#x6839;&amp;#x8BC1;&amp;#x4E66;RSA&amp;#x5BC6;&amp;#x94A5;&amp;#x5BF9;&lt;/p&gt;
+&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutte
+    
+    </summary>
+    
+      <category term="工具使用" scheme="https://yyhan.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="openssl" scheme="https://yyhan.github.io/tags/openssl/"/>
+    
+      <category term="https" scheme="https://yyhan.github.io/tags/https/"/>
+    
+      <category term="ca" scheme="https://yyhan.github.io/tags/ca/"/>
+    
+      <category term="证书" scheme="https://yyhan.github.io/tags/%E8%AF%81%E4%B9%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>CryptoJS 使用示例</title>
@@ -1183,52 +1223,6 @@ setenv.sh (*nix), setenv.bat (Windows), tomcat-juli.jar
       <category term="java" scheme="https://yyhan.github.io/tags/java/"/>
     
       <category term="mongodb" scheme="https://yyhan.github.io/tags/mongodb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>npm入门指南</title>
-    <link href="https://yyhan.github.io/2016/12/11/npm%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/"/>
-    <id>https://yyhan.github.io/2016/12/11/npm入门指南/</id>
-    <published>2016-12-11T14:50:40.000Z</published>
-    <updated>2017-06-18T13:21:22.456Z</updated>
-    
-    <content type="html"><![CDATA[<p>NPM&#x662F;&#x968F;&#x540C;NodeJS&#x4E00;&#x8D77;&#x5B89;&#x88C5;&#x7684;&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x80FD;&#x89E3;&#x51B3;NodeJS&#x4EE3;&#x7801;&#x90E8;&#x7F72;&#x4E0A;&#x7684;&#x5F88;&#x591A;&#x95EE;&#x9898;&#xFF0C;&#x5E38;&#x89C1;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#xFF1A;</p>
-<ul class="ui list">
-<li>&#x5141;&#x8BB8;&#x7528;&#x6237;&#x4ECE;NPM&#x670D;&#x52A1;&#x5668;&#x4E0B;&#x8F7D;&#x522B;&#x4EBA;&#x7F16;&#x5199;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5305;&#x5230;&#x672C;&#x5730;&#x4F7F;&#x7528;&#x3002;</li>
-<li>&#x5141;&#x8BB8;&#x7528;&#x6237;&#x4ECE;NPM&#x670D;&#x52A1;&#x5668;&#x4E0B;&#x8F7D;&#x5E76;&#x5B89;&#x88C5;&#x522B;&#x4EBA;&#x7F16;&#x5199;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x7A0B;&#x5E8F;&#x5230;&#x672C;&#x5730;&#x4F7F;&#x7528;&#x3002;</li>
-<li>&#x5141;&#x8BB8;&#x7528;&#x6237;&#x5C06;&#x81EA;&#x5DF1;&#x7F16;&#x5199;&#x7684;&#x5305;&#x6216;&#x547D;&#x4EE4;&#x884C;&#x7A0B;&#x5E8F;&#x4E0A;&#x4F20;&#x5230;NPM&#x670D;&#x52A1;&#x5668;&#x4F9B;&#x522B;&#x4EBA;&#x4F7F;&#x7528;&#x3002;</li>
-</ul>
-<p>&#x7531;&#x4E8E;&#x65B0;&#x7248;&#x7684;nodejs&#x5DF2;&#x7ECF;&#x96C6;&#x6210;&#x4E86;npm&#xFF0C;&#x6240;&#x4EE5;&#x4E4B;&#x524D;npm&#x4E5F;&#x4E00;&#x5E76;&#x5B89;&#x88C5;&#x597D;&#x4E86;&#x3002;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8F93;&#x5165; &#x201C;npm -v&#x201D; &#x6765;&#x6D4B;&#x8BD5;&#x662F;&#x5426;&#x6210;&#x529F;&#x5B89;&#x88C5;&#x3002;&#x547D;&#x4EE4;&#x5982;&#x4E0B;&#xFF0C;&#x51FA;&#x73B0;&#x7248;&#x672C;&#x63D0;&#x793A;&#x8868;&#x793A;&#x5B89;&#x88C5;&#x6210;&#x529F;:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm -v</div><div class="line">3.10.8</div></pre></td></tr></table></figure></p>
-<ul class="ui list">
-<li><a href="https://www.npmjs.com/" target="_blank" rel="external">npm &#x5B98;&#x7F51;</a></li>
-<li><a href="https://docs.npmjs.com/" target="_blank" rel="external">npm &#x6587;&#x6863;</a></li>
-</ul>
-<h1 id="&#x4F7F;&#x7528;package-json"><a href="#&#x4F7F;&#x7528;package-json" class="headerlink" title="&#x4F7F;&#x7528;package.json"></a>&#x4F7F;&#x7528;package.json</h1><p>package.json&#x6587;&#x4EF6;&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">  <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;demo&quot;</span>,</div><div class="line">  <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;1.0.0&quot;</span>,</div><div class="line">  <span class="attr">&quot;description&quot;</span>: <span class="string">&quot;demo&quot;</span>,</div><div class="line">  <span class="attr">&quot;main&quot;</span>: <span class="string">&quot;index.js&quot;</span>,</div><div class="line">  <span class="attr">&quot;scripts&quot;</span>: {</div><div class="line">    <span class="attr">&quot;dev&quot;</span>: <span class="string">&quot;node build/dev-server.js&quot;</span></div><div class="line">  },</div><div class="line">  <span class="attr">&quot;repository&quot;</span>: {</div><div class="line">    <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;git&quot;</span>,</div><div class="line">    <span class="attr">&quot;url&quot;</span>: <span class="string">&quot;https://github.com/yyhan/demo.git&quot;</span></div><div class="line">  },</div><div class="line">  <span class="attr">&quot;author&quot;</span>: <span class="string">&quot;&quot;</span>,</div><div class="line">  <span class="attr">&quot;license&quot;</span>: <span class="string">&quot;ISC&quot;</span>,</div><div class="line">  <span class="attr">&quot;bugs&quot;</span>: {</div><div class="line">    <span class="attr">&quot;url&quot;</span>: <span class="string">&quot;https://github.com/yyhan/demo/issues&quot;</span></div><div class="line">  },</div><div class="line">  <span class="attr">&quot;homepage&quot;</span>: <span class="string">&quot;https://github.com/yyhan/demo#readme&quot;</span>,</div><div class="line">  <span class="attr">&quot;devDependencies&quot;</span>: {</div><div class="line">    <span class="attr">&quot;express&quot;</span>: <span class="string">&quot;^4.14.0&quot;</span>,</div><div class="line">    <span class="attr">&quot;opn&quot;</span>: <span class="string">&quot;^4.0.2&quot;</span></div><div class="line">  }</div><div class="line">}</div></pre></td></tr></table></figure></p>
-<h1 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="headerlink" title="&#x5E38;&#x7528;&#x547D;&#x4EE4;"></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h1><p><code>npm init</code> &#x521D;&#x59CB;&#x5316;package.json&#x6587;&#x4EF6;  </p>
-<p><code>npm install &lt;package_name&gt;</code> &#x5B89;&#x88C5;<package_name>&#x4F9D;&#x8D56;&#x5230;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF0C;&#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x5728;package.json&#x91CC;&#x914D;&#x7F6E;&#x597D;&#x4E86;&#x4E00;&#x5207;&#x4F9D;&#x8D56;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x8FD0;&#x884C;<code>npm install</code>&#xFF0C;npm&#x4F1A;&#x81EA;&#x52A8;&#x5B89;&#x88C5;package.json&#x91CC;&#x6307;&#x5B9A;&#x7684;&#x4F9D;&#x8D56;</package_name></p>
-<p><code>npm install &lt;package_name&gt; -g</code> &#x5B89;&#x88C5;<package_name>&#x4F9D;&#x8D56;&#x5230;&#x5168;&#x5C40;&#x73AF;&#x5883;&#xFF0C;&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x4E00;&#x4E9B;js&#x5DE5;&#x5177;&#x6216;&#x547D;&#x4EE4;&#x7C7B;&#x7684;&#x5B89;&#x88C5;&#x5305;  </package_name></p>
-<p><code>npm install &lt;package_name&gt; --save</code> &#x5B89;&#x88C5;<package_name>&#x4F9D;&#x8D56;&#x5230;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x5C06;&#x8BE5;&#x4F9D;&#x8D56;&#x6DFB;&#x52A0;&#x5230;package.json &#x6587;&#x4EF6;&#x7684;&#x4F9D;&#x8D56;(<code>dependencies</code>)&#x9879;&#x4E2D;  </package_name></p>
-<p><code>npm install &lt;package_name&gt; --save-dev</code> &#x5B89;&#x88C5;<package_name>&#x4F9D;&#x8D56;&#x5230;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x5C06;&#x8BE5;&#x4F9D;&#x8D56;&#x6DFB;&#x52A0;&#x5230;package.json &#x6587;&#x4EF6;&#x7684;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x4F9D;&#x8D56;(<code>devDependencies</code>)&#x9879;&#x4E2D;  </package_name></p>
-<p><code>npm uninstall &lt;package_name&gt;</code> &#x79FB;&#x9664;<package_name>&#x4F9D;&#x8D56;</package_name></p>
-<h1 id="npm&#x955C;&#x50CF;"><a href="#npm&#x955C;&#x50CF;" class="headerlink" title="npm&#x955C;&#x50CF;"></a>npm&#x955C;&#x50CF;</h1><p><a href="https://npm.taobao.org/" target="_blank" rel="external">&#x6DD8;&#x5B9D;npm&#x955C;&#x50CF;</a>&#x5730;&#x5740;&#xFF1A;<code>https://npm.taobao.org/</code><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</div></pre></td></tr></table></figure></p>
-<p>&#x6216;&#x8005;&#x901A;&#x8FC7;&#x76F4;&#x63A5;&#x6DFB;&#x52A0;<code>npm</code>&#x53C2;&#x6570;<code>alias</code>&#x4E00;&#x4E2A;&#x65B0;&#x547D;&#x4EE4;&#xFF1A;<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">alias</span> cnpm=<span class="string">&quot;npm --registry=https://registry.npm.taobao.org \</span></div><div class="line">--cache=<span class="variable">$HOME</span>/.npm/.cache/cnpm \</div><div class="line">--disturl=https://npm.taobao.org/dist \</div><div class="line">--userconfig=<span class="variable">$HOME</span>/.cnpmrc&quot;</div><div class="line"></div><div class="line"><span class="comment"># Or alias it in .bashrc or .zshrc</span></div><div class="line">$ <span class="built_in">echo</span> <span class="string">&apos;\n#alias for cnpm\nalias cnpm=&quot;npm --registry=https://registry.npm.taobao.org \</span></div><div class="line">  --cache=$HOME/.npm/.cache/cnpm \</div><div class="line">  --disturl=https://npm.taobao.org/dist \</div><div class="line">  --userconfig=$HOME/.cnpmrc&quot;&apos; &gt;&gt; ~/.zshrc &amp;&amp; <span class="built_in">source</span> ~/.zshrc</div></pre></td></tr></table></figure></p>
-<p>&#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;cnpm&#x6765;&#x4EE3;&#x66FF;npm&#x9664;&#x4E86;<code>publish</code>&#x4E4B;&#x5916;&#x7684;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#xFF1A;<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cnpm install [pk_name]</div></pre></td></tr></table></figure></p>
-<p>&#x901A;&#x8FC7;cnpm&#x63D0;&#x4F9B;&#x7684;<code>sync</code>&#x547D;&#x4EE4;&#x540C;&#x6B65;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#xFF1A;<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cnpm sync [pk_name]</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;NPM&amp;#x662F;&amp;#x968F;&amp;#x540C;NodeJS&amp;#x4E00;&amp;#x8D77;&amp;#x5B89;&amp;#x88C5;&amp;#x7684;&amp;#x5305;&amp;#x7BA1;&amp;#x7406;&amp;#x5DE5;&amp;#x5177;&amp;#xFF0C;&amp;#x80FD;&amp;#x89E3;
-    
-    </summary>
-    
-      <category term="工具使用" scheme="https://yyhan.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
-    
-    
-      <category term="npm" scheme="https://yyhan.github.io/tags/npm/"/>
-    
-      <category term="入门指南" scheme="https://yyhan.github.io/tags/%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/"/>
     
   </entry>
   

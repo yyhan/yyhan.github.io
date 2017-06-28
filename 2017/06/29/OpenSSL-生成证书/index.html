@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="JUST DO IT">
+    <title>
+        OpenSSL 生成证书 | YFHan的博客
+    </title>
+    <link rel="shortcut icon" href="/favicon.jpg"/>
+    
+
+    
+    
+    
+    <!-- stylesheets list from config.yml -->
+        
+            <link rel="stylesheet" href="/css/aloha.css">
+        
+            <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+    
+
+</head>
+
+<body id="body" style="margin-bottom: 0;" class="pushable">
+
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+
+        
+        
+
+        
+
+        
+        <a href="/index.html" class="item" >
+            <i class="home icon"></i>
+            首页
+        </a>
+
+        
+        
+
+        
+
+        
+        <a href="/archives/" class="item" >
+            <i class="archive icon"></i>
+            归档
+        </a>
+
+        
+        
+
+        
+
+        
+        <a href="/atom.xml" class="item" >
+            <i class="rss icon"></i>
+            RSS
+        </a>
+
+        
+        
+
+        
+
+        
+        <a href="/about" class="item" >
+            <i class="mail icon"></i>
+            关于
+        </a>
+
+        
+        
+
+        
+
+        
+        <a href="https://github.com/yyhan" class="item" >
+            <i class="github icon"></i>
+            github
+        </a>
+
+        
+        <!--<a class="item" href=""><i class="github icon"></i></a>-->
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>YFHan的博客</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/favicon_400x400.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">
+                        YFHan
+                    </a>
+                    
+                        <div class="meta">
+                            Programer / Dotaor
+                        </div>
+                        
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                            <div class="item">
+                                <i class="marker icon" style="float: left"></i>
+                                <div class="content">
+                                    杭州
+                                </div>
+                            </div>
+                            
+                                
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+
+                            <a href="https://github.com/yyhan"><i class="large github icon" style="float: left"></i></a>
+
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item" >
+        <i class="home icon"></i>
+        首页
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/archives/" class="item" >
+        <i class="archive icon"></i>
+        归档
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/atom.xml" class="item" >
+        <i class="rss icon"></i>
+        RSS
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/about" class="item" >
+        <i class="mail icon"></i>
+        关于
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="https://github.com/yyhan" class="item" >
+        <i class="github icon"></i>
+        github
+    </a>
+
+    
+
+    
+</div>
+
+        <div class="pusher body-content">
+            <div id="content" class="ui main container">
+                <div id="post-OpenSSL-生成证书" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    OpenSSL 生成证书
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <p>1&#x3001;&#x751F;&#x6210;&#x6839;&#x8BC1;&#x4E66;RSA&#x5BC6;&#x94A5;&#x5BF9;</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl genrsa -out private/cakey.pem 2048</div></pre></td></tr></table></figure>
+<p>2&#x3001;&#x751F;&#x6210;&#x81EA;&#x7B7E;&#x540D;&#x6839;&#x8BC1;&#x4E66;</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl req -new -x509 -days 365 -key private/cakey.pem -out cacert.pem</div></pre></td></tr></table></figure>
+<p>3&#x3001;&#x8F6C;&#x6362;&#x8BC1;&#x4E66;&#x683C;&#x5F0F;&#xFF08;&#x975E;&#x5FC5;&#x987B;&#xFF09;<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl x509 -<span class="keyword">in</span> cacert.pem -out cacsert.crt</div></pre></td></tr></table></figure></p>
+<p>4&#x3001;&#x751F;&#x6210;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;RSA&#x5BC6;&#x94A5;&#x5BF9;&#xFF1A;<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl genrsa -out server.key 2048</div></pre></td></tr></table></figure></p>
+<p>5&#x3001;&#x751F;&#x6210;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;&#x7B7E;&#x540D;&#x8BF7;&#x6C42;<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">openssl req -new -days 30 -key nginx.pem -out nginxReq.pem</div><div class="line">openssl req -new -sha256 -days 30 -out server.csr -key server.key</div></pre></td></tr></table></figure></p>
+<p>6&#x3001;&#x5BF9;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;&#x7B7E;&#x540D;<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">openssl ca -<span class="keyword">in</span> nginxReq.pem -out nginxCert.pem</div><div class="line">openssl x509 -req -<span class="keyword">in</span> server.csr -CA D:/www/ca/cacert.pem -CAkey D:/www/ca/private/cakey.pem -CAcreateserial -out server.crt -days 30 -sha256 -extfile v3.ext</div></pre></td></tr></table></figure></p>
+<p>v3.ext &#x6307;&#x5B9A;&#x5907;&#x7528;&#x57DF;&#x540D;&#x7B49;&#x4FE1;&#x606F;<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">authorityKeyIdentifier=keyid,issuer</div><div class="line">basicConstraints=CA:FALSE</div><div class="line">keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment</div><div class="line">subjectAltName = @alt_names</div><div class="line"></div><div class="line">[alt_names]</div><div class="line">DNS.1 = it.jubaopay.com</div><div class="line">DNS.2 = b.jubaopay.com</div><div class="line">DNS.3 = oa.jubaopay.com</div></pre></td></tr></table></figure></p>
+<p>&#x8C37;&#x6B4C;&#x6D4F;&#x89C8;&#x5668;&#x4F7F;&#x7528;<code>SAN (Subject Alternative Name)</code>&#x66FF;&#x4EE3;&#x4E86;<code>CN</code>&#x6765;&#x9A8C;&#x8BC1;&#x57DF;&#x540D;&#xFF0C;&#x6240;&#x4EE5;&#x5FC5;&#x987B;&#x8981;&#x8FD9;&#x6837;&#x641E;</p>
+<p>7&#x3001;&#x8F6C;&#x6362;&#x8BC1;&#x4E66;&#x683C;&#x5F0F;&#xFF08;&#x975E;&#x5FC5;&#x987B;&#xFF09;<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl x509 -<span class="keyword">in</span> nginxCert.pem -out nginx.crt</div></pre></td></tr></table></figure></p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-06-28T16:22:07.000Z" itemprop="datePublished">2017-06-29</time>
+
+    </span>
+    <span class="post-description-item">
+        
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/openssl/">openssl</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/https/">https</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/ca/">ca</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/证书/">证书</a>
+    </span>
+
+    
+
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a class="ui tiny button disabled"><i class="angle left icon"></i>前一篇</a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/2017/06/27/CryptoJS-使用示例/" class="ui tiny button">
+                    
+                    CryptoJS 使用示例
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+            </div>
+            <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2017 <a href="/">YFHan</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
+                href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+        </div>
+
+    
+        
+            <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+        
+            <script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+        
+            <script src="/js/aloha-events.js"></script>
+        
+    
+
+</body>
+</html>
