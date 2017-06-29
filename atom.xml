@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yyhan.github.io/"/>
-  <updated>2017-06-29T17:26:56.035Z</updated>
+  <updated>2017-06-29T17:29:13.247Z</updated>
   <id>https://yyhan.github.io/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="https://yyhan.github.io/2017/06/30/java-%E5%8A%A0%E5%AF%86%E4%BD%93%E7%B3%BB%E6%9E%B6%E6%9E%84%E5%8F%82%E8%80%83%E6%8C%87%E5%8D%97/"/>
     <id>https://yyhan.github.io/2017/06/30/java-加密体系架构参考指南/</id>
     <published>2017-06-29T16:22:34.000Z</published>
-    <updated>2017-06-29T17:26:56.035Z</updated>
+    <updated>2017-06-29T17:29:13.247Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="&#x4ECB;&#x7ECD;"><a href="#&#x4ECB;&#x7ECD;" class="headerlink" title="&#x4ECB;&#x7ECD;"></a>&#x4ECB;&#x7ECD;</h1><p>The Java platform strongly emphasizes security, including language safety, cryptography, public key infrastructure, authentication, secure communication, and access control.</p>
+    <content type="html"><![CDATA[<p>&#x539F;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/crypto/CryptoSpec.html" target="_blank" rel="external">Java Cryptography Architecture (JCA) Reference Guide</a></p>
+<h1 id="&#x4ECB;&#x7ECD;"><a href="#&#x4ECB;&#x7ECD;" class="headerlink" title="&#x4ECB;&#x7ECD;"></a>&#x4ECB;&#x7ECD;</h1><p>The Java platform strongly emphasizes security, including language safety, cryptography, public key infrastructure, authentication, secure communication, and access control.</p>
 <p>The JCA is a major piece of the platform, and contains a &#x201C;provider&#x201D; architecture and a set of APIs for digital signatures, message digests (hashes), certificates and certificate validation, encryption (symmetric/asymmetric block/stream ciphers), key generation and management, and secure random number generation, to name a few. These APIs allow developers to easily integrate security into their application code. The architecture was designed around the following principles:</p>
 <p>Implementation independence: Applications do not need to implement security algorithms. Rather, they can request security services from the Java platform. Security services are implemented in providers (see below), which are plugged into the Java platform via a standard interface. An application may rely on multiple independent providers for security functionality.</p>
 <p>Implementation interoperability: Providers are interoperable across applications. Specifically, an application is not bound to a specific provider, and a provider is not bound to a specific application.</p>
@@ -817,7 +818,7 @@ byte[] cleartext1 = aesCipher.doFinal(ciphertext);
     
     <summary type="html">
     
-      &lt;h1 id=&quot;&amp;#x4ECB;&amp;#x7ECD;&quot;&gt;&lt;a href=&quot;#&amp;#x4ECB;&amp;#x7ECD;&quot; class=&quot;headerlink&quot; title=&quot;&amp;#x4ECB;&amp;#x7ECD;&quot;&gt;&lt;/a&gt;&amp;#x4ECB;&amp;#x7ECD;&lt;/h1&gt;&lt;p&gt;The Java platf
+      &lt;p&gt;&amp;#x539F;&amp;#x6587;&amp;#x5730;&amp;#x5740;&amp;#xFF1A;&lt;a href=&quot;http://docs.oracle.com/javase/8/docs/technotes/guides/security/crypto/CryptoSpec.html&quot; t
     
     </summary>
     
@@ -835,9 +836,10 @@ byte[] cleartext1 = aesCipher.doFinal(ciphertext);
     <link href="https://yyhan.github.io/2017/06/29/java-%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB/"/>
     <id>https://yyhan.github.io/2017/06/29/java-安全体系/</id>
     <published>2017-06-29T15:25:48.000Z</published>
-    <updated>2017-06-29T16:23:19.504Z</updated>
+    <updated>2017-06-29T17:29:41.496Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h1><p>Java security technology includes a large set of APIs, tools, and implementations of commonly-used security algorithms, mechanisms, and protocols. The Java security APIs span a wide range of areas, including cryptography, public key infrastructure, secure communication, authentication, and access control. Java security technology provides the developer with a comprehensive security framework for writing applications, and also provides the user or administrator with a a set of tools to securely manage applications.</p>
+    <content type="html"><![CDATA[<p>&#x539F;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/index.html" target="_blank" rel="external">Security</a></p>
+<h1 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h1><p>Java security technology includes a large set of APIs, tools, and implementations of commonly-used security algorithms, mechanisms, and protocols. The Java security APIs span a wide range of areas, including cryptography, public key infrastructure, secure communication, authentication, and access control. Java security technology provides the developer with a comprehensive security framework for writing applications, and also provides the user or administrator with a a set of tools to securely manage applications.</p>
 <p>Java&#x5B89;&#x5168;&#x6280;&#x672F;&#x5305;&#x62EC;&#x5927;&#x91CF;&#x7684;API&#xFF0C;&#x5DE5;&#x5177;&#x548C;&#x5E38;&#x7528;&#x5B89;&#x5168;&#x7B97;&#x6CD5;&#xFF0C;&#x673A;&#x5236;&#x548C;&#x534F;&#x8BAE;&#x7684;&#x5B9E;&#x73B0;&#x3002; Java&#x5B89;&#x5168;API&#x6DB5;&#x76D6;&#x8303;&#x56F4;&#x5E7F;&#x6CDB;&#x7684;&#x9886;&#x57DF;&#xFF0C;&#x5305;&#x62EC;&#x5BC6;&#x7801;&#x5B66;&#xFF0C;&#x516C;&#x94A5;&#x57FA;&#x7840;&#x8BBE;&#x65BD;&#xFF0C;&#x5B89;&#x5168;&#x901A;&#x4FE1;&#xFF0C;&#x8BA4;&#x8BC1;&#x548C;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x3002; Java&#x5B89;&#x5168;&#x6280;&#x672F;&#x4E3A;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x7F16;&#x5199;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5168;&#x9762;&#x5B89;&#x5168;&#x6846;&#x67B6;&#xFF0C;&#x5E76;&#x4E3A;&#x7528;&#x6237;&#x6216;&#x7BA1;&#x7406;&#x5458;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x5957;&#x5B89;&#x5168;&#x7BA1;&#x7406;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5DE5;&#x5177;&#x3002;</p>
 <h1 id="Enhancements"><a href="#Enhancements" class="headerlink" title="Enhancements"></a>Enhancements</h1><ul class="ui list">
 <li><a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/enhancements-8.html" target="_blank" rel="external">JDK 8 &#x5B89;&#x5168;&#x589E;&#x5F3A;&#x529F;&#x80FD;</a></li>
@@ -961,7 +963,7 @@ byte[] cleartext1 = aesCipher.doFinal(ciphertext);
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Security&quot;&gt;&lt;a href=&quot;#Security&quot; class=&quot;headerlink&quot; title=&quot;Security&quot;&gt;&lt;/a&gt;Security&lt;/h1&gt;&lt;p&gt;Java security technology includes a large set 
+      &lt;p&gt;&amp;#x539F;&amp;#x6587;&amp;#x5730;&amp;#x5740;&amp;#xFF1A;&lt;a href=&quot;http://docs.oracle.com/javase/8/docs/technotes/guides/security/index.html&quot; target=&quot;_blan
     
     </summary>
     
