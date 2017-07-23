@@ -200,7 +200,6 @@
 
     
 
-    
 </div>
 
         <div class="pusher body-content">
@@ -228,33 +227,63 @@
                     <div class="article-entry" itemprop="articleBody">
                         
                         <p>CryptoJS &#x662F;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x7684;JavaScript&#x6807;&#x51C6;&#x5BC6;&#x7801;&#x5B66;&#x5E93;&#x3002;</p>
-<h1 id="Node-js-install"><a href="#Node-js-install" class="headerlink" title="Node.js(install)"></a>Node.js(install)</h1><p>&#x4F9D;&#x8D56;&#xFF1A;</p>
+<h1>Node.js(install)</h1>
+<p>&#x4F9D;&#x8D56;&#xFF1A;</p>
 <ul class="ui list">
 <li>Node.js</li>
 <li>npm</li>
 </ul>
-<p>&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#xFF1A;<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install crypto-js</div></pre></td></tr></table></figure></p>
-<h1 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;"><a href="#&#x4F7F;&#x7528;&#x793A;&#x4F8B;" class="headerlink" title="&#x4F7F;&#x7528;&#x793A;&#x4F8B;"></a>&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h1><h2 id="ES6-&#x4E2D;&#x4F7F;&#x7528;"><a href="#ES6-&#x4E2D;&#x4F7F;&#x7528;" class="headerlink" title="ES6 &#x4E2D;&#x4F7F;&#x7528;"></a>ES6 &#x4E2D;&#x4F7F;&#x7528;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sha256 <span class="keyword">from</span> <span class="string">&apos;crypto-js/sha256&apos;</span>;</div><div class="line"><span class="keyword">import</span> hmacSHA512 <span class="keyword">from</span> <span class="string">&apos;crypto-js/hmac-sha512&apos;</span>;</div><div class="line"><span class="keyword">import</span> Base64 <span class="keyword">from</span> <span class="string">&apos;crypto-js/enc-base64&apos;</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> message, nonce, path, privateKey; <span class="comment">// ...</span></div><div class="line"><span class="keyword">const</span> hashDigest = sha256(nonce + message);</div><div class="line"><span class="keyword">const</span> hmacDigest = Base64.stringify(hmacSHA512(path + hashDigest, privateKey));</div></pre></td></tr></table></figure>
-<h2 id="&#x5728;&#x6A21;&#x5757;&#x7CFB;&#x7EDF;&#x4E2D;&#x4F7F;&#x7528;"><a href="#&#x5728;&#x6A21;&#x5757;&#x7CFB;&#x7EDF;&#x4E2D;&#x4F7F;&#x7528;" class="headerlink" title="&#x5728;&#x6A21;&#x5757;&#x7CFB;&#x7EDF;&#x4E2D;&#x4F7F;&#x7528;"></a>&#x5728;&#x6A21;&#x5757;&#x7CFB;&#x7EDF;&#x4E2D;&#x4F7F;&#x7528;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> AES = <span class="built_in">require</span>(<span class="string">&quot;crypto-js/aes&quot;</span>);</div><div class="line"><span class="keyword">var</span> SHA256 = <span class="built_in">require</span>(<span class="string">&quot;crypto-js/sha256&quot;</span>);</div><div class="line">...</div><div class="line">console.log(SHA256(<span class="string">&quot;Message&quot;</span>));</div></pre></td></tr></table></figure>
-<h2 id="&#x5BFC;&#x5165;&#x6240;&#x6709;&#x7684;&#x6A21;&#x5757;"><a href="#&#x5BFC;&#x5165;&#x6240;&#x6709;&#x7684;&#x6A21;&#x5757;" class="headerlink" title="&#x5BFC;&#x5165;&#x6240;&#x6709;&#x7684;&#x6A21;&#x5757;"></a>&#x5BFC;&#x5165;&#x6240;&#x6709;&#x7684;&#x6A21;&#x5757;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> CryptoJS = <span class="built_in">require</span>(<span class="string">&quot;crypto-js&quot;</span>);</div><div class="line"><span class="built_in">console</span>.log(CryptoJS.HmacSHA1(<span class="string">&quot;Message&quot;</span>, <span class="string">&quot;Key&quot;</span>));</div></pre></td></tr></table></figure>
-<h2 id="&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4F7F;&#x7528;"><a href="#&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4F7F;&#x7528;" class="headerlink" title="&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4F7F;&#x7528;"></a>&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4F7F;&#x7528;</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;path-to/bower_components/crypto-js/crypto-js.js&quot;</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> encrypted = CryptoJS.AES(...);</div><div class="line">    <span class="keyword">var</span> encrypted = CryptoJS.SHA256(...);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="API"><a href="#API" class="headerlink" title="API"></a>API</h1><h2 id="&#x6587;&#x672C;&#x52A0;&#x89E3;&#x5BC6;"><a href="#&#x6587;&#x672C;&#x52A0;&#x89E3;&#x5BC6;" class="headerlink" title="&#x6587;&#x672C;&#x52A0;&#x89E3;&#x5BC6;"></a>&#x6587;&#x672C;&#x52A0;&#x89E3;&#x5BC6;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> CryptoJS = <span class="built_in">require</span>(<span class="string">&quot;crypto-js&quot;</span>);</div><div class="line"></div><div class="line"><span class="comment">// Encrypt</span></div><div class="line"><span class="keyword">var</span> ciphertext = CryptoJS.AES.encrypt(<span class="string">&apos;my message&apos;</span>, <span class="string">&apos;secret key 123&apos;</span>);</div><div class="line"></div><div class="line"><span class="comment">// Decrypt</span></div><div class="line"><span class="keyword">var</span> bytes  = CryptoJS.AES.decrypt(ciphertext.toString(), <span class="string">&apos;secret key 123&apos;</span>);</div><div class="line"><span class="keyword">var</span> plaintext = bytes.toString(CryptoJS.enc.Utf8);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(plaintext);</div></pre></td></tr></table></figure>
-<h2 id="&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x52A0;&#x89E3;&#x5BC6;"><a href="#&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x52A0;&#x89E3;&#x5BC6;" class="headerlink" title="&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x52A0;&#x89E3;&#x5BC6;"></a>&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x52A0;&#x89E3;&#x5BC6;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> CryptoJS = <span class="built_in">require</span>(<span class="string">&quot;crypto-js&quot;</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> data = [{<span class="attr">id</span>: <span class="number">1</span>}, {<span class="attr">id</span>: <span class="number">2</span>}]</div><div class="line"></div><div class="line"><span class="comment">// Encrypt</span></div><div class="line"><span class="keyword">var</span> ciphertext = CryptoJS.AES.encrypt(<span class="built_in">JSON</span>.stringify(data), <span class="string">&apos;secret key 123&apos;</span>);</div><div class="line"></div><div class="line"><span class="comment">// Decrypt</span></div><div class="line"><span class="keyword">var</span> bytes  = CryptoJS.AES.decrypt(ciphertext.toString(), <span class="string">&apos;secret key 123&apos;</span>);</div><div class="line"><span class="keyword">var</span> decryptedData = <span class="built_in">JSON</span>.parse(bytes.toString(CryptoJS.enc.Utf8));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(decryptedData);</div></pre></td></tr></table></figure>
-<h2 id="&#x5E93;&#x547D;&#x540D;&#x7A7A;&#x95F4;"><a href="#&#x5E93;&#x547D;&#x540D;&#x7A7A;&#x95F4;" class="headerlink" title="&#x5E93;&#x547D;&#x540D;&#x7A7A;&#x95F4;"></a>&#x5E93;&#x547D;&#x540D;&#x7A7A;&#x95F4;</h2><h3 id="Base"><a href="#Base" class="headerlink" title="Base"></a>Base</h3><p>&#x539F;&#x578B;&#x7EE7;&#x627F;&#x7684;&#x57FA;&#x7840;&#x5BF9;&#x8C61;&#x3002;CryptoJS&#x5E93;&#x4E2D;&#xFF0C;&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x5957;&#x7EE7;&#x627F;&#x673A;&#x5236;&#x3002;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CryptoJS.lib.Base</div></pre></td></tr></table></figure></p>
-<h3 id="WordArray"><a href="#WordArray" class="headerlink" title="WordArray"></a>WordArray</h3><p>&#x4E00;&#x4E2A;32&#x4F4D;&#x5B57;&#x7684;&#x6570;&#x7EC4;&#x3002;&#x7EE7;&#x627F;<code>Base</code>&#x3002;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CryptoJS.lib.WordArray</div></pre></td></tr></table></figure></p>
-<p>&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF1A;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = wordArray + <span class="string">&apos;&apos;</span>;</div><div class="line"><span class="keyword">var</span> string = wordArray.toString();</div><div class="line"><span class="keyword">var</span> string = wordArray.toString(CryptoJS.enc.Utf8);</div></pre></td></tr></table></figure></p>
+<p>&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#xFF1A;
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install crypto-js</div></pre></td></tr></table></figure></p>
+<h1>&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h1>
+<h2>ES6 &#x4E2D;&#x4F7F;&#x7528;</h2>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sha256 <span class="keyword">from</span> <span class="string">&apos;crypto-js/sha256&apos;</span>;</div><div class="line"><span class="keyword">import</span> hmacSHA512 <span class="keyword">from</span> <span class="string">&apos;crypto-js/hmac-sha512&apos;</span>;</div><div class="line"><span class="keyword">import</span> Base64 <span class="keyword">from</span> <span class="string">&apos;crypto-js/enc-base64&apos;</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> message, nonce, path, privateKey; <span class="comment">// ...</span></div><div class="line"><span class="keyword">const</span> hashDigest = sha256(nonce + message);</div><div class="line"><span class="keyword">const</span> hmacDigest = Base64.stringify(hmacSHA512(path + hashDigest, privateKey));</div></pre></td></tr></table></figure></p>
+<h2>&#x5728;&#x6A21;&#x5757;&#x7CFB;&#x7EDF;&#x4E2D;&#x4F7F;&#x7528;</h2>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> AES = <span class="built_in">require</span>(<span class="string">&quot;crypto-js/aes&quot;</span>);</div><div class="line"><span class="keyword">var</span> SHA256 = <span class="built_in">require</span>(<span class="string">&quot;crypto-js/sha256&quot;</span>);</div><div class="line">...</div><div class="line">console.log(SHA256(<span class="string">&quot;Message&quot;</span>));</div></pre></td></tr></table></figure></p>
+<h2>&#x5BFC;&#x5165;&#x6240;&#x6709;&#x7684;&#x6A21;&#x5757;</h2>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> CryptoJS = <span class="built_in">require</span>(<span class="string">&quot;crypto-js&quot;</span>);</div><div class="line"><span class="built_in">console</span>.log(CryptoJS.HmacSHA1(<span class="string">&quot;Message&quot;</span>, <span class="string">&quot;Key&quot;</span>));</div></pre></td></tr></table></figure></p>
+<h2>&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4F7F;&#x7528;</h2>
+<p><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;path-to/bower_components/crypto-js/crypto-js.js&quot;</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> encrypted = CryptoJS.AES(...);</div><div class="line">    <span class="keyword">var</span> encrypted = CryptoJS.SHA256(...);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h1>API</h1>
+<h2>&#x6587;&#x672C;&#x52A0;&#x89E3;&#x5BC6;</h2>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> CryptoJS = <span class="built_in">require</span>(<span class="string">&quot;crypto-js&quot;</span>);</div><div class="line"></div><div class="line"><span class="comment">// Encrypt</span></div><div class="line"><span class="keyword">var</span> ciphertext = CryptoJS.AES.encrypt(<span class="string">&apos;my message&apos;</span>, <span class="string">&apos;secret key 123&apos;</span>);</div><div class="line"></div><div class="line"><span class="comment">// Decrypt</span></div><div class="line"><span class="keyword">var</span> bytes  = CryptoJS.AES.decrypt(ciphertext.toString(), <span class="string">&apos;secret key 123&apos;</span>);</div><div class="line"><span class="keyword">var</span> plaintext = bytes.toString(CryptoJS.enc.Utf8);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(plaintext);</div></pre></td></tr></table></figure></p>
+<h2>&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x52A0;&#x89E3;&#x5BC6;</h2>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> CryptoJS = <span class="built_in">require</span>(<span class="string">&quot;crypto-js&quot;</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> data = [{<span class="attr">id</span>: <span class="number">1</span>}, {<span class="attr">id</span>: <span class="number">2</span>}]</div><div class="line"></div><div class="line"><span class="comment">// Encrypt</span></div><div class="line"><span class="keyword">var</span> ciphertext = CryptoJS.AES.encrypt(<span class="built_in">JSON</span>.stringify(data), <span class="string">&apos;secret key 123&apos;</span>);</div><div class="line"></div><div class="line"><span class="comment">// Decrypt</span></div><div class="line"><span class="keyword">var</span> bytes  = CryptoJS.AES.decrypt(ciphertext.toString(), <span class="string">&apos;secret key 123&apos;</span>);</div><div class="line"><span class="keyword">var</span> decryptedData = <span class="built_in">JSON</span>.parse(bytes.toString(CryptoJS.enc.Utf8));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(decryptedData);</div></pre></td></tr></table></figure></p>
+<h2>&#x5E93;&#x547D;&#x540D;&#x7A7A;&#x95F4;</h2>
+<h3>Base</h3>
+<p>&#x539F;&#x578B;&#x7EE7;&#x627F;&#x7684;&#x57FA;&#x7840;&#x5BF9;&#x8C61;&#x3002;CryptoJS&#x5E93;&#x4E2D;&#xFF0C;&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x5957;&#x7EE7;&#x627F;&#x673A;&#x5236;&#x3002;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CryptoJS.lib.Base</div></pre></td></tr></table></figure></p>
+<h3>WordArray</h3>
+<p>&#x4E00;&#x4E2A;32&#x4F4D;&#x5B57;&#x7684;&#x6570;&#x7EC4;&#x3002;&#x7EE7;&#x627F;<code>Base</code>&#x3002;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CryptoJS.lib.WordArray</div></pre></td></tr></table></figure></p>
+<p>&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF1A;
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = wordArray + <span class="string">&apos;&apos;</span>;</div><div class="line"><span class="keyword">var</span> string = wordArray.toString();</div><div class="line"><span class="keyword">var</span> string = wordArray.toString(CryptoJS.enc.Utf8);</div></pre></td></tr></table></figure></p>
 <p><code>toString()</code>&#x65B9;&#x6CD5;&#x6709;&#x4E00;&#x4E2A;<code>encoder</code>&#x53C2;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;<code>CryptoJS.enc.Hex</code>&#x3002;</p>
-<h3 id="BufferedBlockAlgorithm"><a href="#BufferedBlockAlgorithm" class="headerlink" title="BufferedBlockAlgorithm"></a>BufferedBlockAlgorithm</h3><p>&#x7F13;&#x51B2;&#x5757;&#x7B97;&#x6CD5;&#x62BD;&#x8C61;&#x6A21;&#x677F;&#x3002;&#x7EE7;&#x627F;<code>Base</code>&#x3002;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CryptoJS.lib.BufferedBlockAlgorithm</div></pre></td></tr></table></figure></p>
-<h3 id="Hasher"><a href="#Hasher" class="headerlink" title="Hasher"></a>Hasher</h3><p>hash&#x7B97;&#x6CD5;&#x62BD;&#x8C61;&#x6A21;&#x677F;&#x3002;&#x7EE7;&#x627F;<code>BufferedBlockAlgorithm</code>&#x3002;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CryptoJS.lib.Hasher</div></pre></td></tr></table></figure></p>
-<h2 id="&#x7F16;&#x7801;&#x5668;"><a href="#&#x7F16;&#x7801;&#x5668;" class="headerlink" title="&#x7F16;&#x7801;&#x5668;"></a>&#x7F16;&#x7801;&#x5668;</h2><h3 id="Hex"><a href="#Hex" class="headerlink" title="Hex"></a>Hex</h3><p>&#x63D0;&#x4F9B;16&#x8FDB;&#x5236;&#x7F16;&#x89E3;&#x7801;&#x652F;&#x6301;&#x3002;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CryptoJS.enc.Hex</div></pre></td></tr></table></figure></p>
-<h3 id="Latin1"><a href="#Latin1" class="headerlink" title="Latin1"></a>Latin1</h3><p><code>ISO 8859-1</code>&#xFF0C;&#x6B63;&#x5F0F;&#x7F16;&#x53F7;&#x4E3A;<code>ISO/IEC 8859-1:1998</code>&#xFF0C;&#x53C8;&#x79F0;<code>Latin-1</code>&#x6216;<code>&#x201C;&#x897F;&#x6B27;&#x8BED;&#x8A00;&#x201D;</code>&#xFF0C;&#x662F;&#x56FD;&#x9645;&#x6807;&#x51C6;&#x5316;&#x7EC4;&#x7EC7;&#x5185;<code>ISO/IEC 8859</code>&#x7684;&#x7B2C;&#x4E00;&#x4E2A;<code>8&#x4F4D;&#x5B57;&#x7B26;&#x96C6;</code>&#x3002;&#x5B83;&#x4EE5;ASCII&#x4E3A;&#x57FA;&#x7840;&#xFF0C;&#x5728;&#x7A7A;&#x7F6E;&#x7684;<code>0xA0-0xFF</code>&#x7684;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x52A0;&#x5165;96&#x4E2A;&#x5B57;&#x6BCD;&#x53CA;&#x7B26;&#x53F7;&#xFF0C;&#x85C9;&#x4EE5;&#x4F9B;&#x4F7F;&#x7528;&#x9644;&#x52A0;&#x7B26;&#x53F7;&#x7684;&#x62C9;&#x4E01;&#x5B57;&#x6BCD;&#x8BED;&#x8A00;&#x4F7F;&#x7528;&#x3002;<a href="https://zh.wikipedia.org/wiki/ISO/IEC_8859-1" target="_blank" rel="external">&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;</a>&#x3002;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CryptoJS.enc.Hex</div></pre></td></tr></table></figure></p>
-<h3 id="Utf8"><a href="#Utf8" class="headerlink" title="Utf8"></a>Utf8</h3><p>&#x63D0;&#x4F9B;UTF-8&#x7F16;&#x89E3;&#x7801;&#x652F;&#x6301;&#x3002;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CryptoJS.enc.Utf8</div></pre></td></tr></table></figure></p>
-<h1 id="&#x6A21;&#x5757;&#x5217;&#x8868;"><a href="#&#x6A21;&#x5757;&#x5217;&#x8868;" class="headerlink" title="&#x6A21;&#x5757;&#x5217;&#x8868;"></a>&#x6A21;&#x5757;&#x5217;&#x8868;</h1><h2 id="&#x6838;&#x5FC3;&#x6A21;&#x5757;"><a href="#&#x6838;&#x5FC3;&#x6A21;&#x5757;" class="headerlink" title="&#x6838;&#x5FC3;&#x6A21;&#x5757;"></a>&#x6838;&#x5FC3;&#x6A21;&#x5757;</h2><ul class="ui list">
+<h3>BufferedBlockAlgorithm</h3>
+<p>&#x7F13;&#x51B2;&#x5757;&#x7B97;&#x6CD5;&#x62BD;&#x8C61;&#x6A21;&#x677F;&#x3002;&#x7EE7;&#x627F;<code>Base</code>&#x3002;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CryptoJS.lib.BufferedBlockAlgorithm</div></pre></td></tr></table></figure></p>
+<h3>Hasher</h3>
+<p>hash&#x7B97;&#x6CD5;&#x62BD;&#x8C61;&#x6A21;&#x677F;&#x3002;&#x7EE7;&#x627F;<code>BufferedBlockAlgorithm</code>&#x3002;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CryptoJS.lib.Hasher</div></pre></td></tr></table></figure></p>
+<h2>&#x7F16;&#x7801;&#x5668;</h2>
+<h3>Hex</h3>
+<p>&#x63D0;&#x4F9B;16&#x8FDB;&#x5236;&#x7F16;&#x89E3;&#x7801;&#x652F;&#x6301;&#x3002;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CryptoJS.enc.Hex</div></pre></td></tr></table></figure></p>
+<h3>Latin1</h3>
+<p><code>ISO 8859-1</code>&#xFF0C;&#x6B63;&#x5F0F;&#x7F16;&#x53F7;&#x4E3A;<code>ISO/IEC 8859-1:1998</code>&#xFF0C;&#x53C8;&#x79F0;<code>Latin-1</code>&#x6216;<code>&#x201C;&#x897F;&#x6B27;&#x8BED;&#x8A00;&#x201D;</code>&#xFF0C;&#x662F;&#x56FD;&#x9645;&#x6807;&#x51C6;&#x5316;&#x7EC4;&#x7EC7;&#x5185;<code>ISO/IEC 8859</code>&#x7684;&#x7B2C;&#x4E00;&#x4E2A;<code>8&#x4F4D;&#x5B57;&#x7B26;&#x96C6;</code>&#x3002;&#x5B83;&#x4EE5;ASCII&#x4E3A;&#x57FA;&#x7840;&#xFF0C;&#x5728;&#x7A7A;&#x7F6E;&#x7684;<code>0xA0-0xFF</code>&#x7684;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x52A0;&#x5165;96&#x4E2A;&#x5B57;&#x6BCD;&#x53CA;&#x7B26;&#x53F7;&#xFF0C;&#x85C9;&#x4EE5;&#x4F9B;&#x4F7F;&#x7528;&#x9644;&#x52A0;&#x7B26;&#x53F7;&#x7684;&#x62C9;&#x4E01;&#x5B57;&#x6BCD;&#x8BED;&#x8A00;&#x4F7F;&#x7528;&#x3002;<a href="https://zh.wikipedia.org/wiki/ISO/IEC_8859-1" target="_blank" rel="external">&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;</a>&#x3002;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CryptoJS.enc.Hex</div></pre></td></tr></table></figure></p>
+<h3>Utf8</h3>
+<p>&#x63D0;&#x4F9B;UTF-8&#x7F16;&#x89E3;&#x7801;&#x652F;&#x6301;&#x3002;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CryptoJS.enc.Utf8</div></pre></td></tr></table></figure></p>
+<h1>&#x6A21;&#x5757;&#x5217;&#x8868;</h1>
+<h2>&#x6838;&#x5FC3;&#x6A21;&#x5757;</h2>
+<ul class="ui list">
 <li><code>crypto-js/core</code></li>
 <li><code>crypto-js/x64-core</code></li>
 <li><code>crypto-js/lib-typedarrays</code></li>
 </ul>
-<h2 id="&#x54C8;&#x5E0C;&#x7B97;&#x6CD5;&#x6A21;&#x5757;"><a href="#&#x54C8;&#x5E0C;&#x7B97;&#x6CD5;&#x6A21;&#x5757;" class="headerlink" title="&#x54C8;&#x5E0C;&#x7B97;&#x6CD5;&#x6A21;&#x5757;"></a>&#x54C8;&#x5E0C;&#x7B97;&#x6CD5;&#x6A21;&#x5757;</h2><ul class="ui list">
+<h2>&#x54C8;&#x5E0C;&#x7B97;&#x6CD5;&#x6A21;&#x5757;</h2>
+<ul class="ui list">
 <li><code>crypto-js/md5</code></li>
 <li><code>crypto-js/sha1</code></li>
 <li><code>crypto-js/sha256</code></li>
@@ -264,7 +293,8 @@
 <li><code>crypto-js/sha3</code></li>
 <li><code>crypto-js/ripemd160</code></li>
 </ul>
-<h2 id="HMAC&#x7B97;&#x6CD5;&#x6A21;&#x5757;"><a href="#HMAC&#x7B97;&#x6CD5;&#x6A21;&#x5757;" class="headerlink" title="HMAC&#x7B97;&#x6CD5;&#x6A21;&#x5757;"></a>HMAC&#x7B97;&#x6CD5;&#x6A21;&#x5757;</h2><ul class="ui list">
+<h2>HMAC&#x7B97;&#x6CD5;&#x6A21;&#x5757;</h2>
+<ul class="ui list">
 <li><code>crypto-js/hmac-md5</code></li>
 <li><code>crypto-js/hmac-sha1</code></li>
 <li><code>crypto-js/hmac-sha256</code></li>
@@ -274,10 +304,12 @@
 <li><code>crypto-js/hmac-sha3</code></li>
 <li><code>crypto-js/hmac-ripemd160</code></li>
 </ul>
-<h2 id="PBKDF2&#x7B97;&#x6CD5;"><a href="#PBKDF2&#x7B97;&#x6CD5;" class="headerlink" title="PBKDF2&#x7B97;&#x6CD5;"></a>PBKDF2&#x7B97;&#x6CD5;</h2><ul class="ui list">
+<h2>PBKDF2&#x7B97;&#x6CD5;</h2>
+<ul class="ui list">
 <li><code>crypto-js/pbkdf2</code></li>
 </ul>
-<h2 id="&#x52A0;&#x89E3;&#x5BC6;&#x6A21;&#x5757;"><a href="#&#x52A0;&#x89E3;&#x5BC6;&#x6A21;&#x5757;" class="headerlink" title="&#x52A0;&#x89E3;&#x5BC6;&#x6A21;&#x5757;"></a>&#x52A0;&#x89E3;&#x5BC6;&#x6A21;&#x5757;</h2><ul class="ui list">
+<h2>&#x52A0;&#x89E3;&#x5BC6;&#x6A21;&#x5757;</h2>
+<ul class="ui list">
 <li><code>crypto-js/aes</code></li>
 <li><code>crypto-js/tripledes</code></li>
 <li><code>crypto-js/rc4</code></li>
@@ -285,25 +317,29 @@
 <li><code>crypto-js/rabbit-legacy</code></li>
 <li><code>crypto-js/evpkdf</code></li>
 </ul>
-<h2 id="&#x683C;&#x5F0F;&#x5316;&#x6A21;&#x5757;"><a href="#&#x683C;&#x5F0F;&#x5316;&#x6A21;&#x5757;" class="headerlink" title="&#x683C;&#x5F0F;&#x5316;&#x6A21;&#x5757;"></a>&#x683C;&#x5F0F;&#x5316;&#x6A21;&#x5757;</h2><ul class="ui list">
+<h2>&#x683C;&#x5F0F;&#x5316;&#x6A21;&#x5757;</h2>
+<ul class="ui list">
 <li><code>crypto-js/format-openssl</code></li>
 <li><code>crypto-js/format-hex</code></li>
 </ul>
-<h2 id="&#x7F16;&#x89E3;&#x7801;&#x6A21;&#x5757;"><a href="#&#x7F16;&#x89E3;&#x7801;&#x6A21;&#x5757;" class="headerlink" title="&#x7F16;&#x89E3;&#x7801;&#x6A21;&#x5757;"></a>&#x7F16;&#x89E3;&#x7801;&#x6A21;&#x5757;</h2><ul class="ui list">
+<h2>&#x7F16;&#x89E3;&#x7801;&#x6A21;&#x5757;</h2>
+<ul class="ui list">
 <li><code>crypto-js/enc-latin1</code></li>
 <li><code>crypto-js/enc-utf8</code></li>
 <li><code>crypto-js/enc-hex</code></li>
 <li><code>crypto-js/enc-utf16</code></li>
 <li><code>crypto-js/enc-base64</code></li>
 </ul>
-<h2 id="&#x5DE5;&#x4F5C;&#x6A21;&#x5F0F;&#x6A21;&#x5757;"><a href="#&#x5DE5;&#x4F5C;&#x6A21;&#x5F0F;&#x6A21;&#x5757;" class="headerlink" title="&#x5DE5;&#x4F5C;&#x6A21;&#x5F0F;&#x6A21;&#x5757;"></a>&#x5DE5;&#x4F5C;&#x6A21;&#x5F0F;&#x6A21;&#x5757;</h2><ul class="ui list">
+<h2>&#x5DE5;&#x4F5C;&#x6A21;&#x5F0F;&#x6A21;&#x5757;</h2>
+<ul class="ui list">
 <li><code>crypto-js/mode-cfb</code></li>
 <li><code>crypto-js/mode-ctr</code></li>
 <li><code>crypto-js/mode-ctr-gladman</code></li>
 <li><code>crypto-js/mode-ofb</code></li>
 <li><code>crypto-js/mode-ecb</code></li>
 </ul>
-<h2 id="&#x586B;&#x5145;&#x65B9;&#x5F0F;&#x6A21;&#x5757;"><a href="#&#x586B;&#x5145;&#x65B9;&#x5F0F;&#x6A21;&#x5757;" class="headerlink" title="&#x586B;&#x5145;&#x65B9;&#x5F0F;&#x6A21;&#x5757;"></a>&#x586B;&#x5145;&#x65B9;&#x5F0F;&#x6A21;&#x5757;</h2><ul class="ui list">
+<h2>&#x586B;&#x5145;&#x65B9;&#x5F0F;&#x6A21;&#x5757;</h2>
+<ul class="ui list">
 <li><code>crypto-js/pad-pkcs7</code></li>
 <li><code>crypto-js/pad-ansix923</code></li>
 <li><code>crypto-js/pad-iso10126</code></li>
@@ -403,7 +439,7 @@
 
                 <div class="ui sticky article-toc" id="article-toc">
                     <!-- toc -->
-                    <ol class="ui ordered list"><li><a href="#Node-js-install"><span>Node.js(install)</span></a></li><li><a href="#使用示例"><span>使用示例</span></a><ol><li><a href="#ES6-中使用"><span>ES6 中使用</span></a></li><li><a href="#在模块系统中使用"><span>在模块系统中使用</span></a></li><li><a href="#导入所有的模块"><span>导入所有的模块</span></a></li><li><a href="#在浏览器中使用"><span>在浏览器中使用</span></a></li></ol></li><li><a href="#API"><span>API</span></a><ol><li><a href="#文本加解密"><span>文本加解密</span></a></li><li><a href="#对象类型加解密"><span>对象类型加解密</span></a></li><li><a href="#库命名空间"><span>库命名空间</span></a><ol><li><a href="#Base"><span>Base</span></a></li><li><a href="#WordArray"><span>WordArray</span></a></li><li><a href="#BufferedBlockAlgorithm"><span>BufferedBlockAlgorithm</span></a></li><li><a href="#Hasher"><span>Hasher</span></a></li></ol></li><li><a href="#编码器"><span>编码器</span></a><ol><li><a href="#Hex"><span>Hex</span></a></li><li><a href="#Latin1"><span>Latin1</span></a></li><li><a href="#Utf8"><span>Utf8</span></a></li></ol></li></ol></li><li><a href="#模块列表"><span>模块列表</span></a><ol><li><a href="#核心模块"><span>核心模块</span></a></li><li><a href="#哈希算法模块"><span>哈希算法模块</span></a></li><li><a href="#HMAC算法模块"><span>HMAC算法模块</span></a></li><li><a href="#PBKDF2算法"><span>PBKDF2算法</span></a></li><li><a href="#加解密模块"><span>加解密模块</span></a></li><li><a href="#格式化模块"><span>格式化模块</span></a></li><li><a href="#编解码模块"><span>编解码模块</span></a></li><li><a href="#工作模式模块"><span>工作模式模块</span></a></li><li><a href="#填充方式模块"><span>填充方式模块</span></a></li></ol></li></ol>
+                    <ol class="ui ordered list"><li><a href="#undefined"><span>Node.js(install)</span></a></li><li><a href="#undefined"><span>使用示例</span></a><ol><li><a href="#undefined"><span>ES6 中使用</span></a></li><li><a href="#undefined"><span>在模块系统中使用</span></a></li><li><a href="#undefined"><span>导入所有的模块</span></a></li><li><a href="#undefined"><span>在浏览器中使用</span></a></li></ol></li><li><a href="#undefined"><span>API</span></a><ol><li><a href="#undefined"><span>文本加解密</span></a></li><li><a href="#undefined"><span>对象类型加解密</span></a></li><li><a href="#undefined"><span>库命名空间</span></a><ol><li><a href="#undefined"><span>Base</span></a></li><li><a href="#undefined"><span>WordArray</span></a></li><li><a href="#undefined"><span>BufferedBlockAlgorithm</span></a></li><li><a href="#undefined"><span>Hasher</span></a></li></ol></li><li><a href="#undefined"><span>编码器</span></a><ol><li><a href="#undefined"><span>Hex</span></a></li><li><a href="#undefined"><span>Latin1</span></a></li><li><a href="#undefined"><span>Utf8</span></a></li></ol></li></ol></li><li><a href="#undefined"><span>模块列表</span></a><ol><li><a href="#undefined"><span>核心模块</span></a></li><li><a href="#undefined"><span>哈希算法模块</span></a></li><li><a href="#undefined"><span>HMAC算法模块</span></a></li><li><a href="#undefined"><span>PBKDF2算法</span></a></li><li><a href="#undefined"><span>加解密模块</span></a></li><li><a href="#undefined"><span>格式化模块</span></a></li><li><a href="#undefined"><span>编解码模块</span></a></li><li><a href="#undefined"><span>工作模式模块</span></a></li><li><a href="#undefined"><span>填充方式模块</span></a></li></ol></li></ol>
                 </div>
 
             </div>
@@ -412,7 +448,6 @@
         </div>
     </div>
 </div>
-
 
             </div>
             <div class="ui vertical footer segment">

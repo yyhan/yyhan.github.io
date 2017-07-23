@@ -200,7 +200,6 @@
 
     
 
-    
 </div>
 
         <div class="pusher body-content">
@@ -270,43 +269,59 @@
 </tr>
 </tbody>
 </table>
-<p>&#x4EE5;&#x4E0A;&#x53EA;&#x662F;&#x5E38;&#x7528;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x5173;&#x4E8E;setenv&#x811A;&#x672C;&#x7684;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x5185;&#x5BB9;&#x8BF7;&#x53C2;&#x8003;<code>CATALINA_HOME\bin\</code>&#x76EE;&#x5F55;&#x4E0B;&#x7684;<code>catalina.bat</code>&#x6216;<code>catalina.sh</code>&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4ECB;&#x7ECD;&#x3002;<br><a id="more"></a></p>
-<h3 id="setenv-bat&#x6587;&#x4EF6;&#x793A;&#x4F8B;"><a href="#setenv-bat&#x6587;&#x4EF6;&#x793A;&#x4F8B;" class="headerlink" title="setenv.bat&#x6587;&#x4EF6;&#x793A;&#x4F8B;"></a>setenv.bat&#x6587;&#x4EF6;&#x793A;&#x4F8B;</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@<span class="built_in">echo</span> off</div><div class="line"><span class="built_in">echo</span> ========  setenv <span class="built_in">start</span>  ========</div><div class="line"><span class="comment">rem &#x8BBE;&#x7F6E;JRE&#x6839;&#x76EE;&#x5F55;</span></div><div class="line"><span class="built_in">set</span> JRE_HOME=D:\Program Files\Java\jdk1.<span class="number">8</span>.<span class="number">0</span>_102\jre</div><div class="line"><span class="comment">rem &#x8BBE;&#x7F6E;JAVA&#x6839;&#x76EE;&#x5F55;</span></div><div class="line"><span class="built_in">set</span> JAVA_HOME=D:\Program Files\Java\jdk1.<span class="number">8</span>.<span class="number">0</span>_102</div><div class="line"><span class="comment">rem &#x8BBE;&#x7F6E;JAVA_OPTS</span></div><div class="line"><span class="built_in">set</span> JAVA_OPTS=<span class="variable">%JAVA_OPTS%</span></div><div class="line"><span class="comment">rem &#x8BBE;&#x7F6E;CATALINA_OPTS</span></div><div class="line"><span class="built_in">set</span> CATALINA_OPTS=-Dfile.encoding=UTF-<span class="number">8</span> -Duser.timezone=GMT+<span class="number">8</span></div><div class="line"><span class="built_in">echo</span> Using JRE_HOME:             <span class="variable">%JRE_HOME%</span></div><div class="line"><span class="built_in">echo</span> Using JAVA_HOME:            <span class="variable">%JAVA_HOME%</span></div><div class="line"><span class="built_in">echo</span> Using JAVA_OPTS:            <span class="variable">%JAVA_OPTS%</span></div><div class="line"><span class="built_in">echo</span> Using CATALINA_OPTS:        <span class="variable">%CATALINA_OPTS%</span></div><div class="line"><span class="built_in">echo</span> ======== setenv over ========</div></pre></td></tr></table></figure>
-<h3 id="&#x5173;&#x4E8E;CATALINA-HOME-&#x548C;-CATALINA-BASE"><a href="#&#x5173;&#x4E8E;CATALINA-HOME-&#x548C;-CATALINA-BASE" class="headerlink" title="&#x5173;&#x4E8E;CATALINA_HOME &#x548C; CATALINA_BASE"></a>&#x5173;&#x4E8E;CATALINA_HOME &#x548C; CATALINA_BASE</h3><p><code>CATALINA_HOME</code>&#x662F;tomcat&#x7684;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#xFF0C;<code>CATALINA_BASE</code>&#x662F;tomcat&#x5B9E;&#x4F8B;&#x7684;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x3002;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x4F8B;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x3002;</p>
+<p>&#x4EE5;&#x4E0A;&#x53EA;&#x662F;&#x5E38;&#x7528;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x5173;&#x4E8E;setenv&#x811A;&#x672C;&#x7684;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x5185;&#x5BB9;&#x8BF7;&#x53C2;&#x8003;<code>CATALINA_HOME\bin\</code>&#x76EE;&#x5F55;&#x4E0B;&#x7684;<code>catalina.bat</code>&#x6216;<code>catalina.sh</code>&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4ECB;&#x7ECD;&#x3002;
+&lt;!-- more --&gt;</p>
+<h3>setenv.bat&#x6587;&#x4EF6;&#x793A;&#x4F8B;</h3>
+<p><figure class="highlight bat"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@<span class="built_in">echo</span> off</div><div class="line"><span class="built_in">echo</span> ========  setenv <span class="built_in">start</span>  ========</div><div class="line"><span class="comment">rem &#x8BBE;&#x7F6E;JRE&#x6839;&#x76EE;&#x5F55;</span></div><div class="line"><span class="built_in">set</span> JRE_HOME=D:\Program Files\Java\jdk1.<span class="number">8</span>.<span class="number">0</span>_102\jre</div><div class="line"><span class="comment">rem &#x8BBE;&#x7F6E;JAVA&#x6839;&#x76EE;&#x5F55;</span></div><div class="line"><span class="built_in">set</span> JAVA_HOME=D:\Program Files\Java\jdk1.<span class="number">8</span>.<span class="number">0</span>_102</div><div class="line"><span class="comment">rem &#x8BBE;&#x7F6E;JAVA_OPTS</span></div><div class="line"><span class="built_in">set</span> JAVA_OPTS=<span class="variable">%JAVA_OPTS%</span></div><div class="line"><span class="comment">rem &#x8BBE;&#x7F6E;CATALINA_OPTS</span></div><div class="line"><span class="built_in">set</span> CATALINA_OPTS=-Dfile.encoding=UTF-<span class="number">8</span> -Duser.timezone=GMT+<span class="number">8</span></div><div class="line"><span class="built_in">echo</span> Using JRE_HOME:             <span class="variable">%JRE_HOME%</span></div><div class="line"><span class="built_in">echo</span> Using JAVA_HOME:            <span class="variable">%JAVA_HOME%</span></div><div class="line"><span class="built_in">echo</span> Using JAVA_OPTS:            <span class="variable">%JAVA_OPTS%</span></div><div class="line"><span class="built_in">echo</span> Using CATALINA_OPTS:        <span class="variable">%CATALINA_OPTS%</span></div><div class="line"><span class="built_in">echo</span> ======== setenv over ========</div></pre></td></tr></table></figure></p>
+<h3>&#x5173;&#x4E8E;CATALINA_HOME &#x548C; CATALINA_BASE</h3>
+<p><code>CATALINA_HOME</code>&#x662F;tomcat&#x7684;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#xFF0C;<code>CATALINA_BASE</code>&#x662F;tomcat&#x5B9E;&#x4F8B;&#x7684;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x3002;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x4F8B;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x3002;</p>
 <p><code>CATALINA_BASE</code>&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x76EE;&#x5F55;&#x548C;&#x6587;&#x4EF6;&#xFF1A;</p>
 <ul class="ui list">
-<li><p>bin  - &#x53EA;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x6587;&#x4EF6;:</p>
-<pre><code> * setenv.sh (*nix) or setenv.bat (Windows),
- * tomcat-juli.jar
+<li>
+<p>bin  - &#x53EA;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x6587;&#x4EF6;:</p>
+<pre><code>    * setenv.sh (*nix) or setenv.bat (Windows),
+    * tomcat-juli.jar
 
-The setenv scripts were described above. The tomcat-juli library
-is documented in the Logging chapter in the User Guide.
-</code></pre></li>
-<li><p>conf - &#x670D;&#x52A1;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x76EE;&#x5F55; (including server.xml)</p>
+   The setenv scripts were described above. The tomcat-juli library
+   is documented in the Logging chapter in the User Guide.
+</code></pre>
 </li>
-<li><p>lib  - &#x5E93;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x3002;&#x5EFA;&#x8BAE;&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x548C;&#x7B2C;&#x4E09;&#x65B9;&#x7684;&#x5E93;&#x6587;&#x4EF6;&#x653E;&#x7F6E;&#x5728;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;</p>
+<li>
+<p>conf - &#x670D;&#x52A1;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x76EE;&#x5F55; (including server.xml)</p>
 </li>
-<li><p>logs - &#x65E5;&#x5FD7;&#x548C;&#x8F93;&#x51FA;&#x76EE;&#x5F55;</p>
+<li>
+<p>lib  - &#x5E93;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x3002;&#x5EFA;&#x8BAE;&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x548C;&#x7B2C;&#x4E09;&#x65B9;&#x7684;&#x5E93;&#x6587;&#x4EF6;&#x653E;&#x7F6E;&#x5728;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;</p>
 </li>
-<li><p>webapps - &#x81EA;&#x52A8;&#x52A0;&#x8F7D;&#x7684;web&#x5E94;&#x7528;&#x76EE;&#x5F55;</p>
+<li>
+<p>logs - &#x65E5;&#x5FD7;&#x548C;&#x8F93;&#x51FA;&#x76EE;&#x5F55;</p>
 </li>
-<li><p>work - web&#x5E94;&#x7528;&#x7684;&#x4E34;&#x65F6;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;</p>
+<li>
+<p>webapps - &#x81EA;&#x52A8;&#x52A0;&#x8F7D;&#x7684;web&#x5E94;&#x7528;&#x76EE;&#x5F55;</p>
 </li>
-<li><p>temp - JVM&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x76EE;&#x5F55;(java.io.tmpdir)</p>
+<li>
+<p>work - web&#x5E94;&#x7528;&#x7684;&#x4E34;&#x65F6;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;</p>
+</li>
+<li>
+<p>temp - JVM&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x76EE;&#x5F55;(java.io.tmpdir)</p>
 </li>
 </ul>
 <p><code>CATALINA_HOME</code>&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x76EE;&#x5F55;&#x548C;&#x6587;&#x4EF6;&#xFF1A;</p>
 <ul class="ui list">
-<li><p>bin  - &#x542F;&#x52A8;&#x548C;&#x5173;&#x95ED;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x76EE;&#x5F55;</p>
-<pre><code>&#x5F53;&#x4EE5;&#x4E0B;&#x6587;&#x4EF6;&#x4E0D;&#x5728;`CATALINA_BASE/bin`&#x76EE;&#x5F55;&#x65F6;&#x5C06;&#x4F1A;&#x88AB;&#x4F7F;&#x7528;:
+<li>
+<p>bin  - &#x542F;&#x52A8;&#x548C;&#x5173;&#x95ED;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x76EE;&#x5F55;</p>
+<pre><code>   &#x5F53;&#x4EE5;&#x4E0B;&#x6587;&#x4EF6;&#x4E0D;&#x5728;`CATALINA_BASE/bin`&#x76EE;&#x5F55;&#x65F6;&#x5C06;&#x4F1A;&#x88AB;&#x4F7F;&#x7528;:
 
-setenv.sh (*nix), setenv.bat (Windows), tomcat-juli.jar
-</code></pre></li>
-<li><p>lib  - &#x5E93;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x3002;&#x5EFA;&#x8BAE;&#x53EA;&#x653E;&#x7F6E;&#x6807;&#x51C6;tomcat&#x5E93;&#x6587;&#x4EF6;</p>
+   setenv.sh (*nix), setenv.bat (Windows), tomcat-juli.jar
+</code></pre>
+</li>
+<li>
+<p>lib  - &#x5E93;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x3002;&#x5EFA;&#x8BAE;&#x53EA;&#x653E;&#x7F6E;&#x6807;&#x51C6;tomcat&#x5E93;&#x6587;&#x4EF6;</p>
 </li>
 </ul>
-<p>&#x5173;&#x4E8E;CATALINA_HOME &#x548C; CATALINA_BASE&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="https://github.com/apache/tomcat/blob/trunk/RUNNING.txt" target="_blank" rel="external">RUNNING.txt</a><br>&#x5176;&#x4E2D;&#x5173;&#x4E8E;&#x8FD9;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x539F;&#x6587;&#x63CF;&#x8FF0;&#x5982;&#x4E0B;&#xFF1A;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">==================================================</div><div class="line">Advanced Configuration - Multiple Tomcat Instances</div><div class="line">==================================================</div><div class="line"></div><div class="line">In many circumstances, it is desirable to have a single copy of a Tomcat</div><div class="line">binary distribution shared among multiple users on the same server.  To make</div><div class="line">this possible, you can set the CATALINA_BASE environment variable to the</div><div class="line">directory that contains the files for your &apos;personal&apos; Tomcat instance.</div><div class="line"></div><div class="line">When running with a separate CATALINA_HOME and CATALINA_BASE, the files</div><div class="line">and directories are split as following:</div><div class="line"></div><div class="line">In CATALINA_BASE:</div><div class="line"></div><div class="line"> * bin  - Only the following files:</div><div class="line"></div><div class="line">           * setenv.sh (*nix) or setenv.bat (Windows),</div><div class="line">           * tomcat-juli.jar</div><div class="line"></div><div class="line">          The setenv scripts were described above. The tomcat-juli library</div><div class="line">          is documented in the Logging chapter in the User Guide.</div><div class="line"></div><div class="line"> * conf - Server configuration files (including server.xml)</div><div class="line"></div><div class="line"> * lib  - Libraries and classes, as explained below</div><div class="line"></div><div class="line"> * logs - Log and output files</div><div class="line"></div><div class="line"> * webapps - Automatically loaded web applications</div><div class="line"></div><div class="line"> * work - Temporary working directories for web applications</div><div class="line"></div><div class="line"> * temp - Directory used by the JVM for temporary files (java.io.tmpdir)</div><div class="line"></div><div class="line"></div><div class="line">In CATALINA_HOME:</div><div class="line"></div><div class="line"> * bin  - Startup and shutdown scripts</div><div class="line"></div><div class="line">          The following files will be used only if they are absent in</div><div class="line">          CATALINA_BASE/bin:</div><div class="line"></div><div class="line">          setenv.sh (*nix), setenv.bat (Windows), tomcat-juli.jar</div><div class="line"></div><div class="line"> * lib  - Libraries and classes, as explained below</div><div class="line"></div><div class="line">In the default configuration the JAR libraries and classes both in</div><div class="line">CATALINA_BASE/lib and in CATALINA_HOME/lib will be added to the common</div><div class="line">classpath, but the ones in CATALINA_BASE will be added first and thus will</div><div class="line">be searched first.</div><div class="line"></div><div class="line">The idea is that you may leave the standard Tomcat libraries in</div><div class="line">CATALINA_HOME/lib and add other ones such as database drivers into</div><div class="line">CATALINA_BASE/lib.</div></pre></td></tr></table></figure>
+<p>&#x5173;&#x4E8E;CATALINA_HOME &#x548C; CATALINA_BASE&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="https://github.com/apache/tomcat/blob/trunk/RUNNING.txt" target="_blank" rel="external">RUNNING.txt</a><br>
+&#x5176;&#x4E2D;&#x5173;&#x4E8E;&#x8FD9;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x539F;&#x6587;&#x63CF;&#x8FF0;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">==================================================</div><div class="line">Advanced Configuration - Multiple Tomcat Instances</div><div class="line">==================================================</div><div class="line"></div><div class="line">In many circumstances, it is desirable to have a single copy of a Tomcat</div><div class="line">binary distribution shared among multiple users on the same server.  To make</div><div class="line">this possible, you can set the CATALINA_BASE environment variable to the</div><div class="line">directory that contains the files for your &apos;personal&apos; Tomcat instance.</div><div class="line"></div><div class="line">When running with a separate CATALINA_HOME and CATALINA_BASE, the files</div><div class="line">and directories are split as following:</div><div class="line"></div><div class="line">In CATALINA_BASE:</div><div class="line"></div><div class="line"> * bin  - Only the following files:</div><div class="line"></div><div class="line">           * setenv.sh (*nix) or setenv.bat (Windows),</div><div class="line">           * tomcat-juli.jar</div><div class="line"></div><div class="line">          The setenv scripts were described above. The tomcat-juli library</div><div class="line">          is documented in the Logging chapter in the User Guide.</div><div class="line"></div><div class="line"> * conf - Server configuration files (including server.xml)</div><div class="line"></div><div class="line"> * lib  - Libraries and classes, as explained below</div><div class="line"></div><div class="line"> * logs - Log and output files</div><div class="line"></div><div class="line"> * webapps - Automatically loaded web applications</div><div class="line"></div><div class="line"> * work - Temporary working directories for web applications</div><div class="line"></div><div class="line"> * temp - Directory used by the JVM for temporary files (java.io.tmpdir)</div><div class="line"></div><div class="line"></div><div class="line">In CATALINA_HOME:</div><div class="line"></div><div class="line"> * bin  - Startup and shutdown scripts</div><div class="line"></div><div class="line">          The following files will be used only if they are absent in</div><div class="line">          CATALINA_BASE/bin:</div><div class="line"></div><div class="line">          setenv.sh (*nix), setenv.bat (Windows), tomcat-juli.jar</div><div class="line"></div><div class="line"> * lib  - Libraries and classes, as explained below</div><div class="line"></div><div class="line">In the default configuration the JAR libraries and classes both in</div><div class="line">CATALINA_BASE/lib and in CATALINA_HOME/lib will be added to the common</div><div class="line">classpath, but the ones in CATALINA_BASE will be added first and thus will</div><div class="line">be searched first.</div><div class="line"></div><div class="line">The idea is that you may leave the standard Tomcat libraries in</div><div class="line">CATALINA_HOME/lib and add other ones such as database drivers into</div><div class="line">CATALINA_BASE/lib.</div></pre></td></tr></table></figure></p>
+
                         
                     </div>
 
@@ -383,7 +398,7 @@ setenv.sh (*nix), setenv.bat (Windows), tomcat-juli.jar
 
                 <div class="ui sticky article-toc" id="article-toc">
                     <!-- toc -->
-                    <ol class="ui ordered list"><li><a href="#setenv-bat文件示例"><span>setenv.bat文件示例</span></a></li><li><a href="#关于CATALINA-HOME-和-CATALINA-BASE"><span>关于CATALINA_HOME 和 CATALINA_BASE</span></a></li></ol>
+                    <ol class="ui ordered list"><li><a href="#undefined"><span>setenv.bat文件示例</span></a></li><li><a href="#undefined"><span>关于CATALINA_HOME 和 CATALINA_BASE</span></a></li></ol>
                 </div>
 
             </div>
@@ -392,7 +407,6 @@ setenv.sh (*nix), setenv.bat (Windows), tomcat-juli.jar
         </div>
     </div>
 </div>
-
 
             </div>
             <div class="ui vertical footer segment">
