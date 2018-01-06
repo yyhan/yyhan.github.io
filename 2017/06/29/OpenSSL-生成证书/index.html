@@ -228,33 +228,33 @@
                         
                         <h1>&#x751F;&#x6210;&#x6839;&#x8BC1;&#x4E66;&#x548C;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;</h1>
 <p>1&#x3001;&#x751F;&#x6210;&#x6839;&#x8BC1;&#x4E66;RSA&#x5BC6;&#x94A5;&#x5BF9;</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl genrsa -out ca.key 2048</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out ca.key 2048</span><br></pre></td></tr></table></figure></p>
 <p>2&#x3001;&#x751F;&#x6210;&#x81EA;&#x7B7E;&#x540D;&#x6839;&#x8BC1;&#x4E66;</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl req -new -x509 -days 365 -key a.key -out a.csr</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -new -x509 -days 365 -key a.key -out a.csr</span><br></pre></td></tr></table></figure></p>
 <p>3&#x3001;&#x8F6C;&#x6362;&#x8BC1;&#x4E66;&#x683C;&#x5F0F;&#xFF08;&#x975E;&#x5FC5;&#x987B;&#xFF09;
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl x509 -<span class="keyword">in</span> ca.csr -out ca.crt</div></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -<span class="keyword">in</span> ca.csr -out ca.crt</span><br></pre></td></tr></table></figure></p>
 <p>4&#x3001;&#x751F;&#x6210;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;RSA&#x5BC6;&#x94A5;&#x5BF9;&#xFF1A;
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl genrsa -out server.key 2048</div></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out server.key 2048</span><br></pre></td></tr></table></figure></p>
 <p>5&#x3001;&#x751F;&#x6210;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;&#x7B7E;&#x540D;&#x8BF7;&#x6C42;
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl req -new -sha256 -key server.key -out server.csr</div></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -new -sha256 -key server.key -out server.csr</span><br></pre></td></tr></table></figure></p>
 <p>6&#x3001;&#x5BF9;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;&#x7B7E;&#x540D;
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl x509 -req -<span class="keyword">in</span> server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt -days 30 -sha256 -extfile v3.ext</div></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -req -<span class="keyword">in</span> server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt -days 30 -sha256 -extfile v3.ext</span><br></pre></td></tr></table></figure></p>
 <p><code>v3.ext</code> &#x6307;&#x5B9A;&#x57DF;&#x540D;&#x7B49;&#x4FE1;&#x606F;
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">authorityKeyIdentifier=keyid,issuer</div><div class="line">basicConstraints=CA:FALSE</div><div class="line">keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment</div><div class="line">subjectAltName = @alt_names</div><div class="line"></div><div class="line">[alt_names]</div><div class="line">DNS.1 = it.jubaopay.com</div><div class="line">DNS.2 = b.jubaopay.com</div><div class="line">DNS.3 = oa.jubaopay.com</div></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">authorityKeyIdentifier</span>=keyid,issuer</span><br><span class="line"><span class="attr">basicConstraints</span>=CA:<span class="literal">FALSE</span></span><br><span class="line"><span class="attr">keyUsage</span> = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment</span><br><span class="line"><span class="attr">subjectAltName</span> = @alt_names</span><br><span class="line"></span><br><span class="line"><span class="section">[alt_names]</span></span><br><span class="line">DNS.1 = it.jubaopay.com</span><br><span class="line">DNS.2 = b.jubaopay.com</span><br><span class="line">DNS.3 = oa.jubaopay.com</span><br></pre></td></tr></table></figure></p>
 <p>&#x8C37;&#x6B4C;&#x6D4F;&#x89C8;&#x5668;&#x4F7F;&#x7528;<code>SAN (Subject Alternative Name)</code>&#x66FF;&#x4EE3;&#x4E86;<code>CN</code>&#x6765;&#x9A8C;&#x8BC1;&#x57DF;&#x540D;&#xFF0C;&#x6240;&#x4EE5;&#x5FC5;&#x987B;&#x8981;&#x8FD9;&#x6837;&#x641E;</p>
 <p>7&#x3001;&#x8F6C;&#x6362;&#x8BC1;&#x4E66;&#x683C;&#x5F0F;&#xFF08;&#x975E;&#x5FC5;&#x987B;&#xFF09;
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl x509 -<span class="keyword">in</span> nginxCert.pem -out nginx.crt</div></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -<span class="keyword">in</span> nginxCert.pem -out nginx.crt</span><br></pre></td></tr></table></figure></p>
 <h1>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h1>
 <h2>&#x8BC1;&#x4E66;&#x683C;&#x5F0F;&#x8F6C;&#x6362;</h2>
 <p>&#x8F6C;&#x6362;&#x8BC1;&#x4E66;&#x683C;&#x5F0F;&#xFF08;<code>pem -&gt; crt</code>&#xFF09;
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl x509 -<span class="keyword">in</span> server.pem -out server.crt</div></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -<span class="keyword">in</span> server.pem -out server.crt</span><br></pre></td></tr></table></figure></p>
 <p>&#x8F6C;&#x6362;&#x8BC1;&#x4E66;&#x683C;&#x5F0F;&#xFF08;<code>pem -&gt; key</code>&#xFF09;
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl rsa -<span class="keyword">in</span> server.pem -out server.key</div></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl rsa -<span class="keyword">in</span> server.pem -out server.key</span><br></pre></td></tr></table></figure></p>
 <h2>&#x67E5;&#x770B;&#x8BC1;&#x4E66;&#x5185;&#x5BB9;</h2>
 <p>&#x67E5;&#x770B;<code>crt</code>&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF1A;
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl x509 -text -<span class="keyword">in</span> server.crt -noout</div></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -text -<span class="keyword">in</span> server.crt -noout</span><br></pre></td></tr></table></figure></p>
 <p>&#x67E5;&#x770B;<code>csr</code>&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF1A;
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl req -text -<span class="keyword">in</span> server.csr -noout</div></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -text -<span class="keyword">in</span> server.csr -noout</span><br></pre></td></tr></table></figure></p>
 
                         
                     </div>
@@ -356,7 +356,7 @@
             <div class="ui vertical footer segment">
     <div class="ui center aligned container">
         <div class="ui inverted section divider"></div>
-        &copy; 2017 <a href="/">YFHan</a>,
+        &copy; 2018 <a href="/">YFHan</a>,
         Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
                 href="http://hexo.io/" target="_blank">Hexo</a>.
     </div>
