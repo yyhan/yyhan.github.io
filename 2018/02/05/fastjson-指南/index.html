@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="JUST DO IT">
+    <title>
+        fastjson 指南 | YFHan的博客
+    </title>
+    <link rel="shortcut icon" href="/favicon.jpg"/>
+    
+
+    
+    
+    
+    <!-- stylesheets list from config.yml -->
+        
+            <link rel="stylesheet" href="/css/aloha.css">
+        
+            <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+    
+
+</head>
+
+<body id="body" style="margin-bottom: 0;" class="pushable">
+
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+
+        
+        
+
+        
+
+        
+        <a href="/index.html" class="item" >
+            <i class="home icon"></i>
+            首页
+        </a>
+
+        
+        
+
+        
+
+        
+        <a href="/archives/" class="item" >
+            <i class="archive icon"></i>
+            归档
+        </a>
+
+        
+        
+
+        
+
+        
+        <a href="/atom.xml" class="item" >
+            <i class="rss icon"></i>
+            RSS
+        </a>
+
+        
+        
+
+        
+
+        
+        <a href="/about" class="item" >
+            <i class="mail icon"></i>
+            关于
+        </a>
+
+        
+        
+
+        
+
+        
+        <a href="https://github.com/yyhan" class="item" >
+            <i class="github icon"></i>
+            github
+        </a>
+
+        
+        <!--<a class="item" href=""><i class="github icon"></i></a>-->
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>YFHan的博客</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/favicon_400x400.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">
+                        YFHan
+                    </a>
+                    
+                        <div class="meta">
+                            Programer / Dotaor
+                        </div>
+                        
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                            <div class="item">
+                                <i class="marker icon" style="float: left"></i>
+                                <div class="content">
+                                    杭州
+                                </div>
+                            </div>
+                            
+                                
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+
+                            <a href="https://github.com/yyhan"><i class="large github icon" style="float: left"></i></a>
+
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item" >
+        <i class="home icon"></i>
+        首页
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/archives/" class="item" >
+        <i class="archive icon"></i>
+        归档
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/atom.xml" class="item" >
+        <i class="rss icon"></i>
+        RSS
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/about" class="item" >
+        <i class="mail icon"></i>
+        关于
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="https://github.com/yyhan" class="item" >
+        <i class="github icon"></i>
+        github
+    </a>
+
+    
+
+</div>
+
+        <div class="pusher body-content">
+            <div id="content" class="ui main container">
+                <div id="post-fastjson-指南" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    fastjson 指南
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <h1>&#x7B80;&#x4ECB;</h1>
+<p><a href="https://github.com/alibaba/fastjson" target="_blank" rel="noopener">fastjson</a>  &#x662F;&#x963F;&#x91CC;&#x5DF4;&#x5DF4;&#x51FA;&#x54C1;&#x7684;&#x9AD8;&#x6027;&#x80FD;json&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;&#x3002;</p>
+<p>&#x5728;maven&#x4E2D;&#x5F15;&#x7528;&#xFF1A;</p>
+<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>fastjson<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.44<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h1>&#x5E38;&#x7528;API</h1>
+<h2>JSON API</h2>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &#x5C06;&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A; json &#x683C;&#x5F0F;&#x7684;&#x5B57;&#x7B26;&#x4E32;</span></span><br><span class="line">JSON.toJSONString(person);</span><br><span class="line"><span class="comment">// &#x6307;&#x5B9A;&#x65E5;&#x671F;&#x683C;&#x5F0F;&#x5316;&#x65B9;&#x5F0F;</span></span><br><span class="line">JSON.toJSONStringWithDateFormat(person, <span class="string">&quot;yyyy-MM-dd&quot;</span>);</span><br><span class="line"></span><br><span class="line">String jsonStr = <span class="string">&quot;{id:1}&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// &#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x6790;&#x4E3A; JSONObject &#x5BF9;&#x8C61;</span></span><br><span class="line">JSONObject jsonObject = JSON.parseObject(jsonStr);</span><br><span class="line"></span><br><span class="line"><span class="comment">// JSONObject &#x4F7F;&#x7528;</span></span><br><span class="line">Person personFromJson1 = jsonObject.toJavaObject(Person.class);</span><br><span class="line">System.out.println(jsonObject.getInteger(<span class="string">&quot;id&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// &#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x76F4;&#x63A5;&#x89E3;&#x6790;&#x4E3A; java &#x5BF9;&#x8C61;</span></span><br><span class="line">Person personFromJson2 = JSON.parseObject(jsonStr, Person.class);</span><br><span class="line"></span><br><span class="line">String jsonArrStr = <span class="string">&quot;[{id:1},{id:2}]&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// &#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x6790;&#x4E3A; JSONArray &#x5BF9;&#x8C61;</span></span><br><span class="line">JSONArray jsonArray = JSON.parseArray(jsonStr);</span><br><span class="line">List&lt;Person&gt; personListFromJson1 = jsonArray.toJavaList(Person.class);</span><br><span class="line"></span><br><span class="line"><span class="comment">// &#x5C06;&#x5B57;&#x7B26;&#x76F4;&#x63A5;&#x4E32;&#x89E3;&#x6790;&#x4E3A; java List &#x5BF9;&#x8C61;</span></span><br><span class="line">List&lt;Person&gt; personListFromJson2 = JSON.parseArray(jsonStr, Person.class);</span><br></pre></td></tr></table></figure></p>
+<h2>JSONField &#x6CE8;&#x89E3;</h2>
+<p><code>JSONField</code> &#x52A0;&#x5728;&#x5B57;&#x6BB5;&#x4E0A;&#xFF0C;&#x5BF9;&#x5B57;&#x6BB5;&#x5355;&#x72EC;&#x6307;&#x5B9A;&#x5E8F;&#x5217;&#x5316;&#x65B9;&#x5F0F;&#x3002;
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// &#x7981;&#x6B62;&#x5E8F;&#x5217;&#x5316;&#x5BC6;&#x7801;&#x5B57;&#x6BB5;</span></span><br><span class="line"><span class="meta">@JSONField</span>(serialize = <span class="keyword">false</span>)</span><br><span class="line"><span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line"><span class="comment">// &#x6307;&#x5B9A;&#x522B;&#x540D;</span></span><br><span class="line"><span class="meta">@JSONField</span>(name = <span class="string">&quot;&#x6027;&#x522B;&quot;</span>)</span><br><span class="line"><span class="keyword">private</span> Sex sex;</span><br><span class="line"></span><br><span class="line"><span class="comment">// &#x6307;&#x5B9A;&#x5E8F;&#x5217;&#x5316;&#x7C7B;</span></span><br><span class="line"><span class="meta">@JSONField</span>(serializeUsing = HelloBigDecimalSerializer.class)</span><br><span class="line"><span class="keyword">private</span> BigDecimal money;</span><br><span class="line"></span><br><span class="line"><span class="comment">// &#x5355;&#x72EC;&#x6307;&#x5B9A;&#x65E5;&#x671F;&#x683C;&#x5F0F;</span></span><br><span class="line"><span class="meta">@JSONField</span>(format = <span class="string">&quot;yyyy-MM-dd&quot;</span>)</span><br><span class="line"><span class="keyword">private</span> Date birthday;</span><br></pre></td></tr></table></figure></p>
+<h2>SerializerFeature</h2>
+<p><code>SerializerFeature</code> &#x662F;fastjson&#x7684;&#x5E8F;&#x5217;&#x5316;&#x7279;&#x6027;&#x679A;&#x4E3E;&#x7C7B;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x679A;&#x4E3E;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QuoteFieldNames</td>
+<td>&#x4F7F;&#x7528;&#x53CC;&#x5F15;&#x53F7;&#x5305;&#x56F4;&#x5B57;&#x6BB5;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>UseSingleQuotes</td>
+<td>&#x4F7F;&#x7528;&#x53CC;&#x5F15;&#x53F7;</td>
+</tr>
+<tr>
+<td>WriteMapNullValue</td>
+<td>&#x5E8F;&#x5217;&#x5316;map&#x4E2D;&#x7684;null</td>
+</tr>
+<tr>
+<td>WriteEnumUsingToString</td>
+<td>&#x7528;&#x679A;&#x4E3E;toString()&#x503C;&#x8F93;&#x51FA;</td>
+</tr>
+<tr>
+<td>WriteEnumUsingName</td>
+<td>&#x7528;&#x679A;&#x4E3E;name()&#x8F93;&#x51FA;</td>
+</tr>
+<tr>
+<td>UseISO8601DateFormat</td>
+<td>&#x4F7F;&#x7528; <a href="https://www.iso.org/iso-8601-date-and-time-format.html" target="_blank" rel="noopener">ISO8601</a> &#x6807;&#x51C6;&#x8F93;&#x51FA;&#x65E5;&#x671F;</td>
+</tr>
+<tr>
+<td>WriteNullListAsEmpty</td>
+<td>&#x5C06; null &#x503C;&#x7684; List &#x5E8F;&#x5217;&#x5316;&#x4E3A; <code>&quot;[]&quot;</code></td>
+</tr>
+<tr>
+<td>WriteNullStringAsEmpty</td>
+<td>&#x5C06; null &#x503C;&#x7684; String &#x5E8F;&#x5217;&#x5316;&#x4E3A; <code>&quot;&quot;</code></td>
+</tr>
+<tr>
+<td>WriteNullNumberAsZero</td>
+<td>&#x5C06; null &#x503C;&#x7684; Number &#x5E8F;&#x5217;&#x5316;&#x4E3A; <code>&quot;0&quot;</code></td>
+</tr>
+<tr>
+<td>WriteNullBooleanAsFalse</td>
+<td>&#x5C06; null &#x503C;&#x7684; Boolean &#x5E8F;&#x5217;&#x5316;&#x4E3A; <code>&quot;false&quot;</code></td>
+</tr>
+<tr>
+<td>SkipTransientField</td>
+<td>&#x8DF3;&#x8FC7; transient &#x5B57;&#x6BB5;</td>
+</tr>
+<tr>
+<td>SortField</td>
+<td>&#x5C06;&#x5B57;&#x6BB5;&#x6309;&#x7167;&#x5B57;&#x5178;&#x5E8F;&#x6392;&#x5217;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;&quot;{a:1,b:2,c:3}&quot;</td>
+</tr>
+<tr>
+<td>SkipTransientField</td>
+<td>&#x8DF3;&#x8FC7; transient &#x5B57;&#x6BB5;</td>
+</tr>
+<tr>
+<td>SkipTransientField</td>
+<td>&#x8DF3;&#x8FC7; transient &#x5B57;&#x6BB5;</td>
+</tr>
+<tr>
+<td>SkipTransientField</td>
+<td>&#x8DF3;&#x8FC7; transient &#x5B57;&#x6BB5;</td>
+</tr>
+<tr>
+<td>SkipTransientField</td>
+<td>&#x8DF3;&#x8FC7; transient &#x5B57;&#x6BB5;</td>
+</tr>
+<tr>
+<td>SkipTransientField</td>
+<td>&#x8DF3;&#x8FC7; transient &#x5B57;&#x6BB5;</td>
+</tr>
+</tbody>
+</table>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> SerializerFeature {</span><br><span class="line">QuoteFieldNames,</span><br><span class="line"><span class="comment">// </span></span><br><span class="line">UseSingleQuotes,</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * </span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">WriteMapNullValue,</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * &#x7528;&#x679A;&#x4E3E;toString()&#x503C;&#x8F93;&#x51FA;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">WriteEnumUsingToString,</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * &#x7528;&#x679A;&#x4E3E;name()&#x8F93;&#x51FA;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">WriteEnumUsingName,</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * </span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">UseISO8601DateFormat,</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">WriteNullListAsEmpty,</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">WriteNullStringAsEmpty,</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">WriteNullNumberAsZero,</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">WriteNullBooleanAsFalse,</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">SkipTransientField,</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">SortField,</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1.1</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="meta">@Deprecated</span></span><br><span class="line">WriteTabAsSpecial,</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1.2</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">PrettyFormat,</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1.2</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">WriteClassName,</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1.6</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">DisableCircularReferenceDetect, <span class="comment">// 32768</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1.9</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">WriteSlashAsSpecial,</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1.10</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">BrowserCompatible,</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1.14</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">WriteDateUseDateFormat,</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1.15</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">NotWriteRootClassName,</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1.19</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@deprecated</span></span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">DisableCheckSpecialChar,</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1.35</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">BeanToArray,</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1.37</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">WriteNonStringKeyAsString,</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.1.42</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">NotWriteDefaultValue,</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.2.6</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">BrowserSecure,</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.2.7</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">IgnoreNonFieldGetter,</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.2.9</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">WriteNonStringValueAsString,</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.2.11</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">IgnoreErrorGetter,</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.2.16</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">WriteBigDecimalAsPlain,</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@since</span> 1.2.27</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">MapSortField;</span><br></pre></td></tr></table></figure></p>
+<h1>spring MVC &#x914D;&#x7F6E;</h1>
+<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;fastJsonConfig&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.alibaba.fastjson.support.config.FastJsonConfig&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;charset&quot;</span> <span class="attr">value</span>=<span class="string">&quot;UTF-8&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dateFormat&quot;</span> <span class="attr">value</span>=<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;features&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>IgnoreNotMatch<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>AllowUnQuotedFieldNames<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;serializerFeatures&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>WriteDateUseDateFormat<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>WriteMapNullValue<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;serializeConfig&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.alibaba.fastjson.serializer.SerializeConfig&quot;</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- &#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x7981;&#x7528; ASM &#xFF0C;fastjson &#x5728; ASM&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x5E8F;&#x5217;&#x5316;&#x7C7B;&#x4E0D;&#x8D77;&#x4F5C;&#x7528; --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;asmEnable&quot;</span> <span class="attr">value</span>=<span class="string">&quot;false&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">mvc:annotation-driven</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mvc:message-converters</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &#x8FD9;&#x4E2A;&#x4E00;&#x5B9A;&#x8981;&#x5728; FastJsonHttpMessageConverter &#x524D; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.http.converter.StringHttpMessageConverter&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;defaultCharset&quot;</span> <span class="attr">value</span>=<span class="string">&quot;UTF-8&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;supportedMediaTypes&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">value</span>&gt;</span>text/html<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">value</span>&gt;</span>application/json<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &#x914D;&#x7F6E;fastjson&#x89E3;&#x6790; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;supportedMediaTypes&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">value</span>&gt;</span>text/html<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">value</span>&gt;</span>application/json<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;defaultCharset&quot;</span> <span class="attr">value</span>=<span class="string">&quot;UTF-8&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;fastJsonConfig&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;fastJsonConfig&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mvc:message-converters</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mvc:annotation-driven</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h1>&#x81EA;&#x5B9A;&#x4E49;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x53CD;&#x5E8F;&#x5217;&#x5316;</h1>
+<p>&#x81EA;&#x5B9A;&#x4E49;&#x5E8F;&#x5217;&#x5316;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5B9E;&#x73B0; <code>com.alibaba.fastjson.serializer.ObjectSerializer</code> &#x63A5;&#x53E3;&#x3002;&#x5E76;&#x4E14;&#x9700;&#x8981;&#x6CE8;&#x518C;&#xFF1A;
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SerializeConfig.getGlobalInstance().put(BigDecimal.class, <span class="keyword">new</span> HelloBigDecimalSerializer());</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.cloudin.example.support.fastjson;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.serializer.JSONSerializer;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.serializer.ObjectSerializer;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.serializer.SerializerFeature;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Type;</span><br><span class="line"><span class="keyword">import</span> java.math.BigDecimal;</span><br><span class="line"><span class="keyword">import</span> java.math.RoundingMode;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> YFHan</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2018/2/3 0003 18:26</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloBigDecimalSerializer</span> <span class="keyword">implements</span> <span class="title">ObjectSerializer</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(JSONSerializer serializer, Object object, Object fieldName, Type fieldType, <span class="keyword">int</span> features)</span> <span class="keyword">throws</span> IOException </span>{</span><br><span class="line">        <span class="keyword">if</span> (object == <span class="keyword">null</span>) {</span><br><span class="line">            <span class="keyword">if</span> (serializer.isEnabled(SerializerFeature.WriteNullNumberAsZero)) {</span><br><span class="line">                serializer.out.write(<span class="string">&quot;0.00&quot;</span>);</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                serializer.out.writeNull();</span><br><span class="line">            }</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line"></span><br><span class="line">            BigDecimal value = (BigDecimal) object;</span><br><span class="line">            serializer.out.write(value.setScale(<span class="number">2</span>, RoundingMode.DOWN).toPlainString());</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2018-02-05T14:00:50.000Z" itemprop="datePublished">2018-02-05</time>
+
+    </span>
+    <span class="post-description-item">
+        
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/spring/">spring</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/json/">json</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/fastjson/">fastjson</a>
+    </span>
+
+    
+
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a class="ui tiny button disabled"><i class="angle left icon"></i>前一篇</a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/2017/12/24/Java-AQS/" class="ui tiny button">
+                    
+                    Java AQS
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#undefined"><span>简介</span></a></li><li><a href="#undefined"><span>常用API</span></a><ol><li><a href="#undefined"><span>JSON API</span></a></li><li><a href="#undefined"><span>JSONField 注解</span></a></li><li><a href="#undefined"><span>SerializerFeature</span></a></li></ol></li><li><a href="#undefined"><span>spring MVC 配置</span></a></li><li><a href="#undefined"><span>自定义序列化和反序列化</span></a></li></ol>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+            </div>
+            <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2018 <a href="/">YFHan</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
+                href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+        </div>
+
+    
+        
+            <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+        
+            <script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+        
+            <script src="/js/aloha-events.js"></script>
+        
+    
+
+</body>
+</html>
