@@ -226,7 +226,16 @@
 
                     <div class="article-entry" itemprop="articleBody">
                         
-                        
+                        <p>1&#x3001;&#x5F00;&#x542F;dubbo&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;</p>
+<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &#x5F00;&#x542F; dubbo &#x8BBF;&#x95EE;&#x65E5;&#x5FD7; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dubbo:protocol</span> <span class="attr">accesslog</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- &#x6307;&#x5B9A; dubbo &#x9002;&#x914D; slf4j --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dubbo:application</span> <span class="attr">logger</span>=<span class="string">&quot;slf4j&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>2&#x3001;&#x5728; log4j2 &#x91CC;&#x914D;&#x7F6E;</p>
+<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- dubbo &#x539F;&#x751F;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;dubbo.accesslog&quot;</span> <span class="attr">level</span>=<span class="string">&quot;info&quot;</span> <span class="attr">additivity</span>=<span class="string">&quot;false&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">&quot;dubboAccessAppender&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">logger</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>3&#x3001;&#x914D;&#x7F6E; log4j2 Appender</p>
+<p>3.1&#x3001;&#x63A7;&#x5236;&#x53F0; Appender
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Console</span> <span class="attr">name</span>=<span class="string">&quot;dubboAccessAppender&quot;</span> <span class="attr">target</span>=<span class="string">&quot;SYSTEM_OUT&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">PatternLayout</span> <span class="attr">pattern</span>=<span class="string">&quot;%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level [dubboAccess] %logger{-5} - %msg %throwable{full}%n&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Console</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>3.1&#x3001;File Appender
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">RollingFile</span> <span class="attr">name</span>=<span class="string">&quot;dubboAccessAppender&quot;</span> <span class="attr">fileName</span>=<span class="string">&quot;${logDir}/dubboAccess.log&quot;</span> <span class="attr">filePattern</span>=<span class="string">&quot;${logDir}/dubboAccess.log.%d{yyyy-MM-dd}&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">PatternLayout</span> <span class="attr">charset</span>=<span class="string">&quot;${logCharset}&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Pattern</span>&gt;</span>%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level [dubboAccess] %logger{-5} - %msg%n<span class="tag">&lt;/<span class="name">Pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">PatternLayout</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Policies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">TimeBasedTriggeringPolicy</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Policies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">RollingFile</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+
                         
                     </div>
 
@@ -241,6 +250,28 @@
     </span>
     <span class="post-description-item">
         
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/dubbo/">dubbo</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/日志/">日志</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/配置/">配置</a>
+    </span>
+
+    
+
     </span>
 </div>
 
