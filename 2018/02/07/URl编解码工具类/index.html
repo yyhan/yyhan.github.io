@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="JUST DO IT">
+    <title>
+        URl编解码工具类 | YFHan的博客
+    </title>
+    <link rel="shortcut icon" href="/favicon.jpg"/>
+    
+
+    
+    
+    
+    <!-- stylesheets list from config.yml -->
+        
+            <link rel="stylesheet" href="/css/aloha.css">
+        
+            <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+    
+
+</head>
+
+<body id="body" style="margin-bottom: 0;" class="pushable">
+
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+
+        
+        
+
+        
+
+        
+        <a href="/index.html" class="item" >
+            <i class="home icon"></i>
+            首页
+        </a>
+
+        
+        
+
+        
+
+        
+        <a href="/archives/" class="item" >
+            <i class="archive icon"></i>
+            归档
+        </a>
+
+        
+        
+
+        
+
+        
+        <a href="/atom.xml" class="item" >
+            <i class="rss icon"></i>
+            RSS
+        </a>
+
+        
+        
+
+        
+
+        
+        <a href="/about" class="item" >
+            <i class="mail icon"></i>
+            关于
+        </a>
+
+        
+        
+
+        
+
+        
+        <a href="https://github.com/yyhan" class="item" >
+            <i class="github icon"></i>
+            github
+        </a>
+
+        
+        <!--<a class="item" href=""><i class="github icon"></i></a>-->
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>YFHan的博客</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/favicon_400x400.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">
+                        YFHan
+                    </a>
+                    
+                        <div class="meta">
+                            Programer / Dotaor
+                        </div>
+                        
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                            <div class="item">
+                                <i class="marker icon" style="float: left"></i>
+                                <div class="content">
+                                    杭州
+                                </div>
+                            </div>
+                            
+                                
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+
+                            <a href="https://github.com/yyhan"><i class="large github icon" style="float: left"></i></a>
+
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item" >
+        <i class="home icon"></i>
+        首页
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/archives/" class="item" >
+        <i class="archive icon"></i>
+        归档
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/atom.xml" class="item" >
+        <i class="rss icon"></i>
+        RSS
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="/about" class="item" >
+        <i class="mail icon"></i>
+        关于
+    </a>
+
+    
+    
+
+    
+
+    
+    <a href="https://github.com/yyhan" class="item" >
+        <i class="github icon"></i>
+        github
+    </a>
+
+    
+
+</div>
+
+        <div class="pusher body-content">
+            <div id="content" class="ui main container">
+                <div id="post-URl编解码工具类" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    URl编解码工具类
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.demo.commons.utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.UnsupportedEncodingException;</span><br><span class="line"><span class="keyword">import</span> java.net.URLDecoder;</span><br><span class="line"><span class="keyword">import</span> java.net.URLEncoder;</span><br><span class="line"><span class="keyword">import</span> java.nio.charset.Charset;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* &#x63D0;&#x4F9B; &lt;CODE&gt;application/x-www-form-urlencoded&lt;/CODE&gt; &#x6807;&#x51C6;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x7F16;&#x89E3;&#x7801;&#x5DE5;&#x5177;</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* <span class="doctag">@author</span> &#x5C0F;&#x5929;</span></span><br><span class="line"><span class="comment">* <span class="doctag">@version</span> 1.0.0, 2017/10/25 0025 15:51</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">URLCodec</span> </span>{</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">encode</span><span class="params">(String plainText)</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> encode(plainText, Charsets.UTF_8);</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">encode</span><span class="params">(String plainText, Charset charset)</span> </span>{</span><br><span class="line">        <span class="keyword">try</span> {</span><br><span class="line">            <span class="keyword">return</span> URLEncoder.encode(plainText, charset.displayName());</span><br><span class="line">        } <span class="keyword">catch</span> (UnsupportedEncodingException e) {</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> plainText;</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">decode</span><span class="params">(String plainText)</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> encode(plainText, Charsets.UTF_8);</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">decode</span><span class="params">(String plainText, Charset charset)</span> </span>{</span><br><span class="line">        <span class="keyword">try</span> {</span><br><span class="line">            <span class="keyword">return</span> URLDecoder.decode(plainText, charset.displayName());</span><br><span class="line">        } <span class="keyword">catch</span> (UnsupportedEncodingException e) {</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> plainText;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2018-02-07T15:52:46.000Z" itemprop="datePublished">2018-02-07</time>
+
+    </span>
+    <span class="post-description-item">
+        
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/java/">java</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/URL/">URL</a>
+    </span>
+
+    
+
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a href="/2018/02/07/dubbo-原生访问日志配置/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    dubbo 原生访问日志配置
+                    
+
+                </a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/2018/02/07/RSA签名工具类/" class="ui tiny button">
+                    
+                    RSA签名工具类
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+            </div>
+            <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2018 <a href="/">YFHan</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
+                href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+        </div>
+
+    
+        
+            <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+        
+            <script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+        
+            <script src="/js/aloha-events.js"></script>
+        
+    
+
+</body>
+</html>
