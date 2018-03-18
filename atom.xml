@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yyhan.github.io/"/>
-  <updated>2018-02-07T16:05:27.063Z</updated>
+  <updated>2018-03-18T14:26:40.457Z</updated>
   <id>https://yyhan.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java 字节码简介</title>
+    <link href="https://yyhan.github.io/2018/03/18/java-%E5%AD%97%E8%8A%82%E7%A0%81%E7%AE%80%E4%BB%8B/"/>
+    <id>https://yyhan.github.io/2018/03/18/java-字节码简介/</id>
+    <published>2018-03-18T13:20:38.000Z</published>
+    <updated>2018-03-18T14:26:40.457Z</updated>
+    
+    <content type="html"><![CDATA[<h1>&#x6587;&#x4EF6;</h1><p>&#x6E90;&#x7801;&#xFF1A;<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.xiaotian;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Simple</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p><p>&#x5B57;&#x8282;&#x7801;&#xFF1A;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">cafe babe 0000 0034 001d 0a00 0600 0f09</span><br><span class="line">0010 0011 0800 120a 0013 0014 0700 1507</span><br><span class="line">0016 0100 063c 696e 6974 3e01 0003 2829</span><br><span class="line">5601 0004 436f 6465 0100 0f4c 696e 654e</span><br><span class="line">756d 6265 7254 6162 6c65 0100 046d 6169</span><br><span class="line">6e01 0016 285b 4c6a 6176 612f 6c61 6e67</span><br><span class="line">2f53 7472 696e 673b 2956 0100 0a53 6f75</span><br><span class="line">7263 6546 696c 6501 000b 5369 6d70 6c65</span><br><span class="line">2e6a 6176 610c 0007 0008 0700 170c 0018</span><br><span class="line">0019 0100 0568 656c 6c6f 0700 1a0c 001b</span><br><span class="line">001c 0100 1363 6f6d 2f78 6961 6f74 6961</span><br><span class="line">6e2f 5369 6d70 6c65 0100 106a 6176 612f</span><br><span class="line">6c61 6e67 2f4f 626a 6563 7401 0010 6a61</span><br><span class="line">7661 2f6c 616e 672f 5379 7374 656d 0100</span><br><span class="line">036f 7574 0100 154c 6a61 7661 2f69 6f2f</span><br><span class="line">5072 696e 7453 7472 6561 6d3b 0100 136a</span><br><span class="line">6176 612f 696f 2f50 7269 6e74 5374 7265</span><br><span class="line">616d 0100 0770 7269 6e74 6c6e 0100 1528</span><br><span class="line">4c6a 6176 612f 6c61 6e67 2f53 7472 696e</span><br><span class="line">673b 2956 0021 0005 0006 0000 0000 0002</span><br><span class="line">0001 0007 0008 0001 0009 0000 001d 0001</span><br><span class="line">0001 0000 0005 2ab7 0001 b100 0000 0100</span><br><span class="line">0a00 0000 0600 0100 0000 0300 0900 0b00</span><br><span class="line">0c00 0100 0900 0000 2500 0200 0100 0000</span><br><span class="line">09b2 0002 1203 b600 04b1 0000 0001 000a</span><br><span class="line">0000 000a 0002 0000 0005 0008 0006 0001</span><br><span class="line">000d 0000 0002 000e</span><br></pre></td></tr></table></figure></p><p>&#x4F7F;&#x7528; <code>javap -c</code> &#x53CD;&#x6C47;&#x7F16;&#xFF1A;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Compiled from &quot;Simple.java&quot;</span><br><span class="line">public class com.xiaotian.Simple {</span><br><span class="line">  public com.xiaotian.Simple();</span><br><span class="line">    Code:</span><br><span class="line">       0: aload_0</span><br><span class="line">       1: invokespecial #1                  // Method java/lang/Object.&quot;&lt;init&gt;&quot;:()V</span><br><span class="line">       4: return</span><br><span class="line"></span><br><span class="line">  public static void main(java.lang.String[]);</span><br><span class="line">    Code:</span><br><span class="line">       0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;</span><br><span class="line">       3: ldc           #3                  // String hello</span><br><span class="line">       5: invokevirtual #4                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V</span><br><span class="line">       8: return</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p><h1>&#x5206;&#x89E3;</h1><h2>Magic&#xFF08;&#x9B54;&#x6570;&#xFF09;</h2><p><code>Magic</code> &#x7684;&#x552F;&#x4E00;&#x4F5C;&#x7528;&#x662F;&#x786E;&#x5B9A;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x4E3A;&#x4E00;&#x4E2A;&#x80FD;&#x88AB;<code>java&#x865A;&#x62DF;&#x673A;</code>&#x63A5;&#x53D7;&#x7684;<code>class</code>&#x6587;&#x4EF6;&#x3002;&#x9B54;&#x6570;&#x56FA;&#x5B9A;&#x503C;&#x4E3A;&#xFF1A; <code>0xCAFEBABE</code>&#xFF0C;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#x3002;</p><h2>&#x4E3B;&#x7248;&#x672C;&#x53F7;&#xFF08;major_version&#xFF09; &#x548C; &#x526F;&#x7248;&#x672C;&#x53F7;&#xFF08;minor_version&#xFF09;</h2><p><code>0000</code> &#x548C; <code>0032</code> &#x4E24;&#x4E2A;&#x5B57;&#x8282;&#x5206;&#x522B;&#x8868;&#x793A;class&#x6587;&#x4EF6;&#x7684;&#x526F;&#x7248;&#x672C;&#x53F7;&#x548C;&#x4E3B;&#x7248;&#x672C;&#x53F7;&#x3002;</p><h2>&#x5E38;&#x91CF;&#x6C60;&#x6570;&#x91CF;</h2><p><code>001d</code>&#xFF0C;&#x8BE5;&#x503C;&#x7B49;&#x4E8E;&#x5E38;&#x91CF;&#x6C60;&#x4E2D;&#x7684;&#x6210;&#x5458;&#x6570;&#x52A0;1</p><h2>&#x5E38;&#x91CF;&#x6C60;</h2><p>&#x5E38;&#x91CF;&#x6C60;&#x662F;&#x4E00;&#x4E2A;&#x8868;&#x7ED3;&#x6784;&#xFF0C;&#x5B83;&#x5305;&#x542B;class&#x6587;&#x4EF6;&#x7ED3;&#x6784;&#x53CA;&#x5176;&#x5B50;&#x7ED3;&#x6784;&#x4E2D;&#x5F15;&#x7528;&#x7684;&#x6240;&#x6709;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#x3001;&#x7C7B;&#x6216;&#x63A5;&#x53E3;&#x540D;&#x3001;&#x5B57;&#x6BB5;&#x540D;&#x548C;&#x5176;&#x5B83;&#x5E38;&#x91CF;&#x3002;<br>&#x5E38;&#x91CF;&#x7ED3;&#x6784;&#xFF1A;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cp_info {</span><br><span class="line">    u1 tag;</span><br><span class="line">    u1 info[];</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p><p>&#x6839;&#x636E;&#x6B64;&#x7ED3;&#x6784;&#xFF0C;&#x53EF;&#x62C6;&#x5206;&#x5E38;&#x91CF;&#xFF1A;</p><table><thead><tr><th>&#x4E8C;&#x8FDB;&#x5236;</th><th>&#x63CF;&#x8FF0;</th></tr></thead><tbody><tr><td>0a 00 0600 0f</td><td>CONSTANT_Methodref</td></tr><tr><td>09 0010 0011</td><td>CONSTANT_Fieldref_info</td></tr><tr><td>08 00 12</td><td>CONSTANT_String</td></tr><tr><td>0a 0013 0014</td><td>CONSTANT_Methodref</td></tr><tr><td>07 00 15</td><td>CONSTANT_Class</td></tr><tr><td>07 0016</td><td>CONSTANT_Class</td></tr><tr><td>01 00 063c 696e 6974 3e</td><td>CONSTANT_Utf8</td></tr><tr><td>01 0003 2829 56</td><td>CONSTANT_Utf8</td></tr><tr><td>01 0004 436f 6465</td><td>CONSTANT_Utf8</td></tr><tr><td>01 00 0f4c 696e 654e 756d 6265 7254 6162 6c65</td><td>CONSTANT_Utf8</td></tr><tr><td>01 00 046d 6169 6e</td><td>CONSTANT_Utf8</td></tr><tr><td>01 0016 285b 4c6a 6176 612f 6c61 6e67 2f53 7472 696e 673b 2956</td><td>CONSTANT_Utf8</td></tr><tr><td>01 00 0a53 6f75 7263 6546 696c 65</td><td>CONSTANT_Utf8</td></tr><tr><td>01 000b 5369 6d70 6c65 2e6a 6176 61</td><td>CONSTANT_Utf8</td></tr><tr><td>0c 0007 0008</td><td>CONSTANT_NameAndType</td></tr><tr><td>07 00 17</td><td>CONSTANT_Class</td></tr><tr><td>0c 0018 0019</td><td>CONSTANT_NameAndType</td></tr><tr><td>01 00 0568 656c 6c6f</td><td>CONSTANT_Utf8</td></tr><tr><td>07 00 1a</td><td>CONSTANT_Class</td></tr><tr><td>0c 001b 001c</td><td>CONSTANT_NameAndType</td></tr><tr><td>01 00 1363 6f6d 2f78 6961 6f74 6961 6e2f 5369 6d70 6c65</td><td>CONSTANT_Utf8</td></tr><tr><td>01 00 106a 6176 612f 6c61 6e67 2f4f 626a 6563 74</td><td>CONSTANT_Utf8</td></tr><tr><td>01 0010 6a61 7661 2f6c 616e 672f 5379 7374 656d</td><td>CONSTANT_Utf8</td></tr><tr><td>01 00 036f 7574</td><td>CONSTANT_Utf8</td></tr><tr><td>01 00 154c 6a61 7661 2f69 6f2f 5072 696e 7453 7472 6561 6d3b</td><td>CONSTANT_Utf8</td></tr><tr><td>01 00 136a 6176 612f 696f 2f50 7269 6e74 5374 7265 616d</td><td>CONSTANT_Utf8</td></tr><tr><td>01 00 0770 7269 6e74 6c6e</td><td>CONSTANT_Utf8</td></tr><tr><td>01 00 1528 4c6a 6176 612f 6c61 6e67 2f53 7472 696e 673b 2956</td><td>CONSTANT_Utf8</td></tr></tbody></table><h1>&#x7C7B;&#x5C5E;&#x6027;</h1><p>0021  # access flags0005  # this_class0006  # super_class0000  # interfaces_count0000  # fields_count</p><h1>&#x65B9;&#x6CD5;</h1><p>0002  # methods_count</p><h2>&#x65B9;&#x6CD5; 1</h2><p>0001  # access flags0007000800010009 0000 001d 00010001 0000 0005 2ab7 0001 b100 0000 01000a00 0000 0600 0100 0000 03</p><h2>&#x65B9;&#x6CD5; 2</h2><p>00 0900 0b00 0c00 0100 09 00 0000 25 00 0200 0100 000009b2 0002 1203 b600 04b1 0000 0001 000a0000 000a 0002 0000 0005 0008 0006</p><h1>&#x5B57;&#x6BB5;</h1><p>0001 # &#x4E00;&#x4E2A;&#x5B57;&#x6BB5;000d # name index0000 0002 # attribute length000e # info</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1&gt;&amp;#x6587;&amp;#x4EF6;&lt;/h1&gt;
+&lt;p&gt;&amp;#x6E90;&amp;#x7801;&amp;#xFF1A;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>dubbo 原生访问日志配置</title>
@@ -257,9 +280,9 @@
       <category term="log4j" scheme="https://yyhan.github.io/categories/log4j/"/>
     
     
-      <category term="java" scheme="https://yyhan.github.io/tags/java/"/>
-    
       <category term="log4j2" scheme="https://yyhan.github.io/tags/log4j2/"/>
+    
+      <category term="java" scheme="https://yyhan.github.io/tags/java/"/>
     
       <category term="log4j" scheme="https://yyhan.github.io/tags/log4j/"/>
     
@@ -545,26 +568,6 @@
       <category term="hessian" scheme="https://yyhan.github.io/tags/hessian/"/>
     
       <category term="序列化" scheme="https://yyhan.github.io/tags/%E5%BA%8F%E5%88%97%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spring MVC基本配置</title>
-    <link href="https://yyhan.github.io/2017/06/15/Spring-MVC%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/"/>
-    <id>https://yyhan.github.io/2017/06/15/Spring-MVC基本配置/</id>
-    <published>2017-06-15T14:25:45.000Z</published>
-    <updated>2017-06-15T14:57:09.491Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="spring" scheme="https://yyhan.github.io/categories/spring/"/>
-    
-    
-      <category term="java" scheme="https://yyhan.github.io/tags/java/"/>
-    
-      <category term="spring" scheme="https://yyhan.github.io/tags/spring/"/>
     
   </entry>
   
