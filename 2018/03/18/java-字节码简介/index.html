@@ -231,8 +231,8 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.xiaotian;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Simple</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
 <p>&#x5B57;&#x8282;&#x7801;&#xFF1A;
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">cafe babe 0000 0034 001d 0a00 0600 0f09</span><br><span class="line">0010 0011 0800 120a 0013 0014 0700 1507</span><br><span class="line">0016 0100 063c 696e 6974 3e01 0003 2829</span><br><span class="line">5601 0004 436f 6465 0100 0f4c 696e 654e</span><br><span class="line">756d 6265 7254 6162 6c65 0100 046d 6169</span><br><span class="line">6e01 0016 285b 4c6a 6176 612f 6c61 6e67</span><br><span class="line">2f53 7472 696e 673b 2956 0100 0a53 6f75</span><br><span class="line">7263 6546 696c 6501 000b 5369 6d70 6c65</span><br><span class="line">2e6a 6176 610c 0007 0008 0700 170c 0018</span><br><span class="line">0019 0100 0568 656c 6c6f 0700 1a0c 001b</span><br><span class="line">001c 0100 1363 6f6d 2f78 6961 6f74 6961</span><br><span class="line">6e2f 5369 6d70 6c65 0100 106a 6176 612f</span><br><span class="line">6c61 6e67 2f4f 626a 6563 7401 0010 6a61</span><br><span class="line">7661 2f6c 616e 672f 5379 7374 656d 0100</span><br><span class="line">036f 7574 0100 154c 6a61 7661 2f69 6f2f</span><br><span class="line">5072 696e 7453 7472 6561 6d3b 0100 136a</span><br><span class="line">6176 612f 696f 2f50 7269 6e74 5374 7265</span><br><span class="line">616d 0100 0770 7269 6e74 6c6e 0100 1528</span><br><span class="line">4c6a 6176 612f 6c61 6e67 2f53 7472 696e</span><br><span class="line">673b 2956 0021 0005 0006 0000 0000 0002</span><br><span class="line">0001 0007 0008 0001 0009 0000 001d 0001</span><br><span class="line">0001 0000 0005 2ab7 0001 b100 0000 0100</span><br><span class="line">0a00 0000 0600 0100 0000 0300 0900 0b00</span><br><span class="line">0c00 0100 0900 0000 2500 0200 0100 0000</span><br><span class="line">09b2 0002 1203 b600 04b1 0000 0001 000a</span><br><span class="line">0000 000a 0002 0000 0005 0008 0006 0001</span><br><span class="line">000d 0000 0002 000e</span><br></pre></td></tr></table></figure></p>
-<p>&#x4F7F;&#x7528; <code>javap -c</code> &#x53CD;&#x6C47;&#x7F16;&#xFF1A;
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Compiled from &quot;Simple.java&quot;</span><br><span class="line">public class com.xiaotian.Simple {</span><br><span class="line">  public com.xiaotian.Simple();</span><br><span class="line">    Code:</span><br><span class="line">       0: aload_0</span><br><span class="line">       1: invokespecial #1                  // Method java/lang/Object.&quot;&lt;init&gt;&quot;:()V</span><br><span class="line">       4: return</span><br><span class="line"></span><br><span class="line">  public static void main(java.lang.String[]);</span><br><span class="line">    Code:</span><br><span class="line">       0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;</span><br><span class="line">       3: ldc           #3                  // String hello</span><br><span class="line">       5: invokevirtual #4                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V</span><br><span class="line">       8: return</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>&#x4F7F;&#x7528; <code>javap -v</code> &#x53CD;&#x6C47;&#x7F16;&#xFF1A;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">public class com.xiaotian.Simple</span><br><span class="line">  minor version: 0</span><br><span class="line">  major version: 52</span><br><span class="line">  flags: ACC_PUBLIC, ACC_SUPER</span><br><span class="line">Constant pool:</span><br><span class="line">   #1 = Methodref          #6.#15         // java/lang/Object.&quot;&lt;init&gt;&quot;:()V</span><br><span class="line">   #2 = Fieldref           #16.#17        // java/lang/System.out:Ljava/io/PrintStream;</span><br><span class="line">   #3 = String             #18            // hello</span><br><span class="line">   #4 = Methodref          #19.#20        // java/io/PrintStream.println:(Ljava/lang/String;)V</span><br><span class="line">   #5 = Class              #21            // com/xiaotian/Simple</span><br><span class="line">   #6 = Class              #22            // java/lang/Object</span><br><span class="line">   #7 = Utf8               &lt;init&gt;</span><br><span class="line">   #8 = Utf8               ()V</span><br><span class="line">   #9 = Utf8               Code</span><br><span class="line">  #10 = Utf8               LineNumberTable</span><br><span class="line">  #11 = Utf8               main</span><br><span class="line">  #12 = Utf8               ([Ljava/lang/String;)V</span><br><span class="line">  #13 = Utf8               SourceFile</span><br><span class="line">  #14 = Utf8               Simple.java</span><br><span class="line">  #15 = NameAndType        #7:#8          // &quot;&lt;init&gt;&quot;:()V</span><br><span class="line">  #16 = Class              #23            // java/lang/System</span><br><span class="line">  #17 = NameAndType        #24:#25        // out:Ljava/io/PrintStream;</span><br><span class="line">  #18 = Utf8               hello</span><br><span class="line">  #19 = Class              #26            // java/io/PrintStream</span><br><span class="line">  #20 = NameAndType        #27:#28        // println:(Ljava/lang/String;)V</span><br><span class="line">  #21 = Utf8               com/xiaotian/Simple</span><br><span class="line">  #22 = Utf8               java/lang/Object</span><br><span class="line">  #23 = Utf8               java/lang/System</span><br><span class="line">  #24 = Utf8               out</span><br><span class="line">  #25 = Utf8               Ljava/io/PrintStream;</span><br><span class="line">  #26 = Utf8               java/io/PrintStream</span><br><span class="line">  #27 = Utf8               println</span><br><span class="line">  #28 = Utf8               (Ljava/lang/String;)V</span><br><span class="line">{</span><br><span class="line">  public com.xiaotian.Simple();</span><br><span class="line">    descriptor: ()V</span><br><span class="line">    flags: ACC_PUBLIC</span><br><span class="line">    Code:</span><br><span class="line">      stack=1, locals=1, args_size=1</span><br><span class="line">         0: aload_0</span><br><span class="line">         1: invokespecial #1                  // Method java/lang/Object.&quot;&lt;init&gt;&quot;:()V</span><br><span class="line">         4: return</span><br><span class="line">      LineNumberTable:</span><br><span class="line">        line 3: 0</span><br><span class="line"></span><br><span class="line">  public static void main(java.lang.String[]);</span><br><span class="line">    descriptor: ([Ljava/lang/String;)V</span><br><span class="line">    flags: ACC_PUBLIC, ACC_STATIC</span><br><span class="line">    Code:</span><br><span class="line">      stack=2, locals=1, args_size=1</span><br><span class="line">         0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;</span><br><span class="line">         3: ldc           #3                  // String hello</span><br><span class="line">         5: invokevirtual #4                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V</span><br><span class="line">         8: return</span><br><span class="line">      LineNumberTable:</span><br><span class="line">        line 5: 0</span><br><span class="line">        line 6: 8</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
 <h1>&#x5206;&#x89E3;</h1>
 <h2>Magic&#xFF08;&#x9B54;&#x6570;&#xFF09;</h2>
 <p><code>Magic</code> &#x7684;&#x552F;&#x4E00;&#x4F5C;&#x7528;&#x662F;&#x786E;&#x5B9A;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x4E3A;&#x4E00;&#x4E2A;&#x80FD;&#x88AB;<code>java&#x865A;&#x62DF;&#x673A;</code>&#x63A5;&#x53D7;&#x7684;<code>class</code>&#x6587;&#x4EF6;&#x3002;&#x9B54;&#x6570;&#x56FA;&#x5B9A;&#x503C;&#x4E3A;&#xFF1A; <code>0xCAFEBABE</code>&#xFF0C;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#x3002;</p>
@@ -248,122 +248,180 @@
 <table>
 <thead>
 <tr>
+<th>&#x7F16;&#x53F7;</th>
 <th>&#x4E8C;&#x8FDB;&#x5236;</th>
-<th>&#x63CF;&#x8FF0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x89E3;&#x91CA;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>1</td>
 <td>0a 00 0600 0f</td>
 <td>CONSTANT_Methodref</td>
+<td>&#x65B9;&#x6CD5;&#xFF1A;<code>#6.#15</code> =&gt; <code>java/lang/Object.&lt;init&gt;()V</code></td>
 </tr>
 <tr>
+<td>2</td>
 <td>09 0010 0011</td>
 <td>CONSTANT_Fieldref_info</td>
+<td>&#x65B9;&#x6CD5;&#xFF1A;<code>#16.#17</code> =&gt; <code>com/xiaotian/Simple.out.Ljava/io/PrintStream</code></td>
 </tr>
 <tr>
+<td>3</td>
 <td>08 00 12</td>
 <td>CONSTANT_String</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#xFF1A;<code>#18</code> =&gt; <code>hello</code></td>
 </tr>
 <tr>
+<td>4</td>
 <td>0a 0013 0014</td>
 <td>CONSTANT_Methodref</td>
+<td>&#x65B9;&#x6CD5;&#xFF1A;<code>#19.#20</code> =&gt; <code>java/io/PrintStream.println(Ljava/lang/String;)V</code></td>
 </tr>
 <tr>
+<td>5</td>
 <td>07 00 15</td>
 <td>CONSTANT_Class</td>
+<td>&#x7C7B;&#xFF1A;<code>#21</code> =&gt; <code>com/xiaotian/Simple</code></td>
 </tr>
 <tr>
+<td>6</td>
 <td>07 0016</td>
 <td>CONSTANT_Class</td>
+<td>&#x7C7B;&#xFF1A;<code>#22</code> =&gt; <code>java/lang/Object</code></td>
 </tr>
 <tr>
+<td>7</td>
 <td>01 00 063c 696e 6974 3e</td>
 <td>CONSTANT_Utf8</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF1A;<code>&lt;init&gt;</code></td>
 </tr>
 <tr>
+<td>8</td>
 <td>01 0003 2829 56</td>
 <td>CONSTANT_Utf8</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF1A;<code>()V</code></td>
 </tr>
 <tr>
+<td>9</td>
 <td>01 0004 436f 6465</td>
 <td>CONSTANT_Utf8</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF1A;<code>Code</code></td>
 </tr>
 <tr>
+<td>10</td>
 <td>01 00 0f4c 696e 654e 756d 6265 7254 6162 6c65</td>
 <td>CONSTANT_Utf8</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF1A;<code>LineNumberTable</code></td>
 </tr>
 <tr>
+<td>11</td>
 <td>01 00 046d 6169 6e</td>
 <td>CONSTANT_Utf8</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF1A;<code>main</code></td>
 </tr>
 <tr>
+<td>12</td>
 <td>01 0016 285b 4c6a 6176 612f 6c61 6e67 2f53 7472 696e 673b 2956</td>
 <td>CONSTANT_Utf8</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF1A;<code>([Ljava/lang/String;)V</code></td>
 </tr>
 <tr>
+<td>13</td>
 <td>01 00 0a53 6f75 7263 6546 696c 65</td>
 <td>CONSTANT_Utf8</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF1A;<code>SourceFile</code></td>
 </tr>
 <tr>
+<td>14</td>
 <td>01 000b 5369 6d70 6c65 2e6a 6176 61</td>
 <td>CONSTANT_Utf8</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF1A;<code>Simple.java</code></td>
 </tr>
 <tr>
+<td>15</td>
 <td>0c 0007 0008</td>
 <td>CONSTANT_NameAndType</td>
+<td>&#x5B57;&#x6BB5;&#x6216;&#x65B9;&#x6CD5;&#xFF1A;<code>#7.#8</code> =&gt; <code>&lt;init&gt;()V</code></td>
 </tr>
 <tr>
+<td>16</td>
 <td>07 00 17</td>
 <td>CONSTANT_Class</td>
+<td>&#x7C7B;&#xFF1A;<code>#21</code> =&gt; <code>com/xiaotian/Simple</code></td>
 </tr>
 <tr>
+<td>17</td>
 <td>0c 0018 0019</td>
 <td>CONSTANT_NameAndType</td>
+<td>&#x5B57;&#x6BB5;&#x6216;&#x65B9;&#x6CD5;&#xFF1A;<code>#24.#25</code> =&gt; <code>out.Ljava/io/PrintStream</code></td>
 </tr>
 <tr>
+<td>18</td>
 <td>01 00 0568 656c 6c6f</td>
 <td>CONSTANT_Utf8</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF1A;<code>hello</code></td>
 </tr>
 <tr>
+<td>19</td>
 <td>07 00 1a</td>
 <td>CONSTANT_Class</td>
+<td>&#x7C7B;&#xFF1A;<code>#26</code> =&gt; <code>java/io/PrintStream</code></td>
 </tr>
 <tr>
+<td>20</td>
 <td>0c 001b 001c</td>
 <td>CONSTANT_NameAndType</td>
+<td>&#x5B57;&#x6BB5;&#x6216;&#x65B9;&#x6CD5;&#xFF1A;<code>#27.#28</code> =&gt; <code>println(Ljava/lang/String;)V</code></td>
 </tr>
 <tr>
+<td>21</td>
 <td>01 00 1363 6f6d 2f78 6961 6f74 6961 6e2f 5369 6d70 6c65</td>
 <td>CONSTANT_Utf8</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF1A;<code>com/xiaotian/Simple</code></td>
 </tr>
 <tr>
+<td>22</td>
 <td>01 00 106a 6176 612f 6c61 6e67 2f4f 626a 6563 74</td>
 <td>CONSTANT_Utf8</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF1A;<code>java/lang/Object</code></td>
 </tr>
 <tr>
+<td>23</td>
 <td>01 0010 6a61 7661 2f6c 616e 672f 5379 7374 656d</td>
 <td>CONSTANT_Utf8</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF1A;<code>java/lang/System</code></td>
 </tr>
 <tr>
+<td>24</td>
 <td>01 00 036f 7574</td>
 <td>CONSTANT_Utf8</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF1A;<code>out</code></td>
 </tr>
 <tr>
+<td>25</td>
 <td>01 00 154c 6a61 7661 2f69 6f2f 5072 696e 7453 7472 6561 6d3b</td>
 <td>CONSTANT_Utf8</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF1A;<code>Ljava/io/PrintStream;</code></td>
 </tr>
 <tr>
+<td>26</td>
 <td>01 00 136a 6176 612f 696f 2f50 7269 6e74 5374 7265 616d</td>
 <td>CONSTANT_Utf8</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF1A;<code>java/io/PrintStream</code></td>
 </tr>
 <tr>
+<td>27</td>
 <td>01 00 0770 7269 6e74 6c6e</td>
 <td>CONSTANT_Utf8</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF1A;<code>println</code></td>
 </tr>
 <tr>
+<td>28</td>
 <td>01 00 1528 4c6a 6176 612f 6c61 6e67 2f53 7472 696e 673b 2956</td>
 <td>CONSTANT_Utf8</td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF1A;<code>(Ljava/lang/String;)V</code></td>
 </tr>
 </tbody>
 </table>
@@ -376,26 +434,258 @@
 <h1>&#x65B9;&#x6CD5;</h1>
 <p>0002  # methods_count</p>
 <h2>&#x65B9;&#x6CD5; 1</h2>
-<p>0001  # access flags
-0007
-0008
-0001
-0009 0000 001d 0001
-0001 0000 0005 2ab7 0001 b100 0000 0100
-0a00 0000 0600 0100 0000 03</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E8C;&#x8FDB;&#x5236;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0001</td>
+<td>&#x65B9;&#x6CD5;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x53CA;&#x5C5E;&#x6027;&#x6807;&#x5FD7;&#xFF1A;<code>ACC_PUBLIC</code></td>
+</tr>
+<tr>
+<td>0007</td>
+<td>&#x65B9;&#x6CD5;&#x540D;&#x7D22;&#x5F15;&#xFF1A; <code>#7</code> =&gt; <code>&lt;init&gt;</code></td>
+</tr>
+<tr>
+<td>0008</td>
+<td>&#x65B9;&#x6CD5;&#x63CF;&#x8FF0;&#x7B26;&#xFF1A; <code>#8</code> =&gt; <code>()V</code></td>
+</tr>
+<tr>
+<td>0001</td>
+<td>&#x9644;&#x52A0;&#x5C5E;&#x6027;&#x6570;&#x91CF;&#xFF1A; <code>1</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Code&#x5C5E;&#x6027;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x4E8C;&#x8FDB;&#x5236;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0009</td>
+<td>&#x5C5E;&#x6027;&#x540D;&#x79F0;&#xFF1A;<code>#9</code> =&gt; <code>Code</code></td>
+</tr>
+<tr>
+<td>0000 001d</td>
+<td>&#x5C5E;&#x6027;&#x957F;&#x5EA6;&#xFF1A;<code>29</code></td>
+</tr>
+<tr>
+<td>0001</td>
+<td>max_stack = 1 &#x3002;&#x5F53;&#x524D;&#x65B9;&#x6CD5;&#x7684;&#x64CD;&#x4F5C;&#x6570;&#x6808;&#x5728;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x4F55;&#x65F6;&#x95F4;&#x70B9;&#x7684;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#x3002;</td>
+</tr>
+<tr>
+<td>0001</td>
+<td>max_locals = 1 &#x3002;&#x5F53;&#x524D;&#x65B9;&#x6CD5;&#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x4E2A;&#x6570;&#x3002;</td>
+</tr>
+<tr>
+<td>0000 0005</td>
+<td>code_length = 5</td>
+</tr>
+<tr>
+<td>2ab7 0001 b1</td>
+<td><code>aload_0</code>  <code>invokespecial #1</code> <code>return</code></td>
+</tr>
+<tr>
+<td>00 00</td>
+<td>exception_table_length</td>
+</tr>
+<tr>
+<td>00 01</td>
+<td>attributes_count = 1</td>
+</tr>
+<tr>
+<td>00 0a00 0000 0600 0100 0000 03</td>
+<td>attribute_info &#x53C2;&#x8003;&#x4E0B;&#x8868;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>&#x4E8C;&#x8FDB;&#x5236;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00 0a</td>
+<td>&#x5C5E;&#x6027;&#x540D;&#x79F0;&#xFF1A;<code>#10</code> =&gt; <code>LineNumberTable</code></td>
+</tr>
+<tr>
+<td>00 0000 06</td>
+<td>&#x5C5E;&#x6027;&#x6570;&#x91CF;&#xFF1A;<code>6</code></td>
+</tr>
+<tr>
+<td>00 01</td>
+<td>line_number_table_length = 1</td>
+</tr>
+<tr>
+<td>00 0000 03</td>
+<td><code>start_pc = 0, line_number = 3</code> =&gt; <code>line 3: 0</code></td>
+</tr>
+</tbody>
+</table>
+<h3>aload_0 &#x6307;&#x4EE4;</h3>
+<p>&#x6307;&#x4EE4;&#x7F16;&#x53F7;&#xFF1A;<code>0x2a</code>&#x3002;
+<code>aload_&lt;n&gt;</code> &#x4ECE;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8868;&#x52A0;&#x8F7D;&#x4E00;&#x4E2A; <code>reference</code> &#x7C7B;&#x578B;&#x503C;&#x5230;&#x64CD;&#x4F5C;&#x6570;&#x6808;&#x4E2D;&#x3002;<code>&lt;n&gt;</code> &#x4EE3;&#x8868;&#x5F53;&#x524D;&#x6808;&#x5E27;&#x4E2D;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8868;&#x7684;&#x7D22;&#x5F15;&#x503C;&#x3002;&#x8BE5;&#x53D8;&#x91CF;&#x5FC5;&#x987B;&#x4E3A; <code>reference</code> &#x7C7B;&#x578B;&#xFF0C;&#x6210;&#x4E3A;&#xFF1A; <code>objectref</code>&#x3002;</p>
+<h3>invokespecial &#x6307;&#x4EE4;</h3>
+<p>&#x6307;&#x4EE4;&#x7F16;&#x53F7;&#xFF1A;<code>0xb7</code>&#x3002;
+&#x8C03;&#x7528;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#xFF0C;&#x4E13;&#x95E8;&#x7528;&#x6765;&#x8C03;&#x7528;&#x7236;&#x7C7B;&#x65B9;&#x6CD5;&#x3001;&#x79C1;&#x6709;&#x65B9;&#x6CD5;&#x548C;&#x5B9E;&#x4F8B;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;&#x3002;
+&#x8BED;&#x6CD5;&#xFF1A;<code>invokespecial &lt;2&#x5B57;&#x8282;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;&#x7D22;&#x5F15;&#x503C;&gt;</code></p>
+<h3>return &#x6307;&#x4EE4;</h3>
+<p>&#x6307;&#x4EE4;&#x7F16;&#x53F7;&#xFF1A;<code>0xb1</code>&#x3002;
+&#x65B9;&#x6CD5;&#x4E2D;&#x8FD4;&#x56DE;void&#x3002;</p>
 <h2>&#x65B9;&#x6CD5; 2</h2>
-<p>00 09
-00 0b
-00 0c
-00 01
-00 09 00 0000 25 00 0200 0100 0000
-09b2 0002 1203 b600 04b1 0000 0001 000a
-0000 000a 0002 0000 0005 0008 0006</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E8C;&#x8FDB;&#x5236;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00 09</td>
+<td>&#x65B9;&#x6CD5;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x53CA;&#x5C5E;&#x6027;&#x6807;&#x5FD7;&#xFF1A;<code>ACC_PUBLIC | ACC_STATIC</code></td>
+</tr>
+<tr>
+<td>00 0b</td>
+<td>&#x65B9;&#x6CD5;&#x540D;&#x7D22;&#x5F15;&#xFF1A; <code>#11</code> =&gt; <code>main</code></td>
+</tr>
+<tr>
+<td>00 0c</td>
+<td>&#x65B9;&#x6CD5;&#x63CF;&#x8FF0;&#x7B26;&#xFF1A; <code>#12</code> =&gt; <code>([Ljava/lang/String;)V</code></td>
+</tr>
+<tr>
+<td>00 01</td>
+<td>&#x9644;&#x52A0;&#x5C5E;&#x6027;&#x6570;&#x91CF;&#xFF1A; <code>1</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Code&#x5C5E;&#x6027;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x4E8C;&#x8FDB;&#x5236;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00 09</td>
+<td>&#x5C5E;&#x6027;&#x540D;&#x79F0;&#xFF1A;<code>#9</code> =&gt; <code>Code</code></td>
+</tr>
+<tr>
+<td>00 0000 25</td>
+<td>&#x5C5E;&#x6027;&#x957F;&#x5EA6;&#xFF1A;<code>37</code></td>
+</tr>
+<tr>
+<td>00 02</td>
+<td>max_stack = 2 &#x3002;&#x5F53;&#x524D;&#x65B9;&#x6CD5;&#x7684;&#x64CD;&#x4F5C;&#x6570;&#x6808;&#x5728;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x4F55;&#x65F6;&#x95F4;&#x70B9;&#x7684;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#x3002;</td>
+</tr>
+<tr>
+<td>00 01</td>
+<td>max_locals = 1 &#x3002;&#x5F53;&#x524D;&#x65B9;&#x6CD5;&#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x4E2A;&#x6570;&#x3002;</td>
+</tr>
+<tr>
+<td>00 0000 09</td>
+<td>code_length = 9</td>
+</tr>
+<tr>
+<td>b2 0002</td>
+<td><code>getstatic #2</code></td>
+</tr>
+<tr>
+<td>1203</td>
+<td><code>ldc #3</code></td>
+</tr>
+<tr>
+<td>b600 04</td>
+<td><code>invokevirtual #4</code></td>
+</tr>
+<tr>
+<td>b1</td>
+<td><code>return</code></td>
+</tr>
+<tr>
+<td>0000</td>
+<td>exception_table_length</td>
+</tr>
+<tr>
+<td>0001</td>
+<td>attributes_count = 1</td>
+</tr>
+<tr>
+<td>000a 0000 000a 0002 0000 0005 0008 0006</td>
+<td>attribute_info &#x53C2;&#x8003;&#x4E0B;&#x8868;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>&#x4E8C;&#x8FDB;&#x5236;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>000a</td>
+<td>&#x5C5E;&#x6027;&#x540D;&#x79F0;&#xFF1A;<code>#10</code> =&gt; <code>LineNumberTable</code></td>
+</tr>
+<tr>
+<td>0000 000a</td>
+<td>&#x5C5E;&#x6027;&#x957F;&#x5EA6;&#xFF1A;<code>10</code></td>
+</tr>
+<tr>
+<td>0002</td>
+<td>line_number_table_length = 2</td>
+</tr>
+<tr>
+<td>0000 0005</td>
+<td><code>start_pc = 0, line_number = 5</code> =&gt; <code>line 5: 0</code></td>
+</tr>
+<tr>
+<td>0008 0006</td>
+<td><code>start_pc = 8, line_number = 6</code> =&gt; <code>line 6: 8</code></td>
+</tr>
+</tbody>
+</table>
 <h1>&#x5B57;&#x6BB5;</h1>
-<p>0001 # &#x4E00;&#x4E2A;&#x5B57;&#x6BB5;
-000d # name index
-0000 0002 # attribute length
-000e # info</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E8C;&#x8FDB;&#x5236;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0001</td>
+<td>&#x5C5E;&#x6027;&#x6570;&#x91CF;&#xFF1A; 1</td>
+</tr>
+<tr>
+<td>000d</td>
+<td>&#x5C5E;&#x6027;&#x540D;&#xFF1A;<code>#13</code> =&gt; <code>SourceFile</code></td>
+</tr>
+<tr>
+<td>0000 0002</td>
+<td>&#x5C5E;&#x6027;&#x957F;&#x5EA6;&#x3002; <code>SourceFile</code> &#x7C7B;&#x578B;&#x7684;&#x957F;&#x5EA6;&#x5FC5;&#x987B;&#x662F; <code>2</code></td>
+</tr>
+<tr>
+<td>000e</td>
+<td>sourcefile_index&#xFF1A; <code>#14</code> =&gt; <code>Simple.java</code></td>
+</tr>
+</tbody>
+</table>
 
                         
                     </div>
@@ -411,6 +701,23 @@
     </span>
     <span class="post-description-item">
         
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/java/">java</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/字节码/">字节码</a>
+    </span>
+
+    
+
     </span>
 </div>
 
@@ -449,7 +756,7 @@
 
                 <div class="ui sticky article-toc" id="article-toc">
                     <!-- toc -->
-                    <ol class="ui ordered list"><li><a href="#undefined"><span>文件</span></a></li><li><a href="#undefined"><span>分解</span></a><ol><li><a href="#undefined"><span>Magic（魔数）</span></a></li><li><a href="#undefined"><span>主版本号（major_version） 和 副版本号（minor_version）</span></a></li><li><a href="#undefined"><span>常量池数量</span></a></li><li><a href="#undefined"><span>常量池</span></a></li></ol></li><li><a href="#undefined"><span>类属性</span></a></li><li><a href="#undefined"><span>方法</span></a><ol><li><a href="#undefined"><span>方法 1</span></a></li><li><a href="#undefined"><span>方法 2</span></a></li></ol></li><li><a href="#undefined"><span>字段</span></a></li></ol>
+                    <ol class="ui ordered list"><li><a href="#undefined"><span>文件</span></a></li><li><a href="#undefined"><span>分解</span></a><ol><li><a href="#undefined"><span>Magic（魔数）</span></a></li><li><a href="#undefined"><span>主版本号（major_version） 和 副版本号（minor_version）</span></a></li><li><a href="#undefined"><span>常量池数量</span></a></li><li><a href="#undefined"><span>常量池</span></a></li></ol></li><li><a href="#undefined"><span>类属性</span></a></li><li><a href="#undefined"><span>方法</span></a><ol><li><a href="#undefined"><span>方法 1</span></a><ol><li><a href="#undefined"><span>Code属性</span></a></li><li><a href="#undefined"><span>aload_0 指令</span></a></li><li><a href="#undefined"><span>invokespecial 指令</span></a></li><li><a href="#undefined"><span>return 指令</span></a></li></ol></li><li><a href="#undefined"><span>方法 2</span></a><ol><li><a href="#undefined"><span>Code属性</span></a></li></ol></li></ol></li><li><a href="#undefined"><span>字段</span></a></li></ol>
                 </div>
 
             </div>
